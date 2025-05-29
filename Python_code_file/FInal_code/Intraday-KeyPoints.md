@@ -11,3 +11,5 @@
 | Resistance **Rejection** | **Sell**      | Sellers active hain, price neeche gir sakta hai |
 
 ---
+
+  ![Alt Intraday](https://github.com/HackBugs/Excel-Dashboard-with-python/blob/main/Chart-PNG/2025-05-29%20150457.png)
