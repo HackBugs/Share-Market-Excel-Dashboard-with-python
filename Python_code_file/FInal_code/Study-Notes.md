@@ -32,6 +32,8 @@
 
 1. [NSE-INDIA - tata-motors-ltd](https://www.nseindia.com/get-quotes/equity?symbol=TATAMOTORS)
 2. [BSE-INDIA - tata-motors-ltd](https://www.bseindia.com/stock-share-price/tata-motors-ltd/tatamotors/500570/)
+
+3. [Company Details. Charting platform for stock markets. Provides nifty live, intraday charts, Sensex share price, NSE BSE EOD charts, live charts, point and figure charts, live NSE charts, candlestick charts, and more. Offers a technical scanner or screener with multiple technical indicators. Website chartink.com](https://chartink.com/)
    
 
 
