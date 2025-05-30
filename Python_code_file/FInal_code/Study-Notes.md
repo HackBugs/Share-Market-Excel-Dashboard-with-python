@@ -28,6 +28,12 @@
 6. [NSE-India](https://www.nseindia.com/market-data/top-gainers-losers)
 7. [NSE-India](https://www.nseindia.com/report-detail/eq_security)
 
+---
+
+1. [NSE-INDIA - tata-motors-ltd](https://www.nseindia.com/get-quotes/equity?symbol=TATAMOTORS)
+2. [BSE-INDIA - tata-motors-ltd](https://www.bseindia.com/stock-share-price/tata-motors-ltd/tatamotors/500570/)
+   
+
 
 ## Query for Screener
 ```
