@@ -16,5 +16,7 @@
 
 <img src="https://raw.githubusercontent.com/HackBugs/Excel-Dashboard-with-python/main/Chart-PNG/2025-05-29%20150457.png" alt="Alt Intraday" width="400"/>
 
-
-
+1. [investopedia](https://www.investopedia.com/terms/r/rsi.asp)
+2. [Chart Pattern](https://www.ig.com/en/trading-strategies/10-chart-patterns-every-trader-needs-to-know-190514)
+3. [Trading-View](https://in.tradingview.com/chart/xSldSdA9/?symbol=NSE%3ATATAMOTORS)
+4. [Screener](https://www.screener.in/screen/new/)
