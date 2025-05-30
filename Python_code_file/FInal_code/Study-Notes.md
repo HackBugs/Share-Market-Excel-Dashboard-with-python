@@ -20,3 +20,11 @@
 2. [Chart Pattern](https://www.ig.com/en/trading-strategies/10-chart-patterns-every-trader-needs-to-know-190514)
 3. [Trading-View](https://in.tradingview.com/chart/xSldSdA9/?symbol=NSE%3ATATAMOTORS)
 4. [Screener](https://www.screener.in/screen/new/)
+
+
+## Query for Screener
+```
+Promoter holding > 70 AND
+FII holding > 3.5 AND
+Market Capitalization < 10000
+```
