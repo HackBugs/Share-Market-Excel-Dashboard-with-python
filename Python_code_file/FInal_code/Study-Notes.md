@@ -21,6 +21,9 @@
 3. [Trading-View](https://in.tradingview.com/chart/xSldSdA9/?symbol=NSE%3ATATAMOTORS)
 4. [Screener](https://www.screener.in/screen/new/)
 
+---
+## Note Search any campany on NSE webiste and click on chart and you can apply any Indicators free 
+
 5. [NSE-India](https://www.nseindia.com/market-data/analysis-and-tools-capital-market-snapshot)
 6. [NSE-India](https://www.nseindia.com/market-data/top-gainers-losers)
 7. [NSE-India](https://www.nseindia.com/report-detail/eq_security)
