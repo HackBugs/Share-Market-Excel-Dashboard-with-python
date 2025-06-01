@@ -91,9 +91,9 @@ Isme traders un stocks ko target karte hain jo strong price movement dikha rahe 
 
 Agar aap kisi specific strategy ke baare mein aur detail mein jaanna chahte hain ya koi particular stock ke liye strategy chahte hain, to please batayein, main aur madad karne ke liye tayyar hoon.
 
-[1]: https://en.wikipedia.org/wiki/Day_trading?utm_source=chatgpt.com "Day trading"
-[2]: https://www.investopedia.com/articles/active-trading/012815/top-technical-indicators-scalping-trading-strategy.asp?utm_source=chatgpt.com "Top Trading Strategies for Scalping - Investopedia"
-[3]: https://www.investopedia.com/trading-strategies-4689646?utm_source=chatgpt.com "Trading Strategies - Investopedia"
-[4]: https://www.investopedia.com/articles/active-trading/010116/perfect-moving-averages-day-trading.asp?utm_source=chatgpt.com "How to Use a 5-8-13 Simple Moving Average Combination for Day ..."
-[5]: https://en.wikipedia.org/wiki/Trend_following?utm_source=chatgpt.com "Trend following"
+- [1]: [Day trading](https://en.wikipedia.org/wiki/Day_trading)
+- [2]: [Top Trading Strategies for Scalping - Investopedia](https://www.investopedia.com/articles/active-trading/012815/top-technical-indicators-scalping-trading-strategy.asp)
+- [3]: [Trading Strategies - Investopedia](https://www.investopedia.com/trading-strategies-4689646?utm_source=chatgpt.com)
+- [4]: [ow to Use a 5-8-13 Simple Moving Average Combination for Day](https://www.investopedia.com/articles/active-trading/010116/perfect-moving-averages-day-trading.asp)
+- [5]: [Trend following](https://en.wikipedia.org/wiki/Trend_following)
 
