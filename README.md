@@ -1,7 +1,8 @@
 
 > # All companies tickers
 1. NSE (National Stock Exchange):
-- [csv_file](https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv)
+- [equities-csv_file](https://nsearchives.nseindia.com/content/equities/EQUITY_L.csv)
+- [all-reports](https://www.nseindia.com/all-reports)
 
 3. BSE (Bombay Stock Exchange):
 
