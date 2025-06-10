@@ -25,7 +25,6 @@ pip install --upgrade streamlit yfinance pandas numpy plotly ta seaborn matplotl
 ```
 
 ```
-.\venv\Scripts\activate
 python -m venv venv
 .\venv\Scripts\activate
 pip install streamlit yfinance pandas numpy plotly ta seaborn matplotlib
