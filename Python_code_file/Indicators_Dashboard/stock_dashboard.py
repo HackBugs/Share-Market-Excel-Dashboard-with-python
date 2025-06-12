@@ -4,7 +4,7 @@ import yfinance as yf
 from ta import add_all_ta_features
 from ta.trend import EMAIndicator, SMAIndicator, WMAIndicator, MACD, ADXIndicator, PSARIndicator, AroonIndicator
 from ta.momentum import RSIIndicator, StochasticOscillator, WilliamsRIndicator, ROCIndicator, TSIIndicator, UltimateOscillator
-from ta.volume import OnBalanceVolumeIndicator, ChaikinMoneyFlowIndicator, MFIIndicator, VolumeWeightedAveragePrice
+from ta.volume import OnBalanceVolumeIndicator, ChaikinMoneyFlowIndicator, MFIIndicator, VolumeWeightedAveragePrice, AccDistIndexIndicator
 from ta.volatility import AverageTrueRange, BollingerBands, KeltnerChannel, DonchianChannel
 from flask import Flask, request, render_template, jsonify
 import os
@@ -67,7 +67,11 @@ INDICATORS = [
     'OBV', 'CMF', 'MFI', 'VWAP', 'PVT',
     'ATR', 'Bollinger Upper', 'Bollinger Middle', 'Bollinger Lower', 'Bollinger Width', 'Bollinger %B',
     'Keltner Upper', 'Keltner Middle', 'Keltner Lower', 'Donchian Upper', 'Donchian Middle', 'Donchian Lower',
-    'Std Dev', 'Stochastic RSI', 'TRIX', 'Chande MO', 'Supertrend'
+    'Std Dev', 'Stochastic RSI', 'TRIX', 'Chande MO', 'Supertrend',
+    # Newly added indicators
+    'Accumulation/Distribution', 'Ichimoku Tenkan', 'Ichimoku Kijun', 'Ichimoku Span A', 'Ichimoku Span B', 'Ichimoku Cloud Signal',
+    'Pivot Point', 'Support 1', 'Support 2', 'Resistance 1', 'Resistance 2',
+    'PPO', 'PPO Divergence'
 ]
 TIMEFRAMES = ['5min', '15min', '30min', '60min', '1d', '1wk']
 
@@ -76,7 +80,6 @@ def fetch_stock_details(symbol):
     try:
         stock = yf.Ticker(symbol)
         info = stock.info
-        # Use daily data as fallback if intraday data fails (e.g., outside market hours)
         history = stock.history(period='1d', interval='1m')
         if history.empty:
             logger.warning(f"Intraday data unavailable for {symbol}, falling back to daily data")
@@ -135,7 +138,6 @@ def fetch_stock_details(symbol):
                 'basic_industry': info.get('industry', 'Power Distribution') if info.get('industry') else 'Power Distribution'
             }
         }
-        # Clean the dictionary to ensure no NaN values
         return clean_dict(details)
     except Exception as e:
         logger.error(f"Error fetching stock details for {symbol}: {str(e)}")
@@ -160,6 +162,7 @@ def fetch_indicator_data(symbol, indicator, timeframe):
 
         data = add_all_ta_features(data, open="Open", high="High", low="Low", close="Close", volume="Volume")
 
+        # Existing indicators
         if indicator == 'EMA9':
             ema9 = EMAIndicator(data['Close'], window=9).ema_indicator()
             value = ema9.iloc[-1]
@@ -343,6 +346,116 @@ def fetch_indicator_data(symbol, indicator, timeframe):
         elif indicator == 'Supertrend':
             value = data['trend_psar'].iloc[-1]
             return value, 'Buy' if value < data['Close'].iloc[-1] else 'Sell'
+        
+        # Newly added indicators
+        elif indicator == 'Accumulation/Distribution':
+            ad = AccDistIndexIndicator(data['High'], data['Low'], data['Close'], data['Volume']).acc_dist_index()
+            value = ad.iloc[-1]
+            return value, 'Up' if ad.iloc[-1] > ad.iloc[-2] else 'Down'
+        
+        elif indicator == 'Ichimoku Tenkan':
+            # Tenkan-sen (Conversion Line): (9-period high + 9-period low)/2
+            tenkan = (data['High'].rolling(window=9).max() + data['Low'].rolling(window=9).min()) / 2
+            value = tenkan.iloc[-1]
+            return value, 'N/A'
+        
+        elif indicator == 'Ichimoku Kijun':
+            # Kijun-sen (Base Line): (26-period high + 26-period low)/2
+            kijun = (data['High'].rolling(window=26).max() + data['Low'].rolling(window=26).min()) / 2
+            value = kijun.iloc[-1]
+            return value, 'N/A'
+        
+        elif indicator == 'Ichimoku Span A':
+            # Senkou Span A (Leading Span A): (Tenkan-sen + Kijun-sen)/2, shifted forward 26 periods
+            tenkan = (data['High'].rolling(window=9).max() + data['Low'].rolling(window=9).min()) / 2
+            kijun = (data['High'].rolling(window=26).max() + data['Low'].rolling(window=26).min()) / 2
+            span_a = ((tenkan + kijun) / 2).shift(26)
+            value = span_a.iloc[-1]
+            return value, 'N/A'
+        
+        elif indicator == 'Ichimoku Span B':
+            # Senkou Span B (Leading Span B): (52-period high + 52-period low)/2, shifted forward 26 periods
+            span_b = ((data['High'].rolling(window=52).max() + data['Low'].rolling(window=52).min()) / 2).shift(26)
+            value = span_b.iloc[-1]
+            return value, 'N/A'
+        
+        elif indicator == 'Ichimoku Cloud Signal':
+            # Signal based on price position relative to the cloud
+            tenkan = (data['High'].rolling(window=9).max() + data['Low'].rolling(window=9).min()) / 2
+            kijun = (data['High'].rolling(window=26).max() + data['Low'].rolling(window=26).min()) / 2
+            span_a = ((tenkan + kijun) / 2).shift(26)
+            span_b = ((data['High'].rolling(window=52).max() + data['Low'].rolling(window=52).min()) / 2).shift(26)
+            price = data['Close'].iloc[-1]
+            span_a_value = span_a.iloc[-1]
+            span_b_value = span_b.iloc[-1]
+            if pd.isna(span_a_value) or pd.isna(span_b_value):
+                return 'N/A', 'N/A'
+            cloud_top = max(span_a_value, span_b_value)
+            cloud_bottom = min(span_a_value, span_b_value)
+            if price > cloud_top:
+                signal = 'Buy'
+            elif price < cloud_bottom:
+                signal = 'Sell'
+            else:
+                signal = 'Neutral'
+            return price, signal
+        
+        elif indicator == 'Pivot Point':
+            # Standard Pivot Point: (High + Low + Close)/3
+            pivot = (data['High'].iloc[-1] + data['Low'].iloc[-1] + data['Close'].iloc[-1]) / 3
+            return pivot, 'N/A'
+        
+        elif indicator == 'Support 1':
+            # S1 = (2 * Pivot) - High
+            pivot = (data['High'].iloc[-1] + data['Low'].iloc[-1] + data['Close'].iloc[-1]) / 3
+            s1 = (2 * pivot) - data['High'].iloc[-1]
+            return s1, 'N/A'
+        
+        elif indicator == 'Support 2':
+            # S2 = Pivot - (High - Low)
+            pivot = (data['High'].iloc[-1] + data['Low'].iloc[-1] + data['Close'].iloc[-1]) / 3
+            s2 = pivot - (data['High'].iloc[-1] - data['Low'].iloc[-1])
+            return s2, 'N/A'
+        
+        elif indicator == 'Resistance 1':
+            # R1 = (2 * Pivot) - Low
+            pivot = (data['High'].iloc[-1] + data['Low'].iloc[-1] + data['Close'].iloc[-1]) / 3
+            r1 = (2 * pivot) - data['Low'].iloc[-1]
+            return r1, 'N/A'
+        
+        elif indicator == 'Resistance 2':
+            # R2 = Pivot + (High - Low)
+            pivot = (data['High'].iloc[-1] + data['Low'].iloc[-1] + data['Close'].iloc[-1]) / 3
+            r2 = pivot + (data['High'].iloc[-1] - data['Low'].iloc[-1])
+            return r2, 'N/A'
+        
+        elif indicator == 'PPO':
+            # Percentage Price Oscillator: ((Fast EMA - Slow EMA) / Slow EMA) * 100
+            ema_fast = EMAIndicator(data['Close'], window=12).ema_indicator()
+            ema_slow = EMAIndicator(data['Close'], window=26).ema_indicator()
+            ppo = ((ema_fast - ema_slow) / ema_slow) * 100
+            value = ppo.iloc[-1]
+            return value, 'N/A'
+        
+        elif indicator == 'PPO Divergence':
+            # Basic divergence detection: Compare PPO trend with price trend
+            ema_fast = EMAIndicator(data['Close'], window=12).ema_indicator()
+            ema_slow = EMAIndicator(data['Close'], window=26).ema_indicator()
+            ppo = ((ema_fast - ema_slow) / ema_slow) * 100
+            ppo_current = ppo.iloc[-1]
+            ppo_prev = ppo.iloc[-2]
+            price_current = data['Close'].iloc[-1]
+            price_prev = data['Close'].iloc[-2]
+            # Bullish divergence: Price makes lower low, PPO makes higher low
+            # Bearish divergence: Price makes higher high, PPO makes lower high
+            if (price_current < price_prev and ppo_current > ppo_prev):
+                signal = 'Bullish Divergence'
+            elif (price_current > price_prev and ppo_current < ppo_prev):
+                signal = 'Bearish Divergence'
+            else:
+                signal = 'No Divergence'
+            return ppo_current, signal
+
         return None, 'N/A'
     except Exception as e:
         logger.error(f"Error fetching {indicator} for {symbol}: {str(e)}")
@@ -379,7 +492,6 @@ def get_data():
         row = {'timeframe': timeframe}
         for indicator in selected_indicators:
             value, signal = fetch_indicator_data(symbol, indicator, timeframe)
-            # Ensure value is JSON-serializable
             if isinstance(value, (int, float)) and (np.isnan(value) or np.isinf(value)):
                 value = 'N/A'
             row[indicator] = {'value': round(value, 2) if isinstance(value, (int, float)) else 'N/A', 'signal': signal}
@@ -397,12 +509,12 @@ def get_data():
             strategy_report += "price trends and potential reversals.\n"
         elif 'RSI' in indicator or 'Stochastic' in indicator or 'Williams' in indicator or 'MOM' in indicator or 'CCI' in indicator or 'TSI' in indicator or 'UO' in indicator:
             strategy_report += "momentum and overbought/oversold conditions.\n"
-        elif 'MACD' in indicator or 'ADX' in indicator or 'DMI' in indicator or '+DI' in indicator or '-DI' in indicator or 'PSAR' in indicator or 'Aroon' in indicator:
+        elif 'MACD' in indicator or 'ADX' in indicator or 'DMI' in indicator or '+DI' in indicator or '-DI' in indicator or 'PSAR' in indicator or 'Aroon' in indicator or 'PPO' in indicator:
             strategy_report += "trend strength and direction.\n"
-        elif 'OBV' in indicator or 'CMF' in indicator or 'MFI' in indicator or 'VWAP' in indicator or 'PVT' in indicator:
+        elif 'OBV' in indicator or 'CMF' in indicator or 'MFI' in indicator or 'VWAP' in indicator or 'PVT' in indicator or 'Accumulation/Distribution' in indicator:
             strategy_report += "volume trends and price-volume relationships.\n"
-        elif 'ATR' in indicator or 'Bollinger' in indicator or 'Keltner' in indicator or 'Donchian' in indicator or 'Std Dev' in indicator:
-            strategy_report += "volatility and potential breakout levels.\n"
+        elif 'ATR' in indicator or 'Bollinger' in indicator or 'Keltner' in indicator or 'Donchian' in indicator or 'Std Dev' in indicator or 'Ichimoku' in indicator or 'Pivot' in indicator or 'Support' in indicator or 'Resistance' in indicator:
+            strategy_report += "volatility, support/resistance, and potential breakout levels.\n"
         else:
             strategy_report += "advanced or composite signals.\n"
     strategy_report += "\nSignals Interpretation:\n"
@@ -413,7 +525,6 @@ def get_data():
             value = timeframe_data[indicator]['value']
             strategy_report += f"- {indicator}: {value} ({signal})\n"
 
-    # Clean the response to ensure no NaN values
     response = {
         'data': data,
         'indicators': selected_indicators,
