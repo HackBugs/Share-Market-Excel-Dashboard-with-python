@@ -2,6 +2,7 @@
 # 📊 Excel Dashboard Images and Video Preview
 
 <!-- JPG & PNG Images -->
+![af75cc9b14041d9d6e6757420e203369](https://github.com/HackBugs/Excel-Dashboard-with-python/blob/main/Images/How%20Smart%20Traders%20Servives.jpg?raw=true)
 ![af75cc9b14041d9d6e6757420e203369](https://github.com/HackBugs/Excel-Dashboard-with-python/blob/main/Images/af75cc9b14041d9d6e6757420e203369.jpg?raw=true)
 ![6772380c5cb682677497e3d0626fe94e](https://github.com/HackBugs/Excel-Dashboard-with-python/blob/main/Images/6772380c5cb682677497e3d0626fe94e.jpg?raw=true)
 ![762d328276d0fe29f99c2dae2d519436](https://github.com/HackBugs/Excel-Dashboard-with-python/blob/main/Images/762d328276d0fe29f99c2dae2d519436.jpg?raw=true)
