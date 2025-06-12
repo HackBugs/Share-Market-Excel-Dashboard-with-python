@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Stock Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 120px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -60px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        .loading-bar {
+            width: 100%;
+            height: 4px;
+            background: #e5e7eb;
+            position: relative;
+            display: none;
+        }
+        .loading-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 0;
+            background: #3b82f6;
+            animation: loading 2s infinite;
+        }
+        @keyframes loading {
+            0% { width: 0; }
+            50% { width: 100%; }
+            100% { width: 0; }
+        }
+        .card {
+            background: #1f2937;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white min-h-screen flex flex-col">
+    <header class="bg-gray-800 p-4 shadow-lg">
+        <h1 class="text-2xl font-bold text-center">Professional Stock Dashboard</h1>
+    </header>
+    <main class="flex-grow p-4">
+        <div class="max-w-6xl mx-auto">
+            <!-- Company and Indicator Selection -->
+            <div class="flex flex-col md:flex-row gap-4 mb-6">
+                <div class="flex-1">
+                    <label for="company" class="block text-sm font-medium mb-1">Select Company</label>
+                    <select id="company" name="company" class="w-full bg-gray-700 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        {% for company in companies %}
+                            <option value="{{ company }}">{{ company }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="flex-1">
+                    <label for="indicator" class="block text-sm font-medium mb-1">Add Indicator</label>
+                    <div class="flex gap-2">
+                        <input id="indicator-search" class="flex-1 bg-gray-700 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Search indicators..." oninput="filterIndicators()">
+                        <select id="indicator" class="flex-1 bg-gray-700 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            {% for indicator in indicators %}
+                                <option value="{{ indicator }}">{{ indicator }}</option>
+                            {% endfor %}
+                        </select>
+                        <button onclick="addIndicator()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Add</button>
+                    </div>
+                </div>
+            </div>
+            <div id="selected-indicators" class="mb-4 flex flex-wrap gap-2"></div>
+            <div class="flex gap-2 mb-6">
+                <button onclick="fetchData()" class="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-md">Fetch Data</button>
+                <button id="strategy-btn" onclick="showStrategy()" class="bg-purple-600 hover:bg-purple-700 text-white px-6 py-2 rounded-md hidden">View Strategy</button>
+                <button id="download-btn" onclick="downloadReport()" class="bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-md hidden">Download Report</button>
+            </div>
+            <div id="loading-bar" class="loading-bar"></div>
+
+            <!-- Stock Price Details -->
+            <div id="stock-price-details" class="mb-6 hidden">
+                <h2 class="text-xl font-bold mb-2">Stock Price Details</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 bg-gray-800 p-4 rounded-md">
+                    <div><strong>Current Price:</strong> <span id="current-price"></span></div>
+                    <div><strong>Prev. Close:</strong> <span id="prev-close"></span></div>
+                    <div><strong>Open:</strong> <span id="open-price"></span></div>
+                    <div><strong>High:</strong> <span id="high"></span></div>
+                    <div><strong>Low:</strong> <span id="low"></span></div>
+                    <div><strong>Close:</strong> <span id="close"></span></div>
+                    <div><strong>Indicative Close:</strong> <span id="indicative-close"></span></div>
+                    <div><strong>VWAP:</strong> <span id="vwap"></span></div>
+                    <div><strong>Adjusted Price:</strong> <span id="adjusted-price"></span></div>
+                </div>
+            </div>
+
+            <!-- P&L Calculator -->
+            <div id="pnl-calculator" class="mb-6 hidden">
+                <h2 class="text-xl font-bold mb-2">Profit & Loss Calculator</h2>
+                <div class="flex gap-4 bg-gray-800 p-4 rounded-md">
+                    <div>
+                        <label for="buy-price" class="block text-sm font-medium mb-1">Buy Price</label>
+                        <input id="buy-price" type="number" step="0.01" class="bg-gray-700 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter buy price">
+                    </div>
+                    <div>
+                        <label for="quantity" class="block text-sm font-medium mb-1">Quantity</label>
+                        <input id="quantity" type="number" class="bg-gray-700 text-white p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter quantity">
+                    </div>
+                    <div class="flex items-end">
+                        <button onclick="calculatePnL()" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md">Calculate P&L</button>
+                    </div>
+                </div>
+                <div id="pnl-result" class="mt-4 hidden">
+                    <p><strong>Profit/Loss:</strong> <span id="pnl-value"></span></p>
+                    <p><strong>Percentage Change:</strong> <span id="pnl-percentage"></span>%</p>
+                </div>
+            </div>
+
+            <!-- Detailed Stock Information -->
+            <div id="stock-details" class="mb-6 hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="card">
+                        <h3 class="text-lg font-bold mb-2">Trade Information</h3>
+                        <p><strong>Traded Volume (Lakhs):</strong> <span id="traded-volume"></span></p>
+                        <p><strong>Traded Value (₹ Cr.):</strong> <span id="traded-value"></span></p>
+                        <p><strong>Total Market Cap (₹ Cr.):</strong> <span id="market-cap"></span></p>
+                        <p><strong>Free Float Market Cap (₹ Cr.):</strong> <span id="free-float"></span></p>
+                        <p><strong>Impact Cost:</strong> <span id="impact-cost"></span></p>
+                        <p><strong>% of Deliverable / Traded Quantity:</strong> <span id="deliverable-quantity"></span></p>
+                        <p><strong>Applicable Margin Rate:</strong> <span id="margin-rate"></span></p>
+                        <p><strong>Face Value:</strong> <span id="face-value"></span></p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-lg font-bold mb-2">Price Information</h3>
+                        <p><strong>52 Week High:</strong> <span id="52-week-high"></span></p>
+                        <p><strong>52 Week Low:</strong> <span id="52-week-low"></span></p>
+                        <p><strong>Upper Band:</strong> <span id="upper-band"></span></p>
+                        <p><strong>Lower Band:</strong> <span id="lower-band"></span></p>
+                        <p><strong>Price Band (%):</strong> <span id="price-band"></span></p>
+                        <p><strong>Daily Volatility:</strong> <span id="daily-volatility"></span></p>
+                        <p><strong>Annualised Volatility:</strong> <span id="annualised-volatility"></span></p>
+                        <p><strong>Tick Size:</strong> <span id="tick-size"></span></p>
+                    </div>
+                    <div class="card">
+                        <h3 class="text-lg font-bold mb-2">Securities Information</h3>
+                        <p><strong>Status:</strong> <span id="status"></span></p>
+                        <p><strong>Trading Status:</strong> <span id="trading-status"></span></p>
+                        <p><strong>Date of Listing:</strong> <span id="date-of-listing"></span></p>
+                        <p><strong>Adjusted P/E:</strong> <span id="adjusted-pe"></span></p>
+                        <p><strong>Symbol P/E:</strong> <span id="symbol-pe"></span></p>
+                        <p><strong>Index:</strong> <span id="index"></span></p>
+                        <p><strong>Basic Industry:</strong> <span id="basic-industry"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Strategy Report Modal -->
+            <div id="strategy-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+                <div class="bg-gray-800 p-6 rounded-md max-w-2xl w-full max-h-[80vh] overflow-y-auto">
+                    <h2 class="text-xl font-bold mb-4">Analysis Strategy Report</h2>
+                    <pre id="strategy-report" class="whitespace-pre-wrap text-sm"></pre>
+                    <button onclick="closeStrategyModal()" class="mt-4 bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md">Close</button>
+                </div>
+            </div>
+
+            <!-- Dashboard Table -->
+            <div class="overflow-x-auto">
+                <table id="dashboard" class="w-full text-sm text-left border-collapse">
+                    <thead>
+                        <tr id="header-row" class="bg-gray-800">
+                            <th class="p-3 border-b border-gray-700">Chart</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data-rows"></tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-gray-800 p-4 text-center text-sm">
+        <p>© 2025 Stock Dashboard. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let selectedIndicators = [];
+        let currentPrice = 0;
+        let strategyReport = '';
+
+        function filterIndicators() {
+            const search = document.getElementById('indicator-search').value.toLowerCase();
+            const select = document.getElementById('indicator');
+            const options = select.options;
+
+            for (let i = 0; i < options.length; i++) {
+                const text = options[i].text.toLowerCase();
+                options[i].style.display = text.includes(search) ? '' : 'none';
+            }
+        }
+
+        function addIndicator() {
+            const indicator = document.getElementById('indicator').value;
+            if (!selectedIndicators.includes(indicator)) {
+                selectedIndicators.push(indicator);
+                updateSelectedIndicators();
+                updateTableHeader();
+            }
+        }
+
+        function removeIndicator(indicator) {
+            selectedIndicators = selectedIndicators.filter(ind => ind !== indicator);
+            updateSelectedIndicators();
+            updateTableHeader();
+        }
+
+        function updateSelectedIndicators() {
+            const selectedDiv = document.getElementById('selected-indicators');
+            selectedDiv.innerHTML = selectedIndicators.map(ind => `
+                <span class="bg-gray-700 text-white px-3 py-1 rounded-full flex items-center gap-2">
+                    ${ind}
+                    <button onclick="removeIndicator('${ind}')" class="text-red-400 hover:text-red-500">×</button>
+                </span>
+            `).join('');
+        }
+
+        function updateTableHeader() {
+            const headerRow = document.getElementById('header-row');
+            headerRow.innerHTML = '<th class="p-3 border-b border-gray-700">Chart</th>';
+            selectedIndicators.forEach(ind => {
+                headerRow.innerHTML += `<th class="p-3 border-b border-gray-700">${ind}</th>`;
+            });
+        }
+
+        function fetchData() {
+            const company = document.getElementById('company').value;
+            const formData = new FormData();
+            formData.append('company', company);
+            selectedIndicators.forEach(ind => formData.append('indicators', ind));
+
+            // Show loading bar
+            const loadingBar = document.getElementById('loading-bar');
+            loadingBar.style.display = 'block';
+
+            fetch('/get_data', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(result => {
+                loadingBar.style.display = 'none';
+                if (result.error) {
+                    throw new Error(result.error);
+                }
+
+                // Update stock price details
+                const stockDetails = result.stock_details;
+                currentPrice = stockDetails.current_price;
+                document.getElementById('stock-price-details').classList.remove('hidden');
+                document.getElementById('current-price').textContent = stockDetails.current_price;
+                document.getElementById('prev-close').textContent = stockDetails.prev_close;
+                document.getElementById('open-price').textContent = stockDetails.open;
+                document.getElementById('high').textContent = stockDetails.high;
+                document.getElementById('low').textContent = stockDetails.low;
+                document.getElementById('close').textContent = stockDetails.close;
+                document.getElementById('indicative-close').textContent = stockDetails.indicative_close;
+                document.getElementById('vwap').textContent = stockDetails.vwap;
+                document.getElementById('adjusted-price').textContent = stockDetails.adjusted_price;
+
+                // Update detailed stock information
+                document.getElementById('stock-details').classList.remove('hidden');
+                document.getElementById('traded-volume').textContent = stockDetails.trade_info.traded_volume_lakhs;
+                document.getElementById('traded-value').textContent = stockDetails.trade_info.traded_value_cr;
+                document.getElementById('market-cap').textContent = stockDetails.trade_info.market_cap_cr;
+                document.getElementById('free-float').textContent = stockDetails.trade_info.free_float_market_cap_cr;
+                document.getElementById('impact-cost').textContent = stockDetails.trade_info.impact_cost;
+                document.getElementById('deliverable-quantity').textContent = stockDetails.trade_info.deliverable_traded_quantity;
+                document.getElementById('margin-rate').textContent = stockDetails.trade_info.applicable_margin_rate;
+                document.getElementById('face-value').textContent = stockDetails.trade_info.face_value;
+
+                document.getElementById('52-week-high').textContent = stockDetails.price_info['52_week_high'];
+                document.getElementById('52-week-low').textContent = stockDetails.price_info['52_week_low'];
+                document.getElementById('upper-band').textContent = stockDetails.price_info.upper_band;
+                document.getElementById('lower-band').textContent = stockDetails.price_info.lower_band;
+                document.getElementById('price-band').textContent = stockDetails.price_info.price_band;
+                document.getElementById('daily-volatility').textContent = stockDetails.price_info.daily_volatility;
+                document.getElementById('annualised-volatility').textContent = stockDetails.price_info.annualised_volatility;
+                document.getElementById('tick-size').textContent = stockDetails.price_info.tick_size;
+
+                document.getElementById('status').textContent = stockDetails.securities_info.status;
+                document.getElementById('trading-status').textContent = stockDetails.securities_info.trading_status;
+                document.getElementById('date-of-listing').textContent = stockDetails.securities_info.date_of_listing;
+                document.getElementById('adjusted-pe').textContent = stockDetails.securities_info.adjusted_pe;
+                document.getElementById('symbol-pe').textContent = stockDetails.securities_info.symbol_pe;
+                document.getElementById('index').textContent = stockDetails.securities_info.index;
+                document.getElementById('basic-industry').textContent = stockDetails.securities_info.basic_industry;
+
+                // Show P&L calculator
+                document.getElementById('pnl-calculator').classList.remove('hidden');
+
+                // Update indicator table
+                const dataRows = document.getElementById('data-rows');
+                dataRows.innerHTML = '';
+                result.data.forEach(row => {
+                    let rowHTML = `<tr class="bg-gray-800"><td class="p-3 border-b border-gray-700">${row.timeframe}</td>`;
+                    result.indicators.forEach(ind => {
+                        const { value, signal } = row[ind];
+                        const signalClass = signal.toLowerCase() === 'buy' || signal.toLowerCase() === 'up' || signal.toLowerCase() === 'strong' ? 'bg-green-600' :
+                                           signal.toLowerCase() === 'sell' || signal.toLowerCase() === 'down' || signal.toLowerCase() === 'weak' ? 'bg-red-600' :
+                                           signal.toLowerCase() === 'neutral' ? 'bg-yellow-600' : 'bg-gray-600';
+                        rowHTML += `
+                            <td class="p-3 border-b border-gray-700">
+                                <div class="tooltip">
+                                    <span class="${signalClass} px-2 py-1 rounded">${value} (${signal})</span>
+                                    <span class="tooltiptext">${ind} Signal</span>
+                                </div>
+                            </td>`;
+                    });
+                    rowHTML += '</tr>';
+                    dataRows.innerHTML += rowHTML;
+                });
+
+                // Store strategy report and show buttons
+                strategyReport = result.strategy_report;
+                document.getElementById('strategy-btn').classList.remove('hidden');
+                document.getElementById('download-btn').classList.remove('hidden');
+            })
+            .catch(error => {
+                loadingBar.style.display = 'none';
+                console.error('Error:', error);
+                alert(`Failed to fetch data: ${error.message}. Check the console for details.`);
+            });
+        }
+
+        function calculatePnL() {
+            const buyPrice = parseFloat(document.getElementById('buy-price').value);
+            const quantity = parseFloat(document.getElementById('quantity').value);
+
+            if (isNaN(buyPrice) || isNaN(quantity) || buyPrice <= 0 || quantity <= 0) {
+                alert('Please enter valid buy price and quantity.');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('buy_price', buyPrice);
+            formData.append('quantity', quantity);
+            formData.append('current_price', currentPrice);
+
+            fetch('/calculate_pnl', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(result => {
+                document.getElementById('pnl-result').classList.remove('hidden');
+                document.getElementById('pnl-value').textContent = result.profit_loss;
+                document.getElementById('pnl-percentage').textContent = result.percentage_change;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Failed to calculate P&L. Check the console for details.');
+            });
+        }
+
+        function showStrategy() {
+            document.getElementById('strategy-report').textContent = strategyReport;
+            document.getElementById('strategy-modal').classList.remove('hidden');
+        }
+
+        function closeStrategyModal() {
+            document.getElementById('strategy-modal').classList.add('hidden');
+        }
+
+        function downloadReport() {
+            const blob = new Blob([strategyReport], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'strategy_report.txt';
+            a.click();
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>
