@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Stock Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment@2.29.4/min/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@1.0.0/dist/chartjs-adapter-moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-financial@0.1.1/dist/chartjs-chart-financial.min.js"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+    <div class="container mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-6">Professional Stock Dashboard</h1>
+
+        <!-- Input Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <!-- Company Selection -->
+                <div>
+                    <label for="company" class="block text-sm font-medium text-gray-700">Select Company</label>
+                    <select id="company" class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                        <option value="">-- Select a Company --</option>
+                        {% for company in companies %}
+                            <option value="{{ company }}">{{ company }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+
+                <!-- Indicator Selection -->
+                <div>
+                    <label for="indicators" class="block text-sm font-medium text-gray-700">Select Indicators</label>
+                    <div class="relative">
+                        <input id="indicatorSearch" type="text" placeholder="Search indicators..." class="mt-1 block w-full p-2 border border-gray-300 rounded-md">
+                        <div id="indicatorDropdown" class="absolute z-10 w-full bg-white border border-gray-300 rounded-md max-h-48 overflow-y-auto hidden">
+                            {% for indicator in indicators %}
+                                <div class="p-2 hover:bg-gray-100 cursor-pointer indicator-option" data-value="{{ indicator }}">{{ indicator }}</div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Added Indicators -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700">Added Indicators</label>
+                    <div id="addedIndicators" class="mt-1 p-2 border border-gray-300 rounded-md min-h-[42px] flex flex-wrap gap-2"></div>
+                </div>
+            </div>
+
+            <!-- Fetch Data Button -->
+            <div class="mt-4 text-center">
+                <button id="fetchData" class="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">Fetch Data</button>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loading" class="hidden text-center my-4">
+            <div class="inline-block animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500"></div>
+            <p class="mt-2">Loading data...</p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="error" class="hidden text-center my-4 text-red-500"></div>
+
+        <!-- Results Section -->
+        <div id="results" class="hidden">
+            <!-- Stock Details -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 id="stockDetailsTitle" class="text-xl font-semibold mb-4"></h2>
+                <p id="fetchTime" class="text-sm text-gray-600 mb-4"></p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <!-- Stock Price Details -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Stock Price Details</h3>
+                        <p><strong>Current Price:</strong> <span id="currentPrice"></span></p>
+                        <p><strong>Previous Close:</strong> <span id="prevClose"></span></p>
+                        <p><strong>Open:</strong> <span id="openPrice"></span></p>
+                        <p><strong>High:</strong> <span id="highPrice"></span></p>
+                        <p><strong>Low:</strong> <span id="lowPrice"></span></p>
+                        <p><strong>Close:</strong> <span id="closePrice"></span></p>
+                        <p><strong>VWAP:</strong> <span id="vwap"></span></p>
+                    </div>
+                    <!-- Trade Information -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Trade Information</h3>
+                        <p><strong>Traded Volume (Lakhs):</strong> <span id="tradedVolume"></span></p>
+                        <p><strong>Traded Value (Cr):</strong> <span id="tradedValue"></span></p>
+                        <p><strong>Market Cap (Cr):</strong> <span id="marketCap"></span></p>
+                        <p><strong>Free Float Market Cap (Cr):</strong> <span id="freeFloatMarketCap"></span></p>
+                        <p><strong>Impact Cost:</strong> <span id="impactCost"></span></p>
+                        <p><strong>Deliverable Traded Quantity:</strong> <span id="deliverableQty"></span></p>
+                        <p><strong>Applicable Margin Rate:</strong> <span id="marginRate"></span></p>
+                        <p><strong>Face Value:</strong> <span id="faceValue"></span></p>
+                    </div>
+                    <!-- Securities Information -->
+                    <div>
+                        <h3 class="text-lg font-medium mb-2">Securities Information</h3>
+                        <p><strong>Status:</strong> <span id="status"></span></p>
+                        <p><strong>Trading Status:</strong> <span id="tradingStatus"></span></p>
+                        <p><strong>Date of Listing:</strong> <span id="listingDate"></span></p>
+                        <p><strong>Adjusted PE:</strong> <span id="adjustedPE"></span></p>
+                        <p><strong>Symbol PE:</strong> <span id="symbolPE"></span></p>
+                        <p><strong>Index:</strong> <span id="index"></span></p>
+                        <p><strong>Basic Industry:</strong> <span id="basicIndustry"></span></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Candlestick Chart -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-xl font-semibold mb-4">Candlestick Chart (Last 30 Days)</h2>
+                <canvas id="candlestickChart" class="w-full h-96"></canvas>
+            </div>
+
+            <!-- Indicator Data Table -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-6 overflow-x-auto">
+                <h2 class="text-xl font-semibold mb-4">Indicator Data</h2>
+                <table id="indicatorTable" class="w-full border-collapse">
+                    <thead>
+                        <tr class="bg-gray-200">
+                            <th class="border p-2">Timeframe</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+
+            <!-- P&L Calculator -->
+            <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-xl font-semibold mb-4">P&L Calculator</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label for="buyPrice" class="block text-sm font-medium text-gray-700">Buy Price</label>
+                        <input type="number" id="buyPrice" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Enter buy price">
+                    </div>
+                    <div>
+                        <label for="quantity" class="block text-sm font-medium text-gray-700">Quantity</label>
+                        <input type="number" id="quantity" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Enter quantity">
+                    </div>
+                    <div>
+                        <label for="currentPriceInput" class="block text-sm font-medium text-gray-700">Current Price</label>
+                        <input type="number" id="currentPriceInput" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Enter current price">
+                    </div>
+                </div>
+                <div class="mt-4 text-center">
+                    <button id="calculatePnL" class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600">Calculate P&L</button>
+                </div>
+                <div id="pnlResult" class="mt-4 text-center"></div>
+            </div>
+
+            <!-- Strategy Report -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <h2 class="text-xl font-semibold mb-4">Strategy Report</h2>
+                <div class="text-center mb-4">
+                    <button id="viewStrategy" class="bg-purple-500 text-white px-4 py-2 rounded-md hover:bg-purple-600">View Strategy</button>
+                    <button id="downloadReport" class="bg-gray-500 text-white px-4 py-2 rounded-md hover:bg-gray-600 ml-2">Download Report</button>
+                </div>
+                <pre id="strategyReport" class="bg-gray-100 p-4 rounded-md hidden"></pre>
+            </div>
+        </div>
+
+        <!-- Popup for Indicator Chart -->
+        <div id="indicatorPopup" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+            <div class="bg-white p-6 rounded-lg shadow-md w-3/4 max-w-4xl">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 id="popupTitle" class="text-xl font-semibold"></h2>
+                    <button id="closePopup" class="text-red-500 hover:text-red-700">×</button>
+                </div>
+                <canvas id="indicatorChart" class="w-full h-96"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Indicator Selection
+        const indicatorSearch = document.getElementById('indicatorSearch');
+        const indicatorDropdown = document.getElementById('indicatorDropdown');
+        const addedIndicators = document.getElementById('addedIndicators');
+        const indicatorOptions = document.querySelectorAll('.indicator-option');
+        let selectedIndicators = [];
+
+        indicatorSearch.addEventListener('focus', () => {
+            indicatorDropdown.classList.remove('hidden');
+        });
+
+        indicatorSearch.addEventListener('input', () => {
+            const searchValue = indicatorSearch.value.toLowerCase();
+            indicatorOptions.forEach(option => {
+                const text = option.textContent.toLowerCase();
+                option.style.display = text.includes(searchValue) ? 'block' : 'none';
+            });
+        });
+
+        document.addEventListener('click', (e) => {
+            if (!indicatorSearch.contains(e.target) && !indicatorDropdown.contains(e.target)) {
+                indicatorDropdown.classList.add('hidden');
+            }
+        });
+
+        indicatorOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const value = option.dataset.value;
+                if (!selectedIndicators.includes(value)) {
+                    selectedIndicators.push(value);
+                    const chip = document.createElement('div');
+                    chip.className = 'bg-blue-200 text-blue-800 px-2 py-1 rounded-full flex items-center';
+                    chip.innerHTML = `${value} <span class="ml-2 cursor-pointer text-red-500" onclick="removeIndicator('${value}')">×</span>`;
+                    addedIndicators.appendChild(chip);
+                }
+                indicatorSearch.value = '';
+                indicatorDropdown.classList.add('hidden');
+            });
+        });
+
+        function removeIndicator(indicator) {
+            selectedIndicators = selectedIndicators.filter(i => i !== indicator);
+            const chips = addedIndicators.children;
+            for (let chip of chips) {
+                if (chip.textContent.includes(indicator)) {
+                    chip.remove();
+                    break;
+                }
+            }
+        }
+
+        // Fetch Data
+        const fetchDataButton = document.getElementById('fetchData');
+        const loading = document.getElementById('loading');
+        const errorDiv = document.getElementById('error');
+        const results = document.getElementById('results');
+        let candlestickChart = null;
+        let indicatorChart = null;
+
+        fetchDataButton.addEventListener('click', async () => {
+            const company = document.getElementById('company').value;
+            if (!company) {
+                errorDiv.textContent = 'Please select a company.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+            if (selectedIndicators.length === 0) {
+                errorDiv.textContent = 'Please select at least one indicator.';
+                errorDiv.classList.remove('hidden');
+                return;
+            }
+
+            errorDiv.classList.add('hidden');
+            loading.classList.remove('hidden');
+            results.classList.add('hidden');
+
+            try {
+                const formData = new FormData();
+                formData.append('company', company);
+                selectedIndicators.forEach(indicator => formData.append('indicators', indicator));
+
+                const response = await fetch('/get_data', {
+                    method: 'POST',
+                    body: formData
+                });
+                const data = await response.json();
+
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+
+                // Display Stock Details
+                document.getElementById('stockDetailsTitle').textContent = `Stock Details: ${company}`;
+                document.getElementById('fetchTime').textContent = `Data Fetched At: ${data.stock_details.fetch_time}`;
+                document.getElementById('currentPrice').textContent = data.stock_details.current_price;
+                document.getElementById('prevClose').textContent = data.stock_details.prev_close;
+                document.getElementById('openPrice').textContent = data.stock_details.open;
+                document.getElementById('highPrice').textContent = data.stock_details.high;
+                document.getElementById('lowPrice').textContent = data.stock_details.low;
+                document.getElementById('closePrice').textContent = data.stock_details.close;
+                document.getElementById('vwap').textContent = data.stock_details.vwap;
+
+                document.getElementById('tradedVolume').textContent = data.stock_details.trade_info.traded_volume_lakhs;
+                document.getElementById('tradedValue').textContent = data.stock_details.trade_info.traded_value_cr;
+                document.getElementById('marketCap').textContent = data.stock_details.trade_info.market_cap_cr;
+                document.getElementById('freeFloatMarketCap').textContent = data.stock_details.trade_info.free_float_market_cap_cr;
+                document.getElementById('impactCost').textContent = data.stock_details.trade_info.impact_cost;
+                document.getElementById('deliverableQty').textContent = data.stock_details.trade_info.deliverable_traded_quantity;
+                document.getElementById('marginRate').textContent = data.stock_details.trade_info.applicable_margin_rate;
+                document.getElementById('faceValue').textContent = data.stock_details.trade_info.face_value;
+
+                document.getElementById('status').textContent = data.stock_details.securities_info.status;
+                document.getElementById('tradingStatus').textContent = data.stock_details.securities_info.trading_status;
+                document.getElementById('listingDate').textContent = data.stock_details.securities_info.date_of_listing;
+                document.getElementById('adjustedPE').textContent = data.stock_details.securities_info.adjusted_pe;
+                document.getElementById('symbolPE').textContent = data.stock_details.securities_info.symbol_pe;
+                document.getElementById('index').textContent = data.stock_details.securities_info.index;
+                document.getElementById('basicIndustry').textContent = data.stock_details.securities_info.basic_industry;
+
+                // Candlestick Chart
+                const candleData = data.stock_details.candle_data.map(item => {
+                    const date = moment(item.date, 'YYYY-MM-DD');
+                    return {
+                        x: date.isValid() ? date.toDate() : null,
+                        o: parseFloat(item.open),
+                        h: parseFloat(item.high),
+                        l: parseFloat(item.low),
+                        c: parseFloat(item.close)
+                    };
+                }).filter(item => item.x && !isNaN(item.o) && !isNaN(item.h) && !isNaN(item.l) && !isNaN(item.c));
+
+                if (candleData.length === 0) {
+                    throw new Error('No valid data available for the candlestick chart.');
+                }
+
+                const candlestickCtx = document.getElementById('candlestickChart').getContext('2d');
+                if (candlestickChart) {
+                    candlestickChart.destroy();
+                }
+                candlestickChart = new Chart(candlestickCtx, {
+                    type: 'candlestick',
+                    data: {
+                        datasets: [{
+                            label: `${company} Candlestick`,
+                            data: candleData,
+                            borderColor: 'rgba(0, 0, 0, 0.5)',
+                            color: {
+                                up: 'rgba(34, 197, 94, 0.5)',    // Green for up candles
+                                down: 'rgba(239, 68, 68, 0.5)',  // Red for down candles
+                                unchanged: 'rgba(156, 163, 175, 0.5)' // Gray for unchanged
+                            }
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        plugins: {
+                            legend: {
+                                display: true
+                            }
+                        },
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    unit: 'day',
+                                    tooltipFormat: 'MMM DD, YYYY',
+                                    displayFormats: {
+                                        day: 'MMM DD'
+                                    }
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Date'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Price'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                // Indicator Table
+                const tableHead = document.querySelector('#indicatorTable thead tr');
+                tableHead.innerHTML = '<th class="border p-2">Timeframe</th>';
+                data.indicators.forEach(indicator => {
+                    const th = document.createElement('th');
+                    th.className = 'border p-2';
+                    th.innerHTML = `<span class="cursor-pointer text-blue-500 hover:underline" data-indicator="${indicator}">${indicator}</span>`;
+                    tableHead.appendChild(th);
+                });
+
+                const tableBody = document.querySelector('#indicatorTable tbody');
+                tableBody.innerHTML = '';
+                data.data.forEach(row => {
+                    const tr = document.createElement('tr');
+                    tr.innerHTML = `<td class="border p-2">${row.timeframe}</td>`;
+                    data.indicators.forEach(indicator => {
+                        const td = document.createElement('td');
+                        td.className = 'border p-2';
+                        const value = row[indicator].value;
+                        const signal = row[indicator].signal;
+                        td.innerHTML = `${value} <span class="text-sm text-gray-500">(${signal})</span>`;
+                        tr.appendChild(td);
+                    });
+                    tableBody.appendChild(tr);
+                });
+
+                // Attach click event to indicator headers
+                document.querySelectorAll('#indicatorTable th span').forEach(span => {
+                    span.addEventListener('click', async () => {
+                        const indicator = span.dataset.indicator;
+                        const timeframe = document.querySelector('#indicatorTable tbody tr td').textContent; // Get first timeframe
+                        await showIndicatorChart(company, indicator, timeframe);
+                    });
+                });
+
+                // Strategy Report
+                document.getElementById('strategyReport').textContent = data.strategy_report;
+
+                results.classList.remove('hidden');
+            } catch (error) {
+                errorDiv.textContent = `Error: ${error.message}`;
+                errorDiv.classList.remove('hidden');
+            } finally {
+                loading.classList.add('hidden');
+            }
+        });
+
+        // Show Indicator Chart in Popup
+        async function showIndicatorChart(company, indicator, timeframe) {
+            const popup = document.getElementById('indicatorPopup');
+            const popupTitle = document.getElementById('popupTitle');
+            const indicatorCtx = document.getElementById('indicatorChart').getContext('2d');
+
+            popupTitle.textContent = `${indicator} Chart (${timeframe})`;
+
+            // Fetch historical data
+            const formData = new FormData();
+            formData.append('company', company);
+            formData.append('indicator', indicator);
+            formData.append('timeframe', timeframe);
+
+            try {
+                const response = await fetch('/get_indicator_history', {
+                    method: 'POST',
+                    body: formData
+                });
+                const history = await response.json();
+
+                if (history.error) {
+                    throw new Error(history.error);
+                }
+
+                const chartData = history.map(item => {
+                    const date = moment(item.date, 'YYYY-MM-DD HH:mm:ss');
+                    return {
+                        x: date.isValid() ? date.toDate() : null,
+                        y: parseFloat(item.value)
+                    };
+                }).filter(item => item.x && !isNaN(item.y));
+
+                if (chartData.length === 0) {
+                    throw new Error('No valid data available for the indicator chart.');
+                }
+
+                if (indicatorChart) {
+                    indicatorChart.destroy();
+                }
+                indicatorChart = new Chart(indicatorCtx, {
+                    type: 'line',
+                    data: {
+                        datasets: [{
+                            label: indicator,
+                            data: chartData,
+                            borderColor: 'rgba(59, 130, 246, 1)',
+                            backgroundColor: 'rgba(59, 130, 246, 0.2)',
+                            fill: false
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            x: {
+                                type: 'time',
+                                time: {
+                                    unit: 'day',
+                                    tooltipFormat: 'MMM DD, YYYY HH:mm',
+                                    displayFormats: {
+                                        day: 'MMM DD'
+                                    }
+                                },
+                                title: {
+                                    display: true,
+                                    text: 'Date'
+                                }
+                            },
+                            y: {
+                                title: {
+                                    display: true,
+                                    text: 'Value'
+                                }
+                            }
+                        }
+                    }
+                });
+
+                popup.classList.remove('hidden');
+            } catch (error) {
+                console.error('Error fetching indicator history:', error);
+                popup.classList.add('hidden');
+                errorDiv.textContent = `Error loading indicator chart: ${error.message}`;
+                errorDiv.classList.remove('hidden');
+            }
+        }
+
+        // Close Popup
+        document.getElementById('closePopup').addEventListener('click', () => {
+            document.getElementById('indicatorPopup').classList.add('hidden');
+            if (indicatorChart) {
+                indicatorChart.destroy();
+                indicatorChart = null;
+            }
+        });
+
+        // P&L Calculator
+        document.getElementById('calculatePnL').addEventListener('click', async () => {
+            const buyPrice = document.getElementById('buyPrice').value;
+            const quantity = document.getElementById('quantity').value;
+            const currentPrice = document.getElementById('currentPriceInput').value;
+
+            if (!buyPrice || !quantity || !currentPrice) {
+                document.getElementById('pnlResult').innerHTML = '<p class="text-red-500">Please fill in all fields.</p>';
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('buy_price', buyPrice);
+            formData.append('quantity', quantity);
+            formData.append('current_price', currentPrice);
+
+            try {
+                const response = await fetch('/calculate_pnl', {
+                    method: 'POST',
+                    body: formData
+                });
+                const result = await response.json();
+
+                document.getElementById('pnlResult').innerHTML = `
+                    <p><strong>Profit/Loss:</strong> ₹${result.profit_loss}</p>
+                    <p><strong>Percentage Change:</strong> ${result.percentage_change}%</p>
+                `;
+            } catch (error) {
+                document.getElementById('pnlResult').innerHTML = `<p class="text-red-500">Error: ${error.message}</p>`;
+            }
+        });
+
+        // View Strategy Report
+        document.getElementById('viewStrategy').addEventListener('click', () => {
+            const strategyReport = document.getElementById('strategyReport');
+            strategyReport.classList.toggle('hidden');
+        });
+
+        // Download Report
+        document.getElementById('downloadReport').addEventListener('click', () => {
+            const strategyReport = document.getElementById('strategyReport').textContent;
+            const blob = new Blob([strategyReport], { type: 'text/plain' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'strategy_report.txt';
+            a.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>
