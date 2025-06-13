@@ -1,3 +1,13 @@
+
+```
+Run - python stock_dashboard.py
+# On Windows
+.\venv\Scripts\activate
+
+# On macOS/Linux
+source venv/bin/activate
+```
+
 ### Stock Dashboard Documentation
 
 This project is a **Professional Stock Dashboard** built using Python, Flask, and JavaScript. It allows users to analyze stock data for Indian companies listed on the National Stock Exchange (NSE) by fetching real-time data using the `yfinance` library, calculating technical indicators with the `ta` library, and presenting the results in an interactive web interface.
