@@ -1,3 +1,10 @@
+## Master Dashboard 
+```
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install streamlit pandas plotly
+```
+
 ```
 pip show streamlit
 pip install --upgrade streamlit
