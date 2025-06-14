@@ -6,6 +6,7 @@ pip install --upgrade streamlit
 ## Powershell cmd 
 ```
 Get-NetTCPConnection
+Stop-Process -Id 1234 -Force
 ```
 
 > ## Dependencies: Ensure you have the required libraries installed:
