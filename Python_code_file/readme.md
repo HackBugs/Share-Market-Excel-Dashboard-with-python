@@ -13,6 +13,9 @@ pip install --upgrade streamlit
 ## Powershell cmd 
 ```
 Get-NetTCPConnection
+Get-NetTCPConnection -LocalPort 8501
+Get-NetTCPConnection -LocalPort 8502 | Select-Object LocalAddress, LocalPort, OwningProcess
+Stop-Process -Id <pid> -Force
 Stop-Process -Id 1234 -Force
 ```
 
