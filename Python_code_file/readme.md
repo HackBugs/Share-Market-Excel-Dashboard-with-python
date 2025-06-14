@@ -1,3 +1,8 @@
+```
+pip show streamlit
+pip install --upgrade streamlit
+```
+
 > ## Dependencies: Ensure you have the required libraries installed:
 
 ```
