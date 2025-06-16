@@ -1,0 +1,50 @@
+//@version=5
+indicator("Volume-Price Sync Pro [VPS]", shorttitle="VPS Pro", overlay=true, precision=2)
+
+// ———— INPUTS ———— //
+length = input.int(20, "Lookback Period", minval=5)
+volMultiplier = input.float(2.0, "Volume Spike Threshold", minval=1.1, step=0.1)
+atrFilter = input.float(0.5, "ATR Movement Filter", step=0.1)
+showAlerts = input.bool(true, "Enable Trading Alerts")
+
+// ———— CORE DATA CALCULATIONS ———— //
+// Volume Analysis
+avgVol = ta.sma(volume, length)
+volSpike = volume >= avgVol * volMultiplier
+volRank = (volume - ta.lowest(volume, length)) / (ta.highest(volume, length) - ta.lowest(volume, length)) * 100
+
+// Price Momentum
+priceChange = close - close[1]
+pricePct = ta.change(close) / close[1] * 100
+atr = ta.atr(14)
+significantMove = math.abs(priceChange) >= atr * atrFilter
+
+// ———— SIGNAL LOGIC ———— //
+bullish = volSpike and priceChange > 0 and significantMove
+bearish = volSpike and priceChange < 0 and significantMove
+
+// ———— VISUALIZATION ———— //
+// 1. Volume Spike Arrows
+plotshape(volSpike, style=shape.triangleup, color=color.new(#00FF00, 0), location=location.belowbar, size=size.small)
+plotshape(volSpike, style=shape.triangledown, color=color.new(#FF0000, 0), location=location.abovebar, size=size.small)
+
+// 2. Price-Volume Strength Bars
+var color vpsColor = na
+vpsColor := priceChange >= 0 ? color.green : color.red
+plot(priceChange * volume / 1e6, "VPS Strength", vpsColor, 2, plot.style_columns)
+
+// 3. Key Data Labels
+var table statsTable = table.new(position.top_right, 2, 5)
+if barstate.islast
+    table.cell(statsTable, 0, 0, "Current Volume", bgcolor=color.gray)
+    table.cell(statsTable, 1, 0, str.tostring(volume / 1e6, "#.##M"), text_color=volume > avgVol ? color.green : color.red)
+    
+    table.cell(statsTable, 0, 1, "Volume Rank", bgcolor=color.gray)
+    table.cell(statsTable, 1, 1, str.tostring(volRank, "#.##%"), text_color=volRank > 80 ? color.green : color.white)
+    
+    table.cell(statsTable, 0, 2, "Price Change", bgcolor=color.gray)
+    table.cell(statsTable, 1, 2, str.tostring(pricePct, "+#.##%"), text_color=priceChange >= 0 ? color.green : color.red)
+
+// ———— ALERTS ———— //
+alertcondition(bullish, "Bullish Volume-Price Sync", "VPS BUY: High volume + upward momentum")
+alertcondition(bearish, "Bearish Volume-Price Sync", "VPS SELL: High volume + downward momentum")
