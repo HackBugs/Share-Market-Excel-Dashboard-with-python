@@ -1,0 +1,78 @@
+//@version=5
+indicator(title="Alpha-Predator Pro [Ultra]", shorttitle="APP Ultra", overlay=true, precision=2, max_labels_count=500)
+
+// ======== Input Parameters ========
+// Moving Averages
+ema9Length = input.int(9, title="EMA 9 Length")
+ema21Length = input.int(21, title="EMA 21 Length")
+
+// RSI
+rsiLength = input.int(14, title="RSI Length")
+rsiOverbought = input.int(70, title="RSI Overbought")
+rsiOversold = input.int(30, title="RSI Oversold")
+
+// MACD
+fastLength = input.int(12, title="MACD Fast Length")
+slowLength = input.int(26, title="MACD Slow Length")
+signalLength = input.int(9, title="MACD Signal Length")
+
+// Supertrend
+supertrendFactor = input.float(3.0, title="Supertrend Factor")
+supertrendPeriod = input.int(7, title="Supertrend Period")
+
+// Volume Analysis
+volumeMultiplier = input.float(2.0, title="Volume Multiplier for Institutional")
+
+// ======== Indicator Calculations ========
+// EMA Calculation
+ema9 = ta.ema(close, ema9Length)
+ema21 = ta.ema(close, ema21Length)
+emaCrossUp = ta.crossover(ema9, ema21)
+emaCrossDown = ta.crossunder(ema9, ema21)
+
+// RSI Calculation
+rsi = ta.rsi(close, rsiLength)
+bearishDiv = ta.highest(rsi, 14)[1] > ta.highest(rsi, 14) and high[1] < high
+bullishDiv = ta.lowest(rsi, 14)[1] < ta.lowest(rsi, 14) and low[1] > low
+
+// MACD Calculation
+[macdLine, signalLine, histLine] = ta.macd(close, fastLength, slowLength, signalLength)
+
+// VWAP Calculation
+vwap = ta.vwap(close)
+vwapUpper = vwap + ta.stdev(close, 20)
+vwapLower = vwap - ta.stdev(close, 20)
+
+// Volume Analysis
+avgVolume = ta.sma(volume, 20)
+highVolume = volume > avgVolume * volumeMultiplier
+institutionalPresence = highVolume and close > vwap and close > ema21
+
+// Supertrend Calculation
+[supertrend, direction] = ta.supertrend(supertrendFactor, supertrendPeriod)
+supertrendColor = direction > 0 ? color.green : color.red
+
+// ======== Dono Box UI ========
+var table donoBox = table.new(position=position.top_right, columns=2, rows=10, border_width=1, frame_color=color.blue, frame_width=1, bgcolor=color.rgb(20, 20, 30))
+
+if barstate.islast
+    table.cell(donoBox, 0, 0, "ALPHA PREDATOR PRO", text_color=color.white, bgcolor=color.blue, text_size=size.normal)
+    table.cell(donoBox, 0, 1, "Current Price:", text_color=color.white, bgcolor=color.rgb(20, 20, 30))
+    table.cell(donoBox, 1, 1, str.tostring(close, format.mintick), text_color=close > open ? color.green : color.red)
+    table.cell(donoBox, 0, 2, "Trend Status:", text_color=color.white, bgcolor=color.rgb(20, 20, 30))
+    table.cell(donoBox, 1, 2, direction > 0 ? "Bullish" : "Bearish", text_color=direction > 0 ? color.green : color.red)
+
+// ======== Chart Plots ========
+plot(ema9, title="EMA 9", color=color.blue, linewidth=2)
+plot(ema21, title="EMA 21", color=color.red, linewidth=2)
+fill(plot(ema9), plot(ema21), color=ema9 > ema21 ? color.green : color.red)
+
+plot(vwap, title="VWAP", color=color.yellow, linewidth=2)
+plot(supertrend, title="Supertrend", color=supertrendColor, linewidth=2, style=plot.style_linebr)
+
+// ======== Alerts ========
+alertcondition(emaCrossUp and rsi > 50, title="EMA Bullish Crossover", message="EMA Bullish Crossover with RSI > 50")
+alertcondition(emaCrossDown and rsi < 50, title="EMA Bearish Crossover", message="EMA Bearish Crossover with RSI < 50")
+alertcondition(institutionalPresence, title="Institutional Buying", message="Institutional Buying Detected")
+alertcondition(bullishDiv, title="Bullish Divergence", message="Bullish Divergence Detected")
+alertcondition(bearishDiv, title="Bearish Divergence", message="Bearish Divergence Detected")
