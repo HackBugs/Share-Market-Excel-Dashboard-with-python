@@ -1,6 +1,7 @@
 # Awesome-Pinescript [![HitCount](https://hits.dwyl.com/pAulseperformance/awesome-pinescript.svg?style=flat-square)](https://hits.dwyl.com/pAulseperformance/awesome-pinescript)
 
-## [Pine-script - links](https://github.com/topics/pine-script)
+1. ## [Pine-script - links](https://github.com/topics/pine-script)
+2. ## [Tradingview-scripts](https://www.tradingview.com/scripts/)
 
 
 **A Comprehensive Collection of Everything Related to Tradingview Pine Script.**
