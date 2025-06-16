@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JIOFIN Intraday Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .chart-container { width: 45%; display: inline-block; margin: 10px; }
+        select { padding: 10px; font-size: 16px; }
+    </style>
+</head>
+<body>
+    <h1>Intraday Trading Dashboard</h1>
+    <form id="companyForm">
+        <label for="company">Select Company:</label>
+        <select name="company" id="company">
+            {% for company in companies %}
+                <option value="{{ company }}">{{ company }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Load Data</button>
+    </form>
+
+    <div class="chart-container">
+        <canvas id="volumeChart"></canvas>
+    </div>
+    <div class="chart-container">
+        <canvas id="priceChart"></canvas>
+    </div>
+
+    <script>
+        document.getElementById('companyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const company = document.getElementById('company').value;
+            fetch('/get_data', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `company=${encodeURIComponent(company)}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+
+                // Volume Chart
+                const volumeCtx = document.getElementById('volumeChart').getContext('2d');
+                new Chart(volumeCtx, {
+                    type: 'bar',
+                    data: data.volume_chart,
+                    options: {
+                        scales: {
+                            y: { beginAtZero: true, title: { display: true, text: 'Volume (Lakhs)' } },
+                            x: { title: { display: true, text: 'Stocks' } }
+                        },
+                        plugins: {
+                            title: { display: true, text: `${data.company} vs Top Volume Stocks` },
+                            legend: { display: true }
+                        }
+                    }
+                });
+
+                // Price Chart
+                const priceCtx = document.getElementById('priceChart').getContext('2d');
+                new Chart(priceCtx, {
+                    type: 'line',
+                    data: data.price_chart,
+                    options: {
+                        scales: {
+                            y: {
+                                title: { display: true, text: 'Price (₹)' },
+                                suggestedMin: data.price_chart.datasets[0].data[1] - 10,
+                                suggestedMax: data.price_chart.datasets[0].data[2] + 10
+                            },
+                            x: { title: { display: true, text: 'Price Points' } }
+                        },
+                        plugins: {
+                            title: { display: true, text: `${data.company} Intraday Price Movement` },
+                            legend: { display: true }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
