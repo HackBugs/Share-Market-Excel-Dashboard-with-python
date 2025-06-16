@@ -1,0 +1,92 @@
+//@version=5
+indicator(title="Alpha-Predator Pro [Ultra]", shorttitle="APP Ultra", overlay=true, precision=2, max_labels_count=500)
+
+// ======== Multi-Timeframe Trend Analysis ========
+tfInput = input.timeframe("D", title="Higher Timeframe")
+htfClose = request.security(syminfo.tickerid, tfInput, close)
+htfEma = ta.ema(htfClose, 21)
+htfTrend = close > htfEma ? "Bullish" : "Bearish"
+
+// ======== Input Parameters ========
+// Moving Averages
+ema9Length = input.int(9, title="EMA 9 Length")
+ema21Length = input.int(21, title="EMA 21 Length")
+
+// RSI
+rsiLength = input.int(14, title="RSI Length")
+rsiOverbought = input.int(70, title="RSI Overbought")
+rsiOversold = input.int(30, title="RSI Oversold")
+
+// MACD
+fastLength = input.int(12, title="MACD Fast Length")
+slowLength = input.int(26, title="MACD Slow Length")
+signalLength = input.int(9, title="MACD Signal Length")
+
+// ATR for Risk Management
+atrLength = input.int(14, title="ATR Length")
+atrValue = ta.atr(atrLength)
+stopLoss = close - atrValue * 1.5
+takeProfit = close + atrValue * 2
+
+// Support & Resistance Zones
+pivot = (high + low + close) / 3
+r1 = pivot * 2 - low
+s1 = pivot * 2 - high
+
+// ======== Indicator Calculations ========
+ema9 = ta.ema(close, ema9Length)
+ema21 = ta.ema(close, ema21Length)
+emaCrossUp = ta.crossover(ema9, ema21)
+emaCrossDown = ta.crossunder(ema9, ema21)
+
+rsi = ta.rsi(close, rsiLength)
+// Fixed divergence logic
+bullishDiv = ta.pivotlow(rsi, 5, 5) and ta.pivotlow(low, 5, 5) and rsi > rsi[10] and low < low[10]
+bearishDiv = ta.pivothigh(rsi, 5, 5) and ta.pivothigh(high, 5, 5) and rsi < rsi[10] and high > high[10]
+
+[macdLine, signalLine, histLine] = ta.macd(close, fastLength, slowLength, signalLength)
+vwap = ta.vwap
+
+// ======== Institutional Footprint Scanner ========
+avgVolume = ta.sma(volume, 20)
+highVolume = volume > avgVolume * 1.5
+institutionalPresence = highVolume and close > vwap and close > ema21
+
+// ======== UI Box (Table Display) ========
+var table donoBox = table.new(position=position.top_right, columns=2, rows=10, border_width=1, frame_color=color.blue, frame_width=1, bgcolor=color.rgb(20, 20, 30))
+
+if barstate.islast
+    table.cell(donoBox, 0, 0, "ALPHA PREDATOR PRO", text_color=color.white, bgcolor=color.blue, text_size=size.normal)
+    table.cell(donoBox, 1, 0, "", text_color=color.white, bgcolor=color.blue)
+    table.cell(donoBox, 0, 1, "Current Price:", text_color=color.white)
+    table.cell(donoBox, 1, 1, str.tostring(close, format.mintick), text_color=close > open ? color.green : color.red)
+    table.cell(donoBox, 0, 2, "Trend Status:", text_color=color.white)
+    table.cell(donoBox, 1, 2, ema9 > ema21 ? "Bullish" : "Bearish", text_color=ema9 > ema21 ? color.green : color.red)
+    table.cell(donoBox, 0, 3, "HTF Trend:", text_color=color.white)
+    table.cell(donoBox, 1, 3, htfTrend, text_color=htfTrend == "Bullish" ? color.green : color.red)
+    table.cell(donoBox, 0, 4, "Institutional Presence:", text_color=color.white)
+    table.cell(donoBox, 1, 4, institutionalPresence ? "YES" : "NO", text_color=institutionalPresence ? color.blue : color.gray)
+
+// ======== Chart Plots ========
+plot(ema9, title="EMA 9", color=color.blue, linewidth=2)
+plot(ema21, title="EMA 21", color=color.red, linewidth=2)
+plot(vwap, title="VWAP", color=color.yellow, linewidth=2)
+plot(stopLoss, title="Stop Loss", color=color.red, linewidth=1, style=plot.style_circles)
+plot(takeProfit, title="Take Profit", color=color.green, linewidth=1, style=plot.style_circles)
+
+// Plot support and resistance
+plot(r1, title="Resistance 1", color=color.orange, linewidth=1, style=plot.style_stepline)
+plot(s1, title="Support 1", color=color.purple, linewidth=1, style=plot.style_stepline)
+
+// ======== Visual Signals ========
+plotshape(emaCrossUp and rsi > 50, title="Buy Signal", location=location.belowbar, style=shape.triangleup, size=size.small, color=color.green)
+plotshape(emaCrossDown and rsi < 50, title="Sell Signal", location=location.abovebar, style=shape.triangledown, size=size.small, color=color.red)
+plotshape(bullishDiv, title="Bullish Divergence", location=location.belowbar, style=shape.diamond, size=size.tiny, color=color.lime)
+plotshape(bearishDiv, title="Bearish Divergence", location=location.abovebar, style=shape.diamond, size=size.tiny, color=color.fuchsia)
+
+// ======== Alerts ========
+alertcondition(emaCrossUp and rsi > 50, title="Strong Buy Signal", message="Bullish Crossover with RSI confirmation")
+alertcondition(emaCrossDown and rsi < 50, title="Strong Sell Signal", message="Bearish Crossover with RSI confirmation")
+alertcondition(institutionalPresence, title="Institutional Buying Detected", message="Institutional activity confirmed")
+alertcondition(bullishDiv, title="Bullish Divergence", message="Bullish Divergence Detected")
+alertcondition(bearishDiv, title="Bearish Divergence", message="Bearish Divergence Detected")
