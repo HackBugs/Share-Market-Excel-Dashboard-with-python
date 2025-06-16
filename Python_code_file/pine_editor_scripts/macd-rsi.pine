@@ -1,0 +1,30 @@
+//@version=5
+indicator(title="Alpha-Predator Oscillators", overlay=false)
+
+// RSI
+rsi = ta.rsi(close, 14)
+rsiOverbought = 70
+rsiOversold = 30
+
+// MACD
+[macdLine, signalLine, histogram] = ta.macd(close, 12, 26, 9)
+
+// Stochastic RSI
+stochRSI = ta.stoch(ta.rsi(close, 14), ta.rsi(close, 14), ta.rsi(close, 14), 14)
+
+// Plot RSI
+plot(rsi, title="RSI", color=color.purple, linewidth=2)
+hline(rsiOverbought, title="RSI Overbought", color=color.red, linestyle=hline.style_dashed)
+hline(rsiOversold, title="RSI Oversold", color=color.green, linestyle=hline.style_dashed)
+hline(50, title="RSI Midline", color=color.gray, linestyle=hline.style_dotted)
+
+// MACD in separate section
+plot(macdLine, title="MACD Line", color=color.blue, linewidth=2)
+plot(signalLine, title="Signal Line", color=color.red, linewidth=2)
+plot(histogram, title="MACD Histogram", color=color.gray, style=plot.style_histogram)
+
+// Zero line for MACD
+hline(0, title="Zero Line", color=color.white, linestyle=hline.style_solid)
+
+// Background colors for RSI conditions
+bgcolor(rsi > rsiOverbought ? color.new(color.red, 90) : rsi < rsiOversold ? color.new(color.green, 90) : na, title="RSI Background")
