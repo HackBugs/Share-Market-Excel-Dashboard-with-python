@@ -1,0 +1,131 @@
+//@version=5
+indicator("Alpha Volume-Price Synergy [AVPS]", shorttitle="AVPS Pro", overlay=true, precision=2, max_lines_count=500, max_labels_count=500)
+
+// ===== INPUTS =====
+// Volume Settings
+volLength = input.int(20, "Volume Lookback Period", minval=5)
+volMultiplier = input.float(2.0, "Volume Spike Threshold", minval=1.1, step=0.1)
+
+// Price Momentum
+vwmaLength = input.int(20, "VWMA Length")
+rsiLength = input.int(14, "RSI Length")
+atrLength = input.int(14, "ATR Length")
+atrFilter = input.float(0.5, "ATR Movement Filter", step=0.1)
+
+// Liquidation Zones
+liqLookback = input.int(50, "Liquidation Zone Lookback")
+
+// Display Options
+showSignals = input.bool(true, "Show Trading Signals?")
+showLiqZones = input.bool(true, "Show Liquidation Zones?")
+showVolume = input.bool(true, "Show Volume Analysis?")
+
+// ===== CORE CALCULATIONS =====
+// 1. VOLUME ANALYSIS
+avgVol = ta.sma(volume, volLength)
+volSpike = volume >= avgVol * volMultiplier
+volRank = (volume - ta.lowest(volume, volLength)) / (ta.highest(volume, volLength) - ta.lowest(volume, volLength)) * 100
+
+// 2. PRICE MOMENTUM
+vwma = ta.vwma(close, vwmaLength)
+priceMomentum = close - vwma
+rsi = ta.rsi(close, rsiLength)
+atr = ta.atr(atrLength)
+
+// 3. LIQUIDATION ZONES (Smart Money Levels)
+highLiq = ta.highest(high, liqLookback)
+lowLiq = ta.lowest(low, liqLookback)
+midLiq = (highLiq + lowLiq) / 2
+
+// ===== SIGNAL GENERATION =====
+// A) Breakout Signals
+breakoutBullish = close > highLiq and volSpike and priceMomentum > 0
+breakoutBearish = close < lowLiq and volSpike and priceMomentum < 0
+
+// B) Reversal Signals
+reversalBullish = close >= lowLiq and close <= midLiq and rsi <= 30 and volSpike
+reversalBearish = close <= highLiq and close >= midLiq and rsi >= 70 and volSpike
+
+// C) Volume-Price Sync Signals
+priceChange = close - close[1]
+significantMove = math.abs(priceChange) >= atr * atrFilter
+vpsBullish = volSpike and priceChange > 0 and significantMove
+vpsBearish = volSpike and priceChange < 0 and significantMove
+
+// ===== VISUALIZATION =====
+// 1. Liquidation Zones
+if showLiqZones
+    line.new(bar_index - liqLookback, highLiq, bar_index, highLiq, color=color.red, style=line.style_dashed, width=1)
+    line.new(bar_index - liqLookback, lowLiq, bar_index, lowLiq, color=color.green, style=line.style_dashed, width=1)
+    line.new(bar_index - liqLookback, midLiq, bar_index, midLiq, color=color.blue, style=line.style_dotted, width=1)
+
+// 2. Volume-Price Strength
+var color vpsColor = na
+vpsColor := priceChange >= 0 ? color.green : color.red
+plot(showVolume ? priceChange * volume / 1e6 : na, "VPS Strength", vpsColor, 2, plot.style_columns)
+
+// 3. Trading Signals
+plotshape(showSignals and breakoutBullish, "Breakout Long", shape.labelup, location.belowbar, color=#00FF00, text="BREAKOUT\nBUY", textcolor=color.white, size=size.normal)
+plotshape(showSignals and breakoutBearish, "Breakout Short", shape.labeldown, location.abovebar, color=#FF0000, text="BREAKOUT\nSELL", textcolor=color.white, size=size.normal)
+plotshape(showSignals and reversalBullish, "Reversal Long", shape.triangleup, location.belowbar, color=#00AA00, size=size.small)
+plotshape(showSignals and reversalBearish, "Reversal Short", shape.triangledown, location.abovebar, color=#AA0000, size=size.small)
+plotshape(showSignals and vpsBullish, "VPS Long", shape.flag, location.belowbar, color=#00FF00, text="VPS\nBUY", textcolor=color.white, size=size.small)
+plotshape(showSignals and vpsBearish, "VPS Short", shape.flag, location.abovebar, color=#FF0000, text="VPS\nSELL", textcolor=color.white, size=size.small)
+
+// ===== INFO DASHBOARD =====
+var table infoTable = table.new(position.top_right, 3, 10, border_width=1)
+if barstate.islast
+    // Header - Using merged cells technique
+    table.cell(infoTable, 0, 0, "ALPHA VPS", bgcolor=color.purple, text_color=color.white)
+    table.cell(infoTable, 1, 0, "Momentum", bgcolor=color.purple, text_color=color.white)
+    table.cell(infoTable, 2, 0, "Zones", bgcolor=color.purple, text_color=color.white)
+    
+    // Volume Data - Row 1
+    table.cell(infoTable, 0, 1, "Volume", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 1, str.tostring(volume/1e6, "#.##M"), text_color=volume > avgVol ? color.green : color.red)
+    table.cell(infoTable, 2, 1, volSpike ? "SPIKE!" : "Normal", bgcolor=volSpike ? color.green : color.gray)
+    
+    // Volume Rank - Row 2
+    table.cell(infoTable, 0, 2, "Vol Rank", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 2, str.tostring(volRank, "#.##%"), bgcolor=volRank > 80 ? color.new(color.green, 70) : volRank < 20 ? color.new(color.red, 70) : color.gray)
+    table.cell(infoTable, 2, 2, "", bgcolor=color.gray)
+    
+    // Price Momentum - Row 3
+    table.cell(infoTable, 0, 3, "Momentum", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 3, str.tostring(priceMomentum, "#.##"), bgcolor=priceMomentum > 0 ? color.new(color.green, 70) : color.new(color.red, 70))
+    table.cell(infoTable, 2, 3, "", bgcolor=color.gray)
+    
+    // RSI - Row 4
+    table.cell(infoTable, 0, 4, "RSI", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 4, str.tostring(rsi, "#.##"), bgcolor=rsi >= 70 ? color.new(color.red, 70) : rsi <= 30 ? color.new(color.green, 70) : color.gray)
+    table.cell(infoTable, 2, 4, "", bgcolor=color.gray)
+    
+    // Liquidation Zones - Rows 5-7
+    table.cell(infoTable, 0, 5, "High Liq", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 5, str.tostring(highLiq, "#.##"), bgcolor=color.gray)
+    table.cell(infoTable, 2, 5, close > highLiq ? "ABOVE" : "BELOW", bgcolor=close > highLiq ? color.green : color.gray)
+    
+    table.cell(infoTable, 0, 6, "Low Liq", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 6, str.tostring(lowLiq, "#.##"), bgcolor=color.gray)
+    table.cell(infoTable, 2, 6, close < lowLiq ? "BELOW" : "ABOVE", bgcolor=close < lowLiq ? color.red : color.gray)
+    
+    table.cell(infoTable, 0, 7, "Mid Liq", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 7, str.tostring(midLiq, "#.##"), bgcolor=color.gray)
+    table.cell(infoTable, 2, 7, math.abs(close-midLiq) <= atr ? "NEAR" : "FAR", bgcolor=math.abs(close-midLiq) <= atr ? color.blue : color.gray)
+    
+    // Current Signals - Multi-row display
+    table.cell(infoTable, 0, 8, "Active Signals", bgcolor=color.navy, text_color=color.white)
+    table.cell(infoTable, 1, 8, breakoutBullish ? "Breakout BUY" : breakoutBearish ? "Breakout SELL" : "—", bgcolor=breakoutBullish ? color.green : breakoutBearish ? color.red : color.gray)
+    table.cell(infoTable, 2, 8, reversalBullish ? "Reversal BUY" : reversalBearish ? "Reversal SELL" : "—", bgcolor=reversalBullish ? color.green : reversalBearish ? color.red : color.gray)
+    
+    table.cell(infoTable, 0, 9, "Confirmation", bgcolor=color.navy, text_color=color.white)
+    table.cell(infoTable, 1, 9, vpsBullish ? "VPS Confirmed" : "—", bgcolor=vpsBullish ? color.green : color.gray)
+    table.cell(infoTable, 2, 9, volSpike ? "Volume Spike" : "—", bgcolor=volSpike ? color.blue : color.gray)
+
+// ===== ALERTS =====
+alertcondition(breakoutBullish, "Bullish Breakout", "AVPS: Bullish Breakout with Volume Spike")
+alertcondition(breakoutBearish, "Bearish Breakout", "AVPS: Bearish Breakout with Volume Spike")
+alertcondition(reversalBullish, "Bullish Reversal", "AVPS: Bullish Reversal at Support")
+alertcondition(reversalBearish, "Bearish Reversal", "AVPS: Bearish Reversal at Resistance")
+alertcondition(vpsBullish, "VPS Bullish", "AVPS: Volume-Price Sync Bullish")
+alertcondition(vpsBearish, "VPS Bearish", "AVPS: Volume-Price Sync Bearish")
