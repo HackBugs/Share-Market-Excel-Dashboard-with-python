@@ -1,0 +1,50 @@
+//@version=5
+indicator("Volume-Price Movement Analyzer", shorttitle="VPA", overlay=false, format=format.volume, precision=2)
+
+// Inputs
+length = input.int(20, title="Lookback Period")
+volMultiplier = input.float(1.5, title="Volume Spike Multiplier", minval=1.0, step=0.1)
+showLabels = input.bool(true, title="Show Buy/Sell Signals?")
+showHistogram = input.bool(true, title="Show Volume-Price Histogram?")
+showSpikes = input.bool(true, title="Highlight Volume Spikes?")
+
+// Calculations
+avgVol = ta.sma(volume, length)
+volSpike = volume > avgVol * volMultiplier
+
+priceChange = close - close[1]
+priceDirection = math.sign(priceChange)
+volPriceStrength = priceChange * volume / ta.atr(length)
+
+// Normalized values for histogram
+normVol = volume / avgVol
+normPriceChange = priceChange / ta.atr(length)
+compositeValue = normVol * normPriceChange
+
+// Conditions
+bullishSignal = volSpike and priceChange > 0 and priceChange > ta.atr(length) * 0.5
+bearishSignal = volSpike and priceChange < 0 and priceChange < -ta.atr(length) * 0.5
+
+// Plotting
+plot(showHistogram ? compositeValue : na, style=plot.style_histogram, color=priceDirection >= 0 ? color.green : color.red, title="Volume-Price Strength")
+
+// Volume spike markers
+plotshape(showSpikes and volSpike ? compositeValue * 1.1 : na, style=shape.triangleup, color=color.new(color.blue, 0), location=location.absolute, size=size.small)
+
+// Buy/Sell signals
+plotshape(showLabels and bullishSignal ? low * 0.995 : na, style=shape.labelup, color=color.new(color.green, 0), textcolor=color.white, text="Buy", location=location.absolute)
+plotshape(showLabels and bearishSignal ? high * 1.005 : na, style=shape.labeldown, color=color.new(color.red, 0), textcolor=color.white, text="Sell", location=location.absolute)
+
+// Background for interpretation
+bgcolor(bullishSignal ? color.new(color.green, 90) : bearishSignal ? color.new(color.red, 90) : na)
+
+// Alerts
+alertcondition(bullishSignal, title="Bullish Volume-Price Signal", message="Bullish VPA signal detected")
+alertcondition(bearishSignal, title="Bearish Volume-Price Signal", message="Bearish VPA signal detected")
+
+// Table for interpretation
+var table infoTable = table.new(position.bottom_right, 2, 2)
+if barstate.islast
+    table.cell(infoTable, 0, 0, "Volume-Price Interpretation", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 0, 1, "High Volume + Price ↑ = Strong Bullish", bgcolor=color.new(color.green, 80))
+    table.cell(infoTable, 1, 1, "High Volume + Price ↓ = Strong Bearish", bgcolor=color.new(color.red, 80))
