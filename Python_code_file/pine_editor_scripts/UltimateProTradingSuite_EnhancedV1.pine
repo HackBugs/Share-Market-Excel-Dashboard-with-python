@@ -1,0 +1,163 @@
+//@version=5
+indicator("Ultimate Pro Trading Suite", overlay=true, max_lines_count=500, max_labels_count=500, max_bars_back=5000)
+
+// ===== INPUTS =====
+// Moving Averages
+showEMAs = input.bool(true, "Show EMAs")
+showSMAs = input.bool(true, "Show SMAs")
+showWMAs = input.bool(false, "Show WMAs")
+showDEMA = input.bool(false, "Show DEMA")
+showTEMA = input.bool(false, "Show TEMA")
+
+// Oscillators
+showRSI = input.bool(true, "Show RSI", group="Oscillators")
+showStoch = input.bool(true, "Show Stochastic", group="Oscillators")
+showMACD = input.bool(true, "Show MACD", group="Oscillators")
+showADX = input.bool(true, "Show ADX", group="Oscillators")
+showVolume = input.bool(true, "Show Volume Indicators", group="Oscillators")
+
+// Bands & Channels
+showBB = input.bool(true, "Show Bollinger Bands", group="Bands & Channels")
+showKC = input.bool(false, "Show Keltner Channels", group="Bands & Channels")
+showDC = input.bool(false, "Show Donchian Channels", group="Bands & Channels")
+
+// Ichimoku
+showIchimoku = input.bool(false, "Show Ichimoku Cloud", group="Ichimoku")
+
+// Pivots
+showPivots = input.bool(true, "Show Pivot Points", group="Pivots")
+
+// ===== CORE CALCULATIONS =====
+// Moving Averages
+ema9 = ta.ema(close, 9)
+ema21 = ta.ema(close, 21)
+sma5 = ta.sma(close, 5)
+sma10 = ta.sma(close, 10)
+sma20 = ta.sma(close, 20)
+sma50 = ta.sma(close, 50)
+sma100 = ta.sma(close, 100)
+sma200 = ta.sma(close, 200)
+wma = ta.wma(close, 14)
+dema = 2 * ta.ema(close, 14) - ta.ema(ta.ema(close, 14), 14)
+tema = 3 * ta.ema(close, 14) - 3 * ta.ema(ta.ema(close, 14), 14) + ta.ema(ta.ema(ta.ema(close, 14), 14), 14)
+
+// Oscillators
+rsi = ta.rsi(close, 14)
+stochK = ta.sma(ta.stoch(close, high, low, 14), 3)
+stochD = ta.sma(stochK, 3)
+williamsR = (ta.highest(high, 14) - close) / (ta.highest(high, 14) - ta.lowest(low, 14)) * -100
+roc = ta.roc(close, 12)
+mom = close - close[12]
+cci = ta.cci(close, 20)
+tsi = 100 * ta.ema(ta.ema(close - close[1], 25), 13) / ta.ema(ta.ema(math.abs(close - close[1]), 25), 13)
+uo = (4 * ta.ema(close - ta.lowest(low, 7), 7) + 2 * ta.ema(close - ta.lowest(low, 14), 14) + ta.ema(close - ta.lowest(low, 28), 28)) / (4 + 2 + 1)
+macdLine = ta.ema(close, 12) - ta.ema(close, 26)
+macdSignal = ta.ema(macdLine, 9)
+macdHist = macdLine - macdSignal
+
+// Trend Strength
+[diPlus, diMinus, adx] = ta.dmi(14, 14)
+
+// Volume Indicators - FIXED MFI
+obv = ta.obv
+cmf = math.sum(volume * (close - low - high + close) / (high - low), 20) / math.sum(volume, 20)
+mfi = ta.mfi(hlc3, 14)  // Fixed: uses hlc3 as source and length only
+pvt = ta.cum(close - close[1]) / close[1] * volume
+
+// Bands & Channels
+basis = ta.sma(close, 20)
+dev = ta.stdev(close, 20)
+upperBB = basis + 2 * dev
+lowerBB = basis - 2 * dev
+bbWidth = (upperBB - lowerBB) / basis
+bbPercent = (close - lowerBB) / (upperBB - lowerBB)
+
+kcMiddle = ta.ema(close, 20)
+trueRange = ta.tr(true)
+kcUpper = kcMiddle + 1.5 * ta.sma(trueRange, 20)
+kcLower = kcMiddle - 1.5 * ta.sma(trueRange, 20)
+
+dcUpper = ta.highest(high, 20)
+dcLower = ta.lowest(low, 20)
+dcMiddle = (dcUpper + dcLower) / 2
+
+// Ichimoku
+tenkan = (ta.highest(high, 9) + ta.lowest(low, 9)) / 2
+kijun = (ta.highest(high, 26) + ta.lowest(low, 26)) / 2
+spanA = (tenkan + kijun) / 2
+spanB = (ta.highest(high, 52) + ta.lowest(low, 52)) / 2
+cloudTop = math.max(spanA, spanB)
+cloudBottom = math.min(spanA, spanB)
+
+// Pivot Points
+pivot = (high + low + close) / 3
+r1 = 2 * pivot - low
+s1 = 2 * pivot - high
+r2 = pivot + (high - low)
+s2 = pivot - (high - low)
+
+// ===== VISUALIZATION =====
+// Moving Averages
+plot(showEMAs ? ema9 : na, "EMA 9", color.new(color.blue, 0), 1)
+plot(showEMAs ? ema21 : na, "EMA 21", color.new(color.orange, 0), 1)
+plot(showSMAs ? sma5 : na, "SMA 5", color.new(color.green, 0), 1)
+plot(showSMAs ? sma20 : na, "SMA 20", color.new(color.red, 0), 1)
+plot(showSMAs ? sma50 : na, "SMA 50", color.new(color.purple, 0), 1)
+plot(showSMAs ? sma200 : na, "SMA 200", color.new(color.fuchsia, 0), 2)
+
+// Bands & Channels
+plot(showBB ? upperBB : na, "BB Upper", color.new(color.blue, 50), 1)
+plot(showBB ? basis : na, "BB Middle", color.new(color.gray, 0), 1)
+plot(showBB ? lowerBB : na, "BB Lower", color.new(color.blue, 50), 1)
+plot(showKC ? kcUpper : na, "KC Upper", color.new(color.orange, 50), 1)
+plot(showKC ? kcMiddle : na, "KC Middle", color.new(color.gray, 0), 1)
+plot(showKC ? kcLower : na, "KC Lower", color.new(color.orange, 50), 1)
+
+// Ichimoku Cloud
+plot(showIchimoku ? tenkan : na, "Tenkan", color.new(color.blue, 0))
+plot(showIchimoku ? kijun : na, "Kijun", color.new(color.red, 0))
+fill(plot(showIchimoku ? cloudTop : na), plot(showIchimoku ? cloudBottom : na), color.new(spanA > spanB ? color.green : color.red, 90))
+
+// Pivot Points
+plot(showPivots ? pivot : na, "Pivot", color.new(color.black, 0), 1, plot.style_circles)
+plot(showPivots ? r1 : na, "R1", color.new(color.red, 0), 1, plot.style_circles)
+plot(showPivots ? s1 : na, "S1", color.new(color.green, 0), 1, plot.style_circles)
+
+// ===== DASHBOARD =====
+var table dashboard = table.new(position.top_right, 4, 20)
+if barstate.islast
+    // Trend Summary
+    table.cell(dashboard, 0, 0, "TREND SUMMARY", bgcolor=color.navy, text_color=color.white)
+    
+    // Moving Averages
+    table.cell(dashboard, 0, 1, "EMA 9", bgcolor=color.gray)
+    table.cell(dashboard, 1, 1, str.tostring(ema9, "#.##"), bgcolor=close > ema9 ? color.green : color.red)
+    table.cell(dashboard, 2, 1, "SMA 50", bgcolor=color.gray)
+    table.cell(dashboard, 3, 1, str.tostring(sma50, "#.##"), bgcolor=close > sma50 ? color.green : color.red)
+    
+    // Oscillators
+    table.cell(dashboard, 0, 2, "OSCILLATORS", bgcolor=color.navy, text_color=color.white)
+    table.cell(dashboard, 0, 3, "RSI", bgcolor=color.gray)
+    table.cell(dashboard, 1, 3, str.tostring(rsi, "#.##"), bgcolor=rsi > 70 ? color.red : rsi < 30 ? color.green : color.gray)
+    table.cell(dashboard, 2, 3, "MACD", bgcolor=color.gray)
+    table.cell(dashboard, 3, 3, str.tostring(macdLine, "#.##"), bgcolor=macdLine > 0 ? color.green : color.red)
+    
+    // Trend Strength
+    table.cell(dashboard, 0, 4, "TREND STRENGTH", bgcolor=color.navy, text_color=color.white)
+    table.cell(dashboard, 0, 5, "ADX", bgcolor=color.gray)
+    table.cell(dashboard, 1, 5, str.tostring(adx, "#.##"), bgcolor=adx > 25 ? color.blue : color.gray)
+    table.cell(dashboard, 2, 5, "DI+", bgcolor=color.gray)
+    table.cell(dashboard, 3, 5, str.tostring(diPlus, "#.##"), bgcolor=diPlus > diMinus ? color.green : color.gray)
+    
+    // Volume
+    table.cell(dashboard, 0, 6, "VOLUME", bgcolor=color.navy, text_color=color.white)
+    table.cell(dashboard, 0, 7, "OBV", bgcolor=color.gray)
+    table.cell(dashboard, 1, 7, str.tostring(obv, "#.0"), bgcolor=obv > obv[1] ? color.green : color.red)
+    table.cell(dashboard, 2, 7, "CMF", bgcolor=color.gray)
+    table.cell(dashboard, 3, 7, str.tostring(cmf, "#.000"), bgcolor=cmf > 0 ? color.green : color.red)
+
+// ===== ALERTS =====
+alertcondition(ta.crossover(macdLine, macdSignal), "MACD Bullish Crossover", "MACD line crossed above signal line")
+alertcondition(ta.crossunder(macdLine, macdSignal), "MACD Bearish Crossover", "MACD line crossed below signal line")
+alertcondition(rsi < 30, "RSI Oversold", "RSI below 30 - Oversold condition")
+alertcondition(rsi > 70, "RSI Overbought", "RSI above 70 - Overbought condition")
