@@ -1,0 +1,73 @@
+//@version=6
+indicator("Master Trading Indicator - RSI, Volume, Price Range", shorttitle="MTI", overlay=false, scale=scale.right, max_labels_count=500)
+
+// Input parameters
+rsiLength = input(14, title="RSI Length")
+rsiOverbought = input(70, title="RSI Overbought Level")
+rsiOversold = input(30, title="RSI Oversold Level")
+volumeLength = input(20, title="Volume MA Length")
+priceRangeLength = input(50, title="Price Range Length")
+showAlerts = input(true, title="Show Trading Alerts?")
+
+// Calculate RSI
+rsiValue = ta.rsi(close, rsiLength)
+
+// Volume Analysis
+volumeMA = ta.sma(volume, volumeLength)
+volumeSpike = volume > volumeMA * 1.5
+volumeLow = volume < volumeMA * 0.7
+
+// Price Range Analysis
+highRange = ta.highest(high, priceRangeLength)
+lowRange = ta.lowest(low, priceRangeLength)
+midRange = (highRange + lowRange) / 2
+priceNearHigh = close >= highRange - (highRange - midRange) * 0.2
+priceNearLow = close <= lowRange + (midRange - lowRange) * 0.2
+
+// Trading Signals
+buySignal = rsiValue < rsiOversold and priceNearLow and volumeSpike
+sellSignal = rsiValue > rsiOverbought and priceNearHigh and volumeSpike
+exitLongSignal = rsiValue > rsiOverbought or priceNearHigh
+exitShortSignal = rsiValue < rsiOversold or priceNearLow
+
+// Plot RSI
+rsiPlot = plot(rsiValue, title="RSI", color=color.new(color.purple, 0), linewidth=2)
+overboughtLine = hline(rsiOverbought, title="Overbought", color=color.new(color.red, 0), linestyle=hline.style_dotted)
+oversoldLine = hline(rsiOversold, title="Oversold", color=color.new(color.green, 0), linestyle=hline.style_dotted)
+
+// Create fill between RSI plot and horizontal lines using boxes
+box.new(bar_index, rsiOverbought, bar_index+1, 100, border_color=color.new(color.red, 70), bgcolor=color.new(color.red, 90))
+box.new(bar_index, 0, bar_index+1, rsiOversold, border_color=color.new(color.green, 70), bgcolor=color.new(color.green, 90))
+
+// Plot Volume
+plot(volume, title="Volume", color=volume > volumeMA ? color.green : color.red, style=plot.style_columns)
+plot(volumeMA, title="Volume MA", color=color.blue, linewidth=2)
+
+// Plot Trading Signals
+plotshape(buySignal, title="Buy Signal", text="BUY", style=shape.labelup, location=location.belowbar, color=color.green, textcolor=color.white, size=size.small)
+plotshape(sellSignal, title="Sell Signal", text="SELL", style=shape.labeldown, location=location.abovebar, color=color.red, textcolor=color.white, size=size.small)
+
+// Alerts
+alertcondition(buySignal, title="Buy Alert", message="BUY signal detected")
+alertcondition(sellSignal, title="Sell Alert", message="SELL signal detected")
+
+// Display information
+var table infoTable = table.new(position.top_right, 2, 6, border_width=1)
+if barstate.islast
+    table.cell(infoTable, 0, 0, "RSI", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 0, str.tostring(rsiValue, "#.##"), bgcolor=rsiValue > rsiOverbought ? color.red : rsiValue < rsiOversold ? color.green : color.gray)
+    
+    table.cell(infoTable, 0, 1, "Volume", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 1, str.tostring(volume), bgcolor=volume > volumeMA ? color.green : color.red)
+    
+    table.cell(infoTable, 0, 2, "Price Position", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 2, priceNearHigh ? "Near High" : priceNearLow ? "Near Low" : "Mid Range", bgcolor=priceNearHigh ? color.red : priceNearLow ? color.green : color.blue)
+    
+    table.cell(infoTable, 0, 3, "High Range", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 3, str.tostring(highRange))
+    
+    table.cell(infoTable, 0, 4, "Low Range", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 4, str.tostring(lowRange))
+    
+    table.cell(infoTable, 0, 5, "Mid Range", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 5, str.tostring(midRange))
