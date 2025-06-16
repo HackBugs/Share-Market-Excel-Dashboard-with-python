@@ -1,7 +1,7 @@
 ### **🔹 CODE: Alpha Predator Day Trading Indicator**  
 ```pine
 //@version=6
-indicator("Alpha Predator - Day Trading", overlay=true, precision=2, max_lines_count=500, max_labels_count=500)
+indicator("Alpha Predator - Day Trading [Fixed]", overlay=true, precision=2, max_lines_count=500, max_labels_count=500)
 
 // ===== INPUTS =====
 vwmaLength = input(20, "Volume-Weighted MA Length")
@@ -18,9 +18,18 @@ momentumUp = momentum > 0
 momentumDown = momentum < 0
 
 // ===== LIQUIDATION ZONES (Smart Money Levels) =====
-highLiquidation = ta.highest(high, liquidationLookback)
-lowLiquidation = ta.lowest(low, liquidationLookback)
-midLiquidation = (highLiquidation + lowLiquidation) / 2
+var float highLiquidation = na
+var float lowLiquidation = na
+var float midLiquidation = na
+
+highLiquidation := ta.highest(high, liquidationLookback)
+lowLiquidation := ta.lowest(low, liquidationLookback)
+midLiquidation := (highLiquidation + lowLiquidation) / 2
+
+// Plot liquidation zones as lines instead of hlines
+lineHigh = line.new(bar_index - liquidationLookback, highLiquidation, bar_index, highLiquidation, color=color.red, style=line.style_dashed, width=1)
+lineLow = line.new(bar_index - liquidationLookback, lowLiquidation, bar_index, lowLiquidation, color=color.green, style=line.style_dashed, width=1)
+lineMid = line.new(bar_index - liquidationLookback, midLiquidation, bar_index, midLiquidation, color=color.blue, style=line.style_dotted, width=1)
 
 // ===== VOLUME SPIKES (Institutional Activity) =====
 avgVolume = ta.sma(volume, 20)
@@ -41,11 +50,6 @@ reversalLong = close >= lowLiquidation and close <= midLiquidation and oversold 
 reversalShort = close <= highLiquidation and close >= midLiquidation and overbought and volumeSpike
 
 // ===== PLOTTING =====
-// Liquidation Zones
-hline(highLiquidation, "High Liquidation", color=color.red, linestyle=hline.style_dashed)
-hline(lowLiquidation, "Low Liquidation", color=color.green, linestyle=hline.style_dashed)
-hline(midLiquidation, "Mid Liquidation", color=color.blue, linestyle=hline.style_dotted)
-
 // Volume-Weighted MA
 plot(vwma, "VWMA", color=color.purple, linewidth=2)
 
