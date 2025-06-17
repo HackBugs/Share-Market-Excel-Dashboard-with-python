@@ -1,0 +1,118 @@
+//@version=6
+indicator("Alpha Predator - Day Trading [Fixed]", overlay=true, precision=2, max_lines_count=500, max_labels_count=500)
+
+// ===== INPUTS =====
+vwmaLength = input(20, "Volume-Weighted MA Length")
+rsiLength = input(14, "RSI Length")
+liquidationLookback = input(50, "Liquidation Zone Lookback")
+thresholdVolumeSpike = input(2.0, "Volume Spike Threshold")
+showSignals = input(true, "Show Trading Signals")
+useAlerts = input(true, "Enable Alerts?")
+
+// MACD Inputs
+macdLengthFast = input(12, "MACD Fast Length")
+macdLengthSlow = input(26, "MACD Slow Length")
+macdSignalLength = input(9, "MACD Signal Length")
+
+// Bollinger Bands Inputs
+bbLength = input(20, "Bollinger Band Length")
+bbMultiplier = input(2, "Bollinger Band Multiplier")
+
+// Stochastic RSI Inputs
+stochRsiLength = input(14, "Stochastic RSI Length")
+
+// ===== INDICATORS =====
+
+// Volume-Weighted MA
+vwma = ta.vwma(close, vwmaLength)
+momentum = close - vwma
+momentumUp = momentum > 0
+momentumDown = momentum < 0
+plot(vwma, "VWMA", color=color.purple, linewidth=2)
+
+// Liquidation Zones
+highLiquidation = ta.highest(high, liquidationLookback)
+lowLiquidation = ta.lowest(low, liquidationLookback)
+midLiquidation = (highLiquidation + lowLiquidation) / 2
+
+// Hover-friendly Labels on Liquidation Zones
+label.new(bar_index, highLiquidation, "High Liquidation", color=color.red, style=label.style_label_down, textcolor=color.white)
+label.new(bar_index, lowLiquidation, "Low Liquidation", color=color.green, style=label.style_label_up, textcolor=color.white)
+label.new(bar_index, midLiquidation, "Mid Liquidation", color=color.blue, style=label.style_label_down, textcolor=color.white)
+
+// Volume Spikes
+avgVolume = ta.sma(volume, 20)
+volumeSpike = volume > avgVolume * thresholdVolumeSpike
+
+// RSI
+rsi = ta.rsi(close, rsiLength)
+overbought = rsi >= 70
+oversold = rsi <= 30
+
+// MACD
+macdLine = ta.ema(close, macdLengthFast) - ta.ema(close, macdLengthSlow)
+macdSignal = ta.ema(macdLine, macdSignalLength)
+macdHistogram = macdLine - macdSignal
+plot(macdLine, title="MACD Line", color=color.blue)
+plot(macdSignal, title="MACD Signal", color=color.red)
+plot(macdHistogram, title="MACD Histogram", color=color.green, style=plot.style_columns)
+
+// VWAP
+vwap = ta.vwap(close)
+plot(vwap, title="VWAP", color=color.orange, linewidth=2)
+
+// Bollinger Bands
+bbMid = ta.sma(close, bbLength)
+bbUpper = bbMid + ta.stdev(close, bbLength) * bbMultiplier
+bbLower = bbMid - ta.stdev(close, bbLength) * bbMultiplier
+plot(bbMid, title="BB Mid", color=color.gray)
+plot(bbUpper, title="BB Upper", color=color.blue)
+plot(bbLower, title="BB Lower", color=color.red)
+
+// Stochastic RSI
+rsiValue = ta.rsi(close, stochRsiLength)
+stochRsi = (rsiValue - ta.lowest(rsiValue, stochRsiLength)) / (ta.highest(rsiValue, stochRsiLength) - ta.lowest(rsiValue, stochRsiLength)) * 100
+stochRsiK = ta.sma(stochRsi, 3)
+stochRsiD = ta.sma(stochRsiK, 3)
+plot(stochRsiK, title="Stoch RSI K", color=color.green)
+plot(stochRsiD, title="Stoch RSI D", color=color.red)
+
+// ===== TRADE SIGNALS =====
+breakoutLong = close > highLiquidation and volumeSpike and momentumUp
+breakoutShort = close < lowLiquidation and volumeSpike and momentumDown
+
+reversalLong = close >= lowLiquidation and close <= midLiquidation and oversold and volumeSpike
+reversalShort = close <= highLiquidation and close >= midLiquidation and overbought and volumeSpike
+
+// Signals
+plotshape(showSignals and breakoutLong, "Breakout Long", shape.labelup, location.belowbar, color=color.green, text="BUY", textcolor=color.white)
+plotshape(showSignals and breakoutShort, "Breakout Short", shape.labeldown, location.abovebar, color=color.red, text="SELL", textcolor=color.white)
+plotshape(showSignals and reversalLong, "Reversal Long", shape.triangleup, location.belowbar, color=color.lime, size=size.small)
+plotshape(showSignals and reversalShort, "Reversal Short", shape.triangledown, location.abovebar, color=color.orange, size=size.small)
+
+// ===== ALERTS =====
+alertcondition(breakoutLong and useAlerts, "Breakout Long Alert", "Alpha Predator: BUY Breakout")
+alertcondition(breakoutShort and useAlerts, "Breakout Short Alert", "Alpha Predator: SELL Breakout")
+alertcondition(reversalLong and useAlerts, "Reversal Long Alert", "Alpha Predator: BUY Reversal")
+alertcondition(reversalShort and useAlerts, "Reversal Short Alert", "Alpha Predator: SELL Reversal")
+
+// ===== INFO TABLE =====
+var table infoTable = table.new(position.top_right, 2, 6, border_width=1)
+if barstate.islast
+    table.cell(infoTable, 0, 0, "VWMA", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 0, str.tostring(vwma, "#.##"), bgcolor=momentumUp ? color.green : color.red)
+
+    table.cell(infoTable, 0, 1, "RSI", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 1, str.tostring(rsi, "#.##"), bgcolor=overbought ? color.red : oversold ? color.green : color.gray)
+
+    table.cell(infoTable, 0, 2, "Volume Spike", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 2, volumeSpike ? "✅" : "❌", bgcolor=volumeSpike ? color.green : color.red)
+
+    table.cell(infoTable, 0, 3, "High Liq", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 3, str.tostring(highLiquidation))
+
+    table.cell(infoTable, 0, 4, "Low Liq", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 4, str.tostring(lowLiquidation))
+
+    table.cell(infoTable, 0, 5, "Mid Liq", bgcolor=color.gray, text_color=color.white)
+    table.cell(infoTable, 1, 5, str.tostring(midLiquidation))
