@@ -1,0 +1,198 @@
+//@version=5
+indicator("VWAP Liquidity & Institutional Analysis", shorttitle="VWAP-LIQ-INST", overlay=true, max_boxes_count=500, max_lines_count=500)
+
+// ==================== INPUTS ====================
+// VWAP Settings
+vwap_source = input.source(hlc3, "VWAP Source")
+vwap_reset = input.string("Session", "VWAP Reset", options=["Session", "Daily", "Weekly", "Monthly"])
+
+// Liquidity Settings
+liquidity_lookback = input.int(20, "Liquidity Lookback Period", minval=5, maxval=100)
+liquidity_threshold = input.float(1.5, "Liquidity Threshold Multiplier", minval=0.5, maxval=5.0, step=0.1)
+
+// Volume Analysis
+volume_ma_length = input.int(20, "Volume MA Length", minval=5, maxval=100)
+high_volume_multiplier = input.float(2.0, "High Volume Multiplier", minval=1.0, maxval=5.0, step=0.1)
+
+// Institutional Detection
+price_change_threshold = input.float(0.5, "Price Change Threshold %", minval=0.1, maxval=2.0, step=0.1)
+volume_spike_threshold = input.float(3.0, "Volume Spike Threshold", minval=1.5, maxval=10.0, step=0.5)
+
+// Display Settings
+show_vwap_bands = input.bool(true, "Show VWAP Bands")
+show_liquidity_zones = input.bool(true, "Show Liquidity Zones")
+show_institutional_signals = input.bool(true, "Show Institutional Signals")
+show_retail_signals = input.bool(true, "Show Retail Signals")
+
+// ==================== VWAP CALCULATION ====================
+var float vwap_sum = 0.0
+var float volume_sum = 0.0
+var int bar_count = 0
+
+// Reset conditions
+is_new_session = ta.change(time("1D")) != 0
+reset_condition = switch vwap_reset
+    "Session" => is_new_session
+    "Daily" => ta.change(time("1D")) != 0
+    "Weekly" => ta.change(time("1W")) != 0
+    "Monthly" => ta.change(time("1M")) != 0
+    => false
+
+if reset_condition
+    vwap_sum := 0.0
+    volume_sum := 0.0
+    bar_count := 0
+
+vwap_sum += vwap_source * volume
+volume_sum += volume
+bar_count += 1
+
+vwap_value = volume_sum > 0 ? vwap_sum / volume_sum : close
+
+// VWAP Standard Deviation Bands
+price_volume = (vwap_source - vwap_value) * (vwap_source - vwap_value) * volume
+var float sum_price_volume = 0.0
+
+if reset_condition
+    sum_price_volume := 0.0
+
+sum_price_volume += price_volume
+variance = sum_price_volume / volume_sum
+std_dev = math.sqrt(variance)
+
+vwap_upper_1 = vwap_value + std_dev
+vwap_lower_1 = vwap_value - std_dev
+vwap_upper_2 = vwap_value + 2 * std_dev
+vwap_lower_2 = vwap_value - 2 * std_dev
+
+// ==================== LIQUIDITY ANALYSIS ====================
+// High and Low liquidity zones
+highest_high = ta.highest(high, liquidity_lookback)
+lowest_low = ta.lowest(low, liquidity_lookback)
+
+// Volume-weighted liquidity levels
+high_volume_avg = ta.sma(volume, volume_ma_length)
+is_high_volume = volume > high_volume_avg * high_volume_multiplier
+
+// Liquidity grab detection
+liquidity_grab_high = high > highest_high[1] and close < highest_high[1]
+liquidity_grab_low = low < lowest_low[1] and close > lowest_low[1]
+
+// Mid-level liquidity (50% retracement levels)
+range_high = ta.highest(high, 50)
+range_low = ta.lowest(low, 50)
+mid_level = (range_high + range_low) / 2
+
+// ==================== INSTITUTIONAL VS RETAIL DETECTION ====================
+// Volume analysis
+volume_ma = ta.sma(volume, volume_ma_length)
+volume_spike = volume > volume_ma * volume_spike_threshold
+
+// Price action analysis
+price_change = math.abs(close - open) / open * 100
+body_size = math.abs(close - open)
+wick_size_upper = high - math.max(open, close)
+wick_size_lower = math.min(open, close) - low
+total_wick = wick_size_upper + wick_size_lower
+
+// Institutional characteristics: High volume + controlled price movement
+institutional_buy = volume_spike and close > open and body_size > total_wick and close > vwap_value and low > vwap_lower_1
+institutional_sell = volume_spike and close < open and body_size > total_wick and close < vwap_value and high < vwap_upper_1
+
+// Retail characteristics: Normal volume + emotional price movement
+retail_fomo_buy = volume > volume_ma and close > open and price_change > price_change_threshold and high > vwap_upper_1
+retail_panic_sell = volume > volume_ma and close < open and price_change > price_change_threshold and low < vwap_lower_1
+
+// Smart money vs dumb money
+smart_money_accumulation = close > vwap_value and volume > volume_ma * 1.5 and ta.rsi(close, 14) < 70
+smart_money_distribution = close < vwap_value and volume > volume_ma * 1.5 and ta.rsi(close, 14) > 30
+
+// ==================== PLOTTING (ALL IN GLOBAL SCOPE) ====================
+// VWAP and Bands
+plot(vwap_value, color=color.yellow, linewidth=2, title="VWAP")
+
+// VWAP Bands - using conditional colors instead of conditional plots
+plot(show_vwap_bands ? vwap_upper_1 : na, color=color.new(color.blue, 70), title="VWAP Upper 1")
+plot(show_vwap_bands ? vwap_lower_1 : na, color=color.new(color.blue, 70), title="VWAP Lower 1")
+plot(show_vwap_bands ? vwap_upper_2 : na, color=color.new(color.red, 80), title="VWAP Upper 2")
+plot(show_vwap_bands ? vwap_lower_2 : na, color=color.new(color.red, 80), title="VWAP Lower 2")
+
+// Mid-level liquidity
+plot(mid_level, color=color.new(color.purple, 50), linewidth=1, title="Mid Liquidity Level")
+
+// Liquidity zones using bgcolor
+bgcolor(show_liquidity_zones and liquidity_grab_high ? color.new(color.red, 80) : na, title="High Liquidity Grab")
+bgcolor(show_liquidity_zones and liquidity_grab_low ? color.new(color.green, 80) : na, title="Low Liquidity Grab")
+
+// ==================== SIGNALS (ALL IN GLOBAL SCOPE) ====================
+// Institutional signals
+plotshape(show_institutional_signals and institutional_buy, style=shape.triangleup, location=location.belowbar, color=color.blue, size=size.normal, title="Institutional Buy")
+plotshape(show_institutional_signals and institutional_sell, style=shape.triangledown, location=location.abovebar, color=color.orange, size=size.normal, title="Institutional Sell")
+
+plotshape(show_institutional_signals and smart_money_accumulation, style=shape.diamond, location=location.belowbar, color=color.navy, size=size.small, title="Smart Money Accumulation")
+plotshape(show_institutional_signals and smart_money_distribution, style=shape.diamond, location=location.abovebar, color=color.maroon, size=size.small, title="Smart Money Distribution")
+
+// Retail signals
+plotshape(show_retail_signals and retail_fomo_buy, style=shape.xcross, location=location.abovebar, color=color.lime, size=size.tiny, title="Retail FOMO Buy")
+plotshape(show_retail_signals and retail_panic_sell, style=shape.xcross, location=location.belowbar, color=color.red, size=size.tiny, title="Retail Panic Sell")
+
+// ==================== ALERTS ====================
+// Institutional entry alerts
+alertcondition(institutional_buy, title="Institutional Buy Signal", message="Large institutional buying detected - High volume with controlled price action above VWAP")
+alertcondition(institutional_sell, title="Institutional Sell Signal", message="Large institutional selling detected - High volume with controlled price action below VWAP")
+
+// Liquidity grab alerts
+alertcondition(liquidity_grab_high, title="High Liquidity Grab", message="Liquidity grab above recent highs detected")
+alertcondition(liquidity_grab_low, title="Low Liquidity Grab", message="Liquidity grab below recent lows detected")
+
+// Smart money alerts
+alertcondition(smart_money_accumulation, title="Smart Money Accumulation", message="Smart money accumulation phase detected")
+alertcondition(smart_money_distribution, title="Smart Money Distribution", message="Smart money distribution phase detected")
+
+// Retail sentiment alerts
+alertcondition(retail_fomo_buy, title="Retail FOMO", message="Retail FOMO buying detected - potential reversal signal")
+alertcondition(retail_panic_sell, title="Retail Panic", message="Retail panic selling detected - potential reversal signal")
+
+// ==================== TABLE FOR MARKET STRUCTURE ====================
+if barstate.islast
+    var table info_table = table.new(position.top_right, 2, 6, bgcolor=color.white, border_width=1)
+    
+    table.cell(info_table, 0, 0, "Market Structure", text_color=color.black, bgcolor=color.gray)
+    table.cell(info_table, 1, 0, "Status", text_color=color.black, bgcolor=color.gray)
+    
+    // Current VWAP position
+    vwap_status = close > vwap_value ? "Above VWAP" : "Below VWAP"
+    vwap_color = close > vwap_value ? color.green : color.red
+    table.cell(info_table, 0, 1, "VWAP Position", text_color=color.black)
+    table.cell(info_table, 1, 1, vwap_status, text_color=vwap_color)
+    
+    // Volume status
+    vol_status = volume > volume_ma * high_volume_multiplier ? "High Volume" : "Normal Volume"
+    vol_color = volume > volume_ma * high_volume_multiplier ? color.orange : color.gray
+    table.cell(info_table, 0, 2, "Volume", text_color=color.black)
+    table.cell(info_table, 1, 2, vol_status, text_color=vol_color)
+    
+    // Liquidity status
+    liq_status = liquidity_grab_high or liquidity_grab_low ? "Liquidity Grab" : "Normal"
+    liq_color = liquidity_grab_high or liquidity_grab_low ? color.purple : color.gray
+    table.cell(info_table, 0, 3, "Liquidity", text_color=color.black)
+    table.cell(info_table, 1, 3, liq_status, text_color=liq_color)
+    
+    // Institutional activity
+    inst_status = institutional_buy ? "Inst. Buying" : institutional_sell ? "Inst. Selling" : "No Activity"
+    inst_color = institutional_buy ? color.blue : institutional_sell ? color.orange : color.gray
+    table.cell(info_table, 0, 4, "Institutional", text_color=color.black)
+    table.cell(info_table, 1, 4, inst_status, text_color=inst_color)
+    
+    // Retail sentiment
+    retail_status = retail_fomo_buy ? "Retail FOMO" : retail_panic_sell ? "Retail Panic" : "Neutral"
+    retail_color = retail_fomo_buy ? color.lime : retail_panic_sell ? color.red : color.gray
+    table.cell(info_table, 0, 5, "Retail Sentiment", text_color=color.black)
+    table.cell(info_table, 1, 5, retail_status, text_color=retail_color)
+
+// ==================== ADDITIONAL VOLUME INDICATOR (NON-OVERLAY) ====================
+// Volume comparison plot (you can add this as a separate pane)
+volume_ratio = volume / volume_ma
+hline(1.0, "Normal Volume", color=color.gray, linestyle=hline.style_dashed)
+hline(high_volume_multiplier, "High Volume Threshold", color=color.orange, linestyle=hline.style_dashed)
+hline(volume_spike_threshold, "Volume Spike Threshold", color=color.red, linestyle=hline.style_dashed)
