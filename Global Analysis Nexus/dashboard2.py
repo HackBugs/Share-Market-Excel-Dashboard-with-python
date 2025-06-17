@@ -241,11 +241,19 @@ FALLBACK_INFLATION = [
     {"country": "United Kingdom", "iso3": "GBR", "inflation": 9.1},
 ]
 CONFLICT_COUNTRIES = [
-    {"country": "Ukraine", "iso3": "UKR", "conflict": "Russia-Ukraine War", "intensity": 9, "sentiment": "Negative"},
-    {"country": "Israel", "iso3": "ISR", "conflict": "Israel-Palestine Conflict", "intensity": 7, "sentiment": "Mixed"},
-    {"country": "Yemen", "iso3": "YEM", "conflict": "Yemeni Civil War", "intensity": 6, "sentiment": "Negative"},
-    {"country": "Syria", "iso3": "SYR", "conflict": "Syrian Civil War", "intensity": 5, "sentiment": "Negative"},
-    {"country": "Sudan", "iso3": "SDN", "conflict": "Sudanese Civil War", "intensity": 8, "sentiment": "Negative"},
+    {"country": "Ukraine", "iso3": "UKR", "conflict": "Russia-Ukraine War", "intensity": 9, "sentiment": "Negative", "conflict_deaths": 100000, "population": 44000000, "death_ratio": 2272.73},
+    {"country": "Israel", "iso3": "ISR", "conflict": "Israel-Palestine Conflict", "intensity": 7, "sentiment": "Mixed", "conflict_deaths": 5000, "population": 9200000, "death_ratio": 543.48},
+    {"country": "Yemen", "iso3": "YEM", "conflict": "Yemeni Civil War", "intensity": 6, "sentiment": "Negative", "conflict_deaths": 20000, "population": 31000000, "death_ratio": 645.16},
+    {"country": "Syria", "iso3": "SYR", "conflict": "Syrian Civil War", "intensity": 5, "sentiment": "Negative", "conflict_deaths": 15000, "population": 18000000, "death_ratio": 833.33},
+    {"country": "Sudan", "iso3": "SDN", "conflict": "Sudanese Civil War", "intensity": 8, "sentiment": "Negative", "conflict_deaths": 25000, "population": 44000000, "death_ratio": 568.18},
+]
+FALLBACK_MORTALITY = [
+    {"country": "United States", "iso3": "USA", "mortality_rate": 8.9},
+    {"country": "Germany", "iso3": "DEU", "mortality_rate": 11.4},
+    {"country": "India", "iso3": "IND", "mortality_rate": 7.3},
+    {"country": "Brazil", "iso3": "BRA", "mortality_rate": 6.8},
+    {"country": "China", "iso3": "CHN", "mortality_rate": 7.1},
+    {"country": "United Kingdom", "iso3": "GBR", "mortality_rate": 9.4},
 ]
 
 # Cache API calls
@@ -297,8 +305,32 @@ def fetch_inflation_data(year):
         return pd.DataFrame([{**d, 'year': year} for d in FALLBACK_INFLATION])
 
 @st.cache_data(ttl=3600)
+def fetch_mortality_data(year):
+    url = f"https://api.worldbank.org/v2/country/all/indicator/SP.DYN.CDRT.IN?format=json&per_page=300&date={year}"
+    try:
+        response = requests.get(url, timeout=10)
+        response.raise_for_status()
+        data = response.json()[1]
+        mortality_data = []
+        for entry in data:
+            if entry['value'] is not None:
+                mortality_data.append({
+                    'country': entry['country']['value'],
+                    'iso3': entry['countryiso3code'],
+                    'mortality_rate': entry['value'],
+                    'year': year
+                })
+        df = pd.DataFrame(mortality_data)
+        if df.empty:
+            st.warning(f"World Bank API returned no mortality data for {year}. Using fallback data.")
+            return pd.DataFrame([{**d, 'year': year} for d in FALLBACK_MORTALITY])
+        return df
+    except (requests.RequestException, json.JSONDecodeError, KeyError, IndexError) as e:
+        st.warning(f"Failed to fetch mortality data: {str(e)}. Using fallback data.")
+        return pd.DataFrame([{**d, 'year': year} for d in FALLBACK_MORTALITY])
+
+@st.cache_data(ttl=3600)
 def fetch_military_data():
-    # Curated from https://www.worlddata.info/military/
     military_data = [
         {"country": "United States", "iso3": "USA", "military_personnel": 1390000, "tanks": 5600, "aircraft": 13500, "naval_vessels": 480, "missiles": 6000},
         {"country": "China", "iso3": "CHN", "military_personnel": 2035000, "tanks": 5000, "aircraft": 3300, "naval_vessels": 730, "missiles": 2500},
@@ -326,8 +358,8 @@ st.session_state.user_profile["theme"] = theme
 st.session_state.user_profile["cloud_sync"] = cloud_sync
 view_mode = st.sidebar.radio("Visualization Mode", ["2D Map", "3D Globe"], index=0)
 year = st.sidebar.selectbox("Temporal Frame", [2022, 2021, 2020], index=0)
-indicator = st.sidebar.radio("Primary Vector", ["GDP", "GDP per Capita", "Inflation", "Unemployment", "Military Expenditure", "Trade Balance", "Debt-to-GDP"], index=0)
-secondary_indicator = st.sidebar.selectbox("Secondary Vector (Overlay)", ["None"] + ["GDP", "GDP per Capita", "Inflation", "Unemployment", "Military Expenditure", "Trade Balance", "Debt-to-GDP"], index=0)
+indicator = st.sidebar.radio("Primary Vector", ["GDP", "GDP per Capita", "Inflation", "Unemployment", "Military Expenditure", "Trade Balance", "Debt-to-GDP", "Mortality Rate"], index=0)
+secondary_indicator = st.sidebar.selectbox("Secondary Vector (Overlay)", ["None"] + ["GDP", "GDP per Capita", "Inflation", "Unemployment", "Military Expenditure", "Trade Balance", "Debt-to-GDP", "Mortality Rate"], index=0)
 show_secondary_overlay = st.sidebar.checkbox("Show Secondary Overlay", value=True, disabled=secondary_indicator == "None")
 color_scale = st.sidebar.selectbox("Visual Spectrum", ["Plasma", "Inferno", "Viridis", "Magma", "Cividis", "Neon"], index=0)
 countries = st.sidebar.multiselect(
@@ -336,9 +368,11 @@ countries = st.sidebar.multiselect(
     default=st.session_state.user_profile.get("config", {}).get("countries", [])
 )
 highlight_conflicts = st.sidebar.checkbox("Conflict Overlay", value=True)
+show_death_ratio = st.sidebar.checkbox("Show Conflict Death Ratio", value=True)
 show_military = st.sidebar.checkbox("Military Data Stream", value=True)
 live_data = st.sidebar.checkbox("Live Data Feed", value=False)
 predictive_mode = st.sidebar.checkbox("Predictive Analytics", value=False)
+mortality_viz_type = st.sidebar.selectbox("Mortality Dashboard View", ["Choropleth", "Bar Chart"], index=0)
 save_config = st.sidebar.button("Save Neural Configuration")
 if save_config:
     st.session_state.user_profile["config"] = {"countries": countries, "indicator": indicator, "secondary_indicator": secondary_indicator, "year": year, "theme": theme}
@@ -355,8 +389,12 @@ if nlq:
         df_gdp = fetch_worldbank_data("NY.GDP.MKTP.CD", year, "gdp")
         top_5 = df_gdp.nlargest(5, "gdp")[["country", "gdp"]].to_dict("records")
         st.sidebar.markdown("### AI Response\n" + "\n".join([f"{i+1}. {r['country']}: ${r['gdp']:,.2f}B" for i, r in enumerate(top_5)]))
+    elif "top 5" in nlq.lower() and "mortality" in nlq.lower():
+        df_mortality = fetch_mortality_data(year)
+        top_5 = df_mortality.nlargest(5, "mortality_rate")[["country", "mortality_rate"]].to_dict("records")
+        st.sidebar.markdown("### AI Response\n" + "\n".join([f"{i+1}. {r['country']}: {r['mortality_rate']:,.1f} per 1,000" for i, r in enumerate(top_5)]))
     else:
-        st.sidebar.warning("Query not recognized. Try: 'Top 5 GDP countries?'")
+        st.sidebar.warning("Query not recognized. Try: 'Top 5 GDP countries?' or 'Top 5 mortality rate countries?'")
 
 # Data fetching and merging
 indicator_map = {
@@ -366,10 +404,13 @@ indicator_map = {
     "Unemployment": ("unemployment", "SL.UEM.TOTL.ZS", "%"),
     "Military Expenditure": ("military_expenditure", "MS.MIL.XPND.CD", "Billion US$"),
     "Trade Balance": ("trade_balance", "NE.TRD.GNFS.ZS", "% of GDP"),
-    "Debt-to-GDP": ("debt_to_gdp", "GC.DOD.TOTL.GD.ZS", "%")
+    "Debt-to-GDP": ("debt_to_gdp", "GC.DOD.TOTL.GD.ZS", "%"),
+    "Mortality Rate": ("mortality_rate", "SP.DYN.CDRT.IN", "per 1,000")
 }
 indicator_col, indicator_code, indicator_unit = indicator_map[indicator]
 df = fetch_worldbank_data(indicator_code, year, indicator_col) if indicator != "Inflation" else fetch_inflation_data(year)
+if indicator == "Mortality Rate":
+    df = fetch_mortality_data(year)
 
 # Secondary indicator data
 secondary_df = pd.DataFrame()
@@ -378,6 +419,8 @@ secondary_unit = None
 if secondary_indicator != "None":
     secondary_col, secondary_code, secondary_unit = indicator_map[secondary_indicator]
     secondary_df = fetch_worldbank_data(secondary_code, year, secondary_col) if secondary_indicator != "Inflation" else fetch_inflation_data(year)
+    if secondary_indicator == "Mortality Rate":
+        secondary_df = fetch_mortality_data(year)
 
 # Merge primary and secondary data
 if not df.empty and not secondary_df.empty and secondary_indicator != "None":
@@ -424,7 +467,7 @@ military_df = fetch_military_data()
 conflict_df = pd.DataFrame(CONFLICT_COUNTRIES)
 if not df.empty:
     df = df.merge(military_df, on=["country", "iso3"], how="left")
-    df = df.merge(conflict_df, on=["country", "iso3"], how="left")
+    df = df.merge(conflict_df[["country", "iso3", "conflict", "intensity", "sentiment", "death_ratio"]], on=["country", "iso3"], how="left")
 
 # Predictive analytics
 if predictive_mode and indicator == "GDP" and not df.empty:
@@ -433,12 +476,12 @@ if predictive_mode and indicator == "GDP" and not df.empty:
     df_pred = df_pred.rename(columns={"gdp": "gdp_value"})  # Rename to avoid melt conflict
     # Merge military and conflict data to support hover_data
     df_pred = df_pred.merge(military_df, on=["country", "iso3"], how="left")
-    df_pred = df_pred.merge(conflict_df, on=["country", "iso3"], how="left")
+    df_pred = df_pred.merge(conflict_df[["country", "iso3", "conflict", "intensity", "sentiment", "death_ratio"]], on=["country", "iso3"], how="left")
     df_pred = df_pred.melt(
-        id_vars=["country", "iso3", "military_personnel", "tanks", "aircraft", "naval_vessels", "missiles", "conflict", "intensity", "sentiment"],
+        id_vars=["country", "iso3", "military_personnel", "tanks", "aircraft", "naval_vessels", "missiles", "conflict", "intensity", "sentiment", "death_ratio"],
         value_vars=["gdp_value", "gdp_2023"],
         var_name="year",
-        value_name="gdp_melted"  # Changed to avoid conflict
+        value_name="gdp_melted"
     )
     df_pred["year"] = df_pred["year"].map({"gdp_value": year, "gdp_2023": 2023})
     if df_pred.empty:
@@ -465,9 +508,11 @@ def create_visualization():
                 hover_data[col] = ":,.0f"
     if highlight_conflicts:
         conflict_cols = ["conflict", "intensity", "sentiment"]
+        if show_death_ratio:
+            conflict_cols.append("death_ratio")
         for col in conflict_cols:
             if col in current_df.columns:
-                hover_data[col] = True if col in ["conflict", "sentiment"] else ":,.0f"
+                hover_data[col] = True if col in ["conflict", "sentiment"] else ":,.1f"
 
     if view_mode == "3D Globe":
         fig = go.Figure()
@@ -581,6 +626,49 @@ def create_visualization():
         )
     return fig
 
+# Mortality rate visualization
+def create_mortality_visualization(mortality_df, viz_type):
+    if mortality_df.empty:
+        return px.choropleth(title=f"Mortality Rate {year} - Data Unavailable")
+    
+    if viz_type == "Choropleth":
+        fig = px.choropleth(
+            mortality_df,
+            locations="iso3",
+            color="mortality_rate",
+            hover_name="country",
+            hover_data={"mortality_rate": ":,.1f"},
+            color_continuous_scale="Plasma" if color_scale == "Neon" else color_scale.lower(),
+            title=f"Global Mortality Rate (per 1,000, {year})",
+            projection="natural earth",
+            height=600
+        )
+    else:
+        fig = px.bar(
+            mortality_df,
+            x="country",
+            y="mortality_rate",
+            color="mortality_rate",
+            color_continuous_scale="Plasma" if color_scale == "Neon" else color_scale.lower(),
+            title=f"Mortality Rate by Country (per 1,000, {year})",
+            height=600
+        )
+    fig.update_layout(
+        margin={"r":10,"t":50,"l":10,"b":10},
+        coloraxis_colorbar=dict(
+            len=0.75,
+            title="Mortality Rate (per 1,000)",
+            tickformat=",.1f",
+            bgcolor="rgba(30, 30, 46, 0.7)"
+        ),
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(color="#e0e0ff", family="Orbitron"),
+        xaxis=dict(showgrid=False),
+        yaxis=dict(showgrid=False)
+    )
+    return fig
+
 # Header with holographic logo
 st.markdown(f"""
     <div style='display: flex; align-items: center; animation: glow 2s infinite alternate;'>
@@ -600,8 +688,9 @@ if highlight_conflicts and not df.empty:
     conflict_df_subset = df[df["conflict"].notna()]
     if not conflict_df_subset.empty:
         for _, row in conflict_df_subset.iterrows():
+            death_info = f", Death Ratio: {row['death_ratio']:.1f} per million" if show_death_ratio and pd.notna(row['death_ratio']) else ""
             st.markdown(
-                f"<div class='alert'>ALERT: Conflict in {row['country']} ({row['conflict']}, Intensity: {row['intensity']:.1f}, Sentiment: {row['sentiment']})</div>",
+                f"<div class='alert'>ALERT: Conflict in {row['country']} ({row['conflict']}, Intensity: {row['intensity']:.1f}, Sentiment: {row['sentiment']}{death_info})</div>",
                 unsafe_allow_html=True
             )
 
@@ -611,15 +700,19 @@ if live_data:
     with st.spinner("Streaming live data..."):
         for y in [2020, 2021, 2022]:
             temp_df = fetch_worldbank_data(indicator_code, y, indicator_col) if indicator != "Inflation" else fetch_inflation_data(y)
+            if indicator == "Mortality Rate":
+                temp_df = fetch_mortality_data(y)
             if not temp_df.empty:
                 temp_df["year"] = y
                 # Merge secondary, military, and conflict data for live data
                 if secondary_indicator != "None":
                     secondary_temp_df = fetch_worldbank_data(indicator_map[secondary_indicator][1], y, indicator_map[secondary_indicator][0]) if secondary_indicator != "Inflation" else fetch_inflation_data(y)
+                    if secondary_indicator == "Mortality Rate":
+                        secondary_temp_df = fetch_mortality_data(y)
                     if not secondary_temp_df.empty:
                         temp_df = temp_df.merge(secondary_temp_df[["iso3", indicator_map[secondary_indicator][0], "country"]], on=["iso3", "country"], how="left")
                 temp_df = temp_df.merge(military_df, on=["country", "iso3"], how="left")
-                temp_df = temp_df.merge(conflict_df, on=["country", "iso3"], how="left")
+                temp_df = temp_df.merge(conflict_df[["country", "iso3", "conflict", "intensity", "sentiment", "death_ratio"]], on=["country", "iso3"], how="left")
                 # Apply country and data range filters
                 if countries:
                     temp_df = temp_df[temp_df["country"].isin(countries)]
@@ -633,6 +726,16 @@ if live_data:
 else:
     st.plotly_chart(create_visualization(), use_container_width=True)
 
+# Mortality Rate Dashboard
+# st.markdown("### Mortality Rate Dashboard")
+# mortality_df = fetch_mortality_data(year)
+# if not mortality_df.empty:
+#     st.plotly_chart(create_mortality_visualization(mortality_df, mortality_viz_type), use_container_width=True)
+#     csv = mortality_df[["country", "iso3", "mortality_rate"]].to_csv(index=False).encode('utf-8')
+#     st.download_button("Download Mortality Data as CSV", csv, f"mortality_{year}.csv", "text/csv")
+# else:
+#     st.warning("No mortality data available for the selected year.")
+
 # AR Preview
 st.markdown("### Augmented Reality Interface")
 ar_url = "https://example.com/ar-view"  # Placeholder; replace with A-Frame hosted URL
@@ -645,9 +748,9 @@ st.image(qr_img, caption="Scan for AR Visualization", width=150)
 # Sentiment Analysis
 st.markdown("### Conflict Sentiment Analysis")
 if highlight_conflicts and not df.empty:
-    sentiment_data = df[df["sentiment"].notna()][["country", "conflict", "sentiment"]]
+    sentiment_data = df[df["sentiment"].notna()][["country", "conflict", "sentiment", "death_ratio"]]
     if not sentiment_data.empty:
-        st.markdown("**Public Sentiment (Simulated from X posts):**\n" + "\n".join([f"- {row['country']}: {row['sentiment']} ({row['conflict']})" for _, row in sentiment_data.iterrows()]))
+        st.markdown("**Public Sentiment and Death Ratio (Simulated from X posts):**\n" + "\n".join([f"- {row['country']}: {row['sentiment']} ({row['conflict']})" + (f", Death Ratio: {row['death_ratio']:.1f} per million" if show_death_ratio and pd.notna(row['death_ratio']) else "") for _, row in sentiment_data.iterrows()]))
     else:
         st.warning("No sentiment data available.")
 
@@ -662,8 +765,11 @@ if not df.empty:
             ai_summary += "Strong economic output, likely driven by diversified industries."
         elif indicator == "Inflation" and country_data[indicator_col] > 10:
             ai_summary += "High inflation suggests economic instability."
+        elif indicator == "Mortality Rate" and country_data[indicator_col] > 10:
+            ai_summary += "High mortality rate suggests health or social challenges."
         st.markdown(ai_summary)
         with st.expander(f"{selected_country} Neural Data Core", expanded=True):
+            death_info = f"<p><b>Conflict Death Ratio:</b> {country_data.get('death_ratio', 'N/A'):,.1f} per million</p>" if show_death_ratio and pd.notna(country_data.get('death_ratio')) else ""
             st.markdown(f"""
                 <div class='data-card'>
                     <h3>{selected_country}</h3>
@@ -675,6 +781,7 @@ if not df.empty:
                     <p><b>Naval Vessels:</b> {country_data.get('naval_vessels', 'N/A'):,.0f}</p>
                     <p><b>Missiles:</b> {country_data.get('missiles', 'N/A'):,.0f}</p>
                     <p><b>Conflict:</b> {country_data.get('conflict', 'None')} (Intensity: {country_data.get('intensity', 'N/A')}, Sentiment: {country_data.get('sentiment', 'N/A')})</p>
+                    {death_info}
                 </div>
             """, unsafe_allow_html=True)
 
@@ -728,6 +835,8 @@ if not df.empty:
                 col, code, unit = indicator_map[ind]
                 for y in [2020, 2021, 2022]:
                     temp_df = fetch_worldbank_data(code, y, col) if ind != "Inflation" else fetch_inflation_data(y)
+                    if ind == "Mortality Rate":
+                        temp_df = fetch_mortality_data(y)
                     if not temp_df.empty:
                         temp_df["indicator"] = ind
                         temp_df["unit"] = unit
@@ -832,9 +941,12 @@ if not df.empty:
     if secondary_indicator != "None" and secondary_col in df.columns:
         display_cols.append(secondary_col)
     if show_military:
-        display_cols.extend(["military_personnel", "tanks", "aircraft", "naval_vessels", "missiles"])  # Fixed: Removed "military"
+        display_cols.extend(["military_personnel", "tanks", "aircraft", "naval_vessels", "missiles"])
     if highlight_conflicts:
-        display_cols.extend(["conflict", "intensity", "sentiment"])
+        conflict_cols = ["conflict", "intensity", "sentiment"]
+        if show_death_ratio:
+            conflict_cols.append("death_ratio")
+        display_cols.extend(conflict_cols)
     
     rename_dict = {
         indicator_col: f"{indicator} ({indicator_unit})",
@@ -844,7 +956,8 @@ if not df.empty:
         "naval_vessels": "Naval Vessels",
         "missiles": "Missiles",
         "intensity": "Conflict Intensity",
-        "sentiment": "Public Sentiment"
+        "sentiment": "Public Sentiment",
+        "death_ratio": "Conflict Death Ratio (per million)"
     }
     if secondary_indicator != "None" and secondary_col in df.columns:
         rename_dict[secondary_col] = f"{secondary_indicator} ({secondary_unit})"
@@ -856,7 +969,8 @@ if not df.empty:
         "Aircraft": "{:.0f}",
         "Naval Vessels": "{:.0f}",
         "Missiles": "{:.0f}",
-        "Conflict Intensity": "{:.0f}"
+        "Conflict Intensity": "{:.0f}",
+        "Conflict Death Ratio (per million)": "{:.1f}"
     }
     if secondary_indicator != "None" and secondary_col in df.columns:
         format_dict[f"{secondary_indicator} ({secondary_unit})"] = f"{{:,.{'2f' if secondary_indicator != 'Inflation' else '1f'}}}"
