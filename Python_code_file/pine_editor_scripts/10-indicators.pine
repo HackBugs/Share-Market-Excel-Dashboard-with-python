@@ -1,0 +1,85 @@
+// @version=5
+indicator("10 Indicators Dashboard", overlay=false)
+
+// Inputs
+rsi_length = input(14, "RSI Length")
+macd_fast = input(12, "MACD Fast Length")
+macd_slow = input(26, "MACD Slow Length")
+macd_signal = input(9, "MACD Signal Length")
+ema_length = input(20, "EMA Length")
+bb_length = input(20, "Bollinger Bands Length")
+bb_mult = input(2.0, "Bollinger Bands Multiplier")
+atr_length = input(14, "ATR Length")
+
+// Calculations
+// RSI
+rsi = ta.rsi(close, rsi_length)
+rsi_status = rsi > 70 ? "Overbought" : rsi < 30 ? "Oversold" : "Neutral"
+
+// MACD
+[macd_line, signal_line, _] = ta.macd(close, macd_fast, macd_slow, macd_signal)
+macd_status = macd_line > signal_line ? "Bullish" : "Bearish"
+
+// EMA
+ema = ta.ema(close, ema_length)
+ema_status = close > ema ? "Above EMA" : "Below EMA"
+
+// Bollinger Bands
+bb_basis = ta.sma(close, bb_length)
+bb_dev = bb_mult * ta.stdev(close, bb_length)
+bb_upper = bb_basis + bb_dev
+bb_lower = bb_basis - bb_dev
+bb_status = close > bb_upper ? "Above Upper" : close < bb_lower ? "Below Lower" : "Inside Bands"
+
+// ATR
+atr = ta.atr(atr_length)
+atr_status = atr > ta.atr(atr_length)[1] ? "Rising" : "Falling"
+
+// VWAP
+vwap = ta.vwap(close)
+vwap_status = close > vwap ? "Above VWAP" : "Below VWAP"
+
+// Create Dashboard Table
+var table dashboard = table.new(position.top_right, 6, 7, border_width=1)
+if barstate.islast
+    table.cell(dashboard, 0, 0, "Indicator", bgcolor=color.gray, text_color=color.yellow)
+    table.cell(dashboard, 1, 0, "Value", bgcolor=color.gray, text_color=color.blue)
+    table.cell(dashboard, 2, 0, "Status", bgcolor=color.gray, text_color=color.white)
+    
+    // RSI Row
+    table.cell(dashboard, 0, 1, "RSI", bgcolor=color.black, text_color=color.yellow)
+    table.cell(dashboard, 1, 1, str.tostring(rsi, "#.##"), bgcolor=color.black, text_color=color.blue)
+    table.cell(dashboard, 2, 1, rsi_status, bgcolor=rsi > 70 ? color.red : rsi < 30 ? color.green : color.yellow)
+    
+    // MACD Row
+    table.cell(dashboard, 0, 2, "MACD", bgcolor=color.black, text_color=color.yellow)
+    table.cell(dashboard, 1, 2, str.tostring(macd_line, "#.##"), bgcolor=color.black, text_color=color.blue)
+    table.cell(dashboard, 2, 2, macd_status, bgcolor=macd_line > signal_line ? color.green : color.red)
+    
+    // EMA Row
+    table.cell(dashboard, 0, 3, "EMA", bgcolor=color.black, text_color=color.yellow)
+    table.cell(dashboard, 1, 3, str.tostring(ema, "#.##"), bgcolor=color.black, text_color=color.blue)
+    table.cell(dashboard, 2, 3, ema_status, bgcolor=close > ema ? color.green : color.red)
+    
+    // Bollinger Bands Row
+    table.cell(dashboard, 0, 4, "Bollinger Bands", bgcolor=color.black, text_color=color.yellow)
+    table.cell(dashboard, 1, 4, str.tostring(bb_basis, "#.##"), bgcolor=color.black, text_color=color.blue)
+    table.cell(dashboard, 2, 4, bb_status, bgcolor=close > bb_upper ? color.red : close < bb_lower ? color.green : color.yellow)
+    
+    // ATR Row
+    table.cell(dashboard, 0, 5, "ATR", bgcolor=color.black, text_color=color.yellow)
+    table.cell(dashboard, 1, 5, str.tostring(atr, "#.##"), bgcolor=color.black, text_color=color.blue)
+    table.cell(dashboard, 2, 5, atr_status, bgcolor=atr > ta.atr(atr_length)[1] ? color.green : color.red)
+    
+    // VWAP Row
+    table.cell(dashboard, 0, 6, "VWAP", bgcolor=color.black, text_color=color.yellow)
+    table.cell(dashboard, 1, 6, str.tostring(vwap, "#.##"), bgcolor=color.black, text_color=color.blue)
+    table.cell(dashboard, 2, 6, vwap_status, bgcolor=close > vwap ? color.green : color.red)
+
+// Plotting (Optional)
+plot(rsi, "RSI", color=color.blue)
+plot(ema, "EMA", color=color.orange)
+plot(bb_basis, "BB Basis", color=color.purple)
+plot(bb_upper, "BB Upper", color=color.purple)
+plot(bb_lower, "BB Lower", color=color.purple)
+plot(vwap, "VWAP", color=color.teal)
