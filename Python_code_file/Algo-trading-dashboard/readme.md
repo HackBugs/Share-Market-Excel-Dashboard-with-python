@@ -15,6 +15,8 @@ pip install --upgrade pandas yfinance ta pandas-ta numpy streamlit plotly setupt
 pip install numpy==1.26.4
 pip install --force-reinstall pandas-ta
 pip install setuptools<81
+
+pip install --force-reinstall pandas-ta
 ```
 
 ```
