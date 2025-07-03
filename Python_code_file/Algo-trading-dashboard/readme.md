@@ -13,3 +13,7 @@ pip install numpy==1.26.4
 pip install --force-reinstall pandas-ta
 pip install setuptools<81
 ```
+
+```
+pip install --upgrade altair attrs beautifulsoup4 blinker cachetools certifi cffi charset-normalizer click colorama curl_cffi frozendict gitdb GitPython idna Jinja2 jsonschema jsonschema-specifications MarkupSafe multitasking narwhals numpy packaging pandas pandas_ta peewee pillow pip platformdirs plotly protobuf pyarrow pycparser pydeck python-dateutil pytz referencing requests rpds-py six smmap soupsieve streamlit ta tenacity toml tornado typing_extensions tzdata urllib3 watchdog websockets yfinance
+```
