@@ -18,6 +18,8 @@ pip install setuptools<81
 
 pip install --force-reinstall pandas-ta
 python -m pip install --upgrade pip==25.1.1
+pip --version
+pip list
 ```
 
 ```
