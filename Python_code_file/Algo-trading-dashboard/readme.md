@@ -32,7 +32,7 @@ pip install --upgrade altair attrs beautifulsoup4 blinker cachetools certifi cff
 <hr>
 
 
-## Python libraries install kiye hain** unka ek **backup export** 
+> # Python libraries install kiye hain** unka ek **backup export** 
 
 ---
 
@@ -105,7 +105,7 @@ Isse aap **one double-click me sab install** kar sakte ho.
 
 <hr>
 
-## Made `.bat` file** bana dete hain — jisse aap **one double-click me pip libraries install** kar sako.
+> # Made `.bat` file** bana dete hain — jisse aap **one double-click me pip libraries install** kar sako.
 
 ---
 
