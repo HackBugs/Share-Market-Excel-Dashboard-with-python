@@ -38,6 +38,34 @@
 
 > Jab ek **patni ko santan paida karne ke liye** apne pati ke alawa kisi **rishi ya yogya purush** ke saath santan utpatti ka adhikar diya jaata tha — ise **Niyog** kahte hain.
 
+### 🧬 **Niyog Pratha me kis-kis ke saath sambandh banaya ja sakta tha?** (Hinglish me simple tarike se):
+
+**Niyog** sirf ek **dharmik aur maryadit samayik kriya** hoti thi **sirf santan utpatti** ke liye, aur isme **sab kuch shastro ke niyam ke anusar** hota tha.
+
+---
+
+### ✅ Niyog kis ke saath kiya ja sakta tha?
+
+1. **Pati ke anuj (chhote bhai)**
+   ➤ Agar pati mar gaya ho ya santan paida nahi kar sakta ho.
+
+2. **Rishi/Muni ya Yogya Brahmin**
+   ➤ Aise log jinme **gyaan, maryada aur satgun** ho, jo dharmik roop se shuddh ho.
+
+3. **Rajya ya kul ke aadesh se chune gaye yogya purush**
+   ➤ Jaise **Vyasa Rishi** ko Satyavati ne niyog ke liye bulaya tha Ambika aur Ambalika ke liye.
+
+---
+
+### 📘 Mahabharat ke Examples:
+
+| Patni    | Kis ke saath niyog  | Paida hua santan          |
+| -------- | ------------------- | ------------------------- |
+| Kunti    | Devtaon (mantra se) | Yudhishthir, Bheem, Arjun |
+| Madri    | Ashwini Kumar       | Nakul, Sahdev             |
+| Ambika   | Rishi Vyasa         | Dhritarashtra             |
+| Ambalika | Rishi Vyasa         | Pandu                     |
+
 ---
 
 ### 📖 Kaha likha hai?
