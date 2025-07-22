@@ -1,4 +1,4 @@
-# 1. **Raja Ravi Varma** ek **mahan Bharatiya chitrakar (painter)** the, jinhone **Indian mythology aur Western painting techniques** ko mila kar **nayi kala ki dhara** shuru ki thi.
+> # 1. **Raja Ravi Varma** ek **mahan Bharatiya chitrakar (painter)** the, jinhone **Indian mythology aur Western painting techniques** ko mila kar **nayi kala ki dhara** shuru ki thi.
 
 ---
 
@@ -28,7 +28,7 @@
 
 ---
 
-# 2. ### 📜 **Niyog Pratha** – Short mein samjhaayein (Hinglish mein):
+> # 2. ### 📜 **Niyog Pratha** – Short mein samjhaayein (Hinglish mein):
 
 **Niyog** ek **prachin Hindu pratha (custom)** thi jisme agar kisi purush ki mrityu ho jaati thi ya usme santan paida karne ki kshamata nahi hoti thi, to uski patni **kisi anya yogya purush ke saath santan utpatti** ke liye sambandh bana sakti thi — **dharmik niyam ke tahat**.
 
