@@ -1,4 +1,4 @@
-# > **20 common dark psychology techniques**
+> # **20 common dark psychology techniques**
 
 ---
 
