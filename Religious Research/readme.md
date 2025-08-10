@@ -445,5 +445,43 @@ This document presents a detailed list of historical and mythological battles wh
 * **Polygamy** → One man, multiple wives.
 * **Polyandry** → One woman, multiple husbands (e.g., Draupadi with Pandavas).
 
+Yeh jo **8 prakar ke vivaah** hain, unka reference pramukh Vedic–Dharmashastric granthon me milta hai. Main tumhe source-wise batata hoon:
+
+### **Primary Sanskrit Sources**
+
+1. **Manusmriti (Chapter 3, Verses 20–34)**
+
+   * Yahaan 8 types of marriage clearly list kiye gaye hain:
+     **Brahma, Daiva, Arsha, Prajapatya, Asura, Gandharva, Rakshasa, Paisacha**
+   * Example: Manusmriti 3.20–21:
+     *"Brahmo daivo 'rsas caiva prajapatyas tatha 'surah |
+     Gandharvo raksasas caiva paishacas ceti dharmatah ||"*
+
+2. **Apastamba Dharmasutra (Book 2, Section 5)**
+
+   * Yahaan bhi same 8 forms ka zikr milta hai, slight wording differences ke saath.
+
+3. **Grihya Sutras** (Asvalayana Grihya Sutra, Paraskara Grihya Sutra)
+
+   * Vivah vidhi aur type ke rules deti hain, especially Brahma vivah ko ideal batati hain.
+
+4. **Mahabharata (Anushasana Parva, Chapter 44)**
+
+   * Bhishma Pitamah Yudhishthira ko 8 types of marriages ka vivaran dete hain.
+
+### **Secondary & Explanatory Texts**
+
+* **Katyayana Smriti** – Marriage types ki classification ko social acceptance ke perspective se explain karta hai.
+* **Vishnu Purana** – Gandharva vivah ka romantic context aur Daiva vivah ka ritual context deta hai.
+* **Narada Smriti** – Gandharva, Rakshasa, aur Paisacha vivah ke ethical/legal implications batata hai.
+
+---
+
+📌 **Extra categories** jaise Swayamvara, Niyoga, Anuloma–Pratiloma
+
+* **Swayamvara** – Mahabharata (Adi Parva, Draupadi swayamvara), Ramayana (Sita swayamvara)
+* **Niyoga** – Mahabharata (Adi Parva, Ambika–Ambalika–Vyasa), Bhagavata Purana 9.22.
+* **Anuloma–Pratiloma** – Manusmriti 10.6–10.27.
+
 ---
 
