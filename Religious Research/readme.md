@@ -359,4 +359,59 @@ This document presents a detailed list of historical and mythological battles wh
 | 50 | **Rishi Shukracharya**        | Devyani (apni putri ko niyog diya) | Daughter-based lineage         | Mahabharata      |
 
 ---
+> # 1 se zyada shaadi 
+
+| #  | Naam                   | Shaadi / Consort List                                                                       | Kitni Shaadi                 | Source / Note               |
+| -- | ---------------------- | ------------------------------------------------------------------------------------------- | ---------------------------- | --------------------------- |
+| 1  | Dasharatha             | Kaushalya, Kaikeyi, Sumitra                                                                 | 3                            | Ramayana                    |
+| 2  | Krishna                | Rukmini, Satyabhama, Jambavati, Kalindi, Mitravinda, Nagnajiti, Bhadra, Lakshmana, aur anek | 16,108 wives (mythic)        | Bhagavata Purana            |
+| 3  | Arjuna                 | Draupadi, Subhadra, Ulupi, Chitrangada                                                      | 4                            | Mahabharata                 |
+| 4  | Yudhishthira           | Draupadi, Devika                                                                            | 2                            | Mahabharata                 |
+| 5  | Bhima                  | Draupadi, Hidimba, Valandhara                                                               | 3                            | Mahabharata                 |
+| 6  | Nakula                 | Draupadi, Karenumati                                                                        | 2                            | Mahabharata                 |
+| 7  | Sahadeva               | Draupadi, Vijaya                                                                            | 2                            | Mahabharata                 |
+| 8  | Pandu                  | Kunti, Madri                                                                                | 2                            | Mahabharata                 |
+| 9  | Karna                  | Vrushali, Supriya                                                                           | 2                            | Later texts                 |
+| 10 | Shantanu               | Ganga, Satyavati                                                                            | 2                            | Mahabharata                 |
+| 11 | Vichitravirya          | Ambika, Ambalika                                                                            | 2                            | Mahabharata                 |
+| 12 | Nala                   | Damayanti, Sunanda                                                                          | 2                            | Nala-Damayanti Katha        |
+| 13 | Bali (Asura King)      | Vindhyavali, Sundari                                                                        | 2                            | Puranic                     |
+| 14 | Indra                  | Shachi (Indrani), Paulomi, Riddhi, multiple apsaras                                         | Multiple                     | Puranas                     |
+| 15 | Chandra                | Rohini, Revati, Anuradha, Kritika, 27 Nakshatra wives                                       | 27                           | Vedas/Puranas               |
+| 16 | Kashyap Rishi          | Aditi, Diti, Danu, Vinata, Kadru, Surasa, Khasa, Muni, Krodhavasha, Tamra, etc.             | 13+                          | Vishnu Purana               |
+| 17 | Rishi Bhrigu           | Khyati, Puloma                                                                              | 2                            | Vishnu Purana               |
+| 18 | Rishi Gautama          | Ahalya, Anjana (some accounts)                                                              | 2                            | Puranas                     |
+| 19 | Surya                  | Saranyu, Chhaya, Prabha                                                                     | 3                            | Vishnu Purana               |
+| 20 | Agni                   | Swaha, Daksha daughters (symbolic), others                                                  | Multiple                     | Puranas                     |
+| 21 | Varuna                 | Varuni, Parnika                                                                             | 2                            | Puranas                     |
+| 22 | Shiva                  | Sati, Parvati                                                                               | 2 (different births)         | Shiva Purana                |
+| 23 | Vishnu                 | Lakshmi, Bhudevi, Sridevi                                                                   | 3 forms                      | Vishnu Purana               |
+| 24 | Jamadagni              | Renuka, others                                                                              | Multiple                     | Puranas                     |
+| 25 | Harishchandra          | Shaivya, Rohini (local lore)                                                                | 2                            | Purana/Itihasa              |
+| 26 | Yayati                 | Devayani, Sharmishtha                                                                       | 2                            | Mahabharata                 |
+| 27 | Nahusha                | Viraja, Ashokasundari (some accounts)                                                       | 2                            | Purana                      |
+| 28 | Rishabhdev             | Jayanti, Sumangala                                                                          | 2                            | Bhagavata Purana            |
+| 29 | Dilipa                 | Sudakshina, Padmavati                                                                       | 2                            | Purana                      |
+| 30 | Dushyanta              | Shakuntala, others                                                                          | Multiple                     | Mahabharata                 |
+| 31 | Parikshit              | Madravati, Iravati (some accounts)                                                          | 2                            | Puranas                     |
+| 32 | Janaka                 | Sunayana, others (regional legends)                                                         | Multiple                     | Local epics                 |
+| 33 | Bali (Vanara King)     | Tara, others                                                                                | Multiple                     | Ramayana                    |
+| 34 | Sugriva                | Ruma, Tara                                                                                  | 2                            | Ramayana                    |
+| 35 | Ravana                 | Mandodari, Dhanyamalini, others                                                             | Multiple                     | Ramayana                    |
+| 36 | Kumbhakarna            | Vajrajwala, others                                                                          | Multiple                     | Ramayana                    |
+| 37 | Vibheeshana            | Sarama, others                                                                              | Multiple                     | Ramayana                    |
+| 38 | Mandhata               | Bindumati, Chitralekha                                                                      | 2                            | Puranas                     |
+| 39 | Pururava               | Urvashi, others                                                                             | Multiple                     | Rigveda                     |
+| 40 | Budha (son of Chandra) | Ila, others                                                                                 | Multiple                     | Puranas                     |
+| 41 | Ananta Shesha          | Multiple Nagini wives                                                                       | Multiple                     | Puranas                     |
+| 42 | Kartavirya Arjuna      | Multiple queens                                                                             | Multiple                     | Puranas                     |
+| 43 | Jayadratha             | Dushala, others                                                                             | Multiple                     | Mahabharata                 |
+| 44 | Kritavarma             | Multiple wives                                                                              | Multiple                     | Mahabharata                 |
+| 45 | Rukmi                  | Multiple wives                                                                              | Multiple                     | Bhagavata Purana            |
+| 46 | Virata                 | Sudeshna, others                                                                            | Multiple                     | Mahabharata                 |
+| 47 | Shalya                 | Multiple wives                                                                              | Multiple                     | Mahabharata                 |
+| 48 | Bhagadatta             | Multiple wives                                                                              | Multiple                     | Mahabharata                 |
+| 49 | Jarasandha             | Multiple queens                                                                             | Multiple                     | Mahabharata                 |
+| 50 | **Prajapati Daksha**   | Prasuti, Asikni                                                                             | 2 main wives (60+ daughters) | Shiva Purana, Vishnu Purana |
+
 
