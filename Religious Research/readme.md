@@ -414,4 +414,36 @@ This document presents a detailed list of historical and mythological battles wh
 | 49 | Jarasandha             | Multiple queens                                                                             | Multiple                     | Mahabharata                 |
 | 50 | **Prajapati Daksha**   | Prasuti, Asikni                                                                             | 2 main wives (60+ daughters) | Shiva Purana, Vishnu Purana |
 
+<hr>
+
+> # Hindu–Vedic–Pauranik tradition me **marriage ke alag–alag types** ka zikr hota hai, jo shastraon me clearly classify kiye gaye hain.
+
+**Ancient Hindu law (Manusmriti, Grihya Sutra, Dharma Shastra)** me mainly **8 types of marriages** bataye gaye hain:
+
+---
+
+| # | Type of Marriage      | Sanskrit Name   | Description                                                                                      | Social / Ethical Note                                         |
+| - | --------------------- | --------------- | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------- |
+| 1 | **Brahma Vivaha**     | ब्रह्म विवाह    | Kanya ko vidya-yukt, character-wise uttam var ko daan karna bina koi dahej ya redemptive act ke. | Shreshth & most respected form.                               |
+| 2 | **Daiva Vivaha**      | दैव विवाह       | Kanya ko yajna-karne wale Brahmin ko daan karna.                                                 | Second best; girl's family sees groom as punya recipient.     |
+| 3 | **Arsha Vivaha**      | आर्ष विवाह      | Var ke taraf se kuch gau–daan ya symbolic gift lena; ritualistic consent.                        | Ancient but less practiced now.                               |
+| 4 | **Prajapatya Vivaha** | प्रजापत्य विवाह | Kanya ko is vachan ke saath dena: "Dharma saath milkar karo."                                    | Duty-oriented marriage.                                       |
+| 5 | **Asura Vivaha**      | आसुर विवाह      | Groom by offering wealth or gifts to bride's family to get consent.                              | Considered lower because it treats marriage as a transaction. |
+| 6 | **Gandharva Vivaha**  | गन्धर्व विवाह   | Mutual love marriage without parental involvement (consensual union).                            | Accepted in some texts but socially less ideal.               |
+| 7 | **Rakshasa Vivaha**   | राक्षस विवाह    | Forcefully taking bride after battle (warrior class practice).                                   | Kshatriya exception but ethically questionable.               |
+| 8 | **Paisacha Vivaha**   | पैशाच विवाह     | Seducing or violating a sleeping, drunk, or unconscious woman.                                   | Condemned, sinful & criminal.                                 |
+
+---
+
+💡 **Other relationship categories** jo tumhare pehle wale lists me fit hote hain:
+
+* **Swayamvara** → Bride selects groom from assembled suitors (e.g., Draupadi–Arjuna, Sita–Rama).
+* **Niyoga** → Widow (ya childless wife) ko var ke consent se kisi aur vyakti se santan prapti ka adhikar (e.g., Vichitravirya ke baad Ambika–Ambalika & Ved Vyasa).
+* **Anuloma Vivaha** → Higher varna man marrying lower varna woman.
+* **Pratiloma Vivaha** → Lower varna man marrying higher varna woman (considered socially adharma in ancient times).
+* **Consanguineous marriage** → Close relative ke saath marriage (gotra or bloodline preserve karne ke liye).
+* **Polygamy** → One man, multiple wives.
+* **Polyandry** → One woman, multiple husbands (e.g., Draupadi with Pandavas).
+
+---
 
