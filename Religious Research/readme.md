@@ -100,6 +100,8 @@ Ye sab prachin granthon ke **symbolic arth** hain, inhe **maanav samaj ke rules*
 
 ---
 
+- In Hindu mythology, Prajapati Daksha had many daughters, some of whom married Rishi Kashyapa. Kashyapa married thirteen of Daksha's daughters, including Aditi, Diti, Danu, and Vinata. These marriages are significant as they represent the diverse lineage of beings in Hindu cosmology, with Kashyapa's wives giving birth to gods, demons, animals, and other creatures,
+
 ## 🔥 Realation-wise Categorized List:
 
 ### 🧬 1. **Swayam se santan (Sperm/Manas putri se)**
