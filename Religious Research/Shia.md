@@ -92,7 +92,7 @@ Yani Ali (RA) ne bhi Sahaba ko izzat di, unka purana kafir hona koi nuqsan nahi.
 
 Tumsab uske liye jhagdaa karte ho - jinhone Allah ke rashool ka massage failane ke liye jaan de di (o massage important tha) but tum log to jiske liye jaan diya gya (Message of Allah) usko bhul kar jo jaan diya usko sbase behatar banane me lage ho.
 
-Where is the word ‘Shia’ mentioned in the Quran, or any other sect name? Allah never told us to introduce ourselves as Shia, Sunni, Wahhabi, Deobandi, or Ahl-e-Hadith. All these divisions are man-made and rubbish, because they divide Muslims. Muslims are not united now because of these sects.
+‘Shia’ or any other sect name? Allah never told us to introduce ourselves as Shia, Sunni, Wahhabi, Deobandi, or Ahl-e-Hadith. All these divisions are man-made and rubbish, because they divide Muslims. Muslims are not united now because of these sects.
 
 1. Aur tum sab mil kar Allah ki rassi (Quran) ko mazbooti se pakad lo, aur tafarraq (firqon) me mat pado. (Surah Aal-e-Imran 3:103)
 
