@@ -1,4 +1,4 @@
-> Main tumhe clear aur reference ke saath bata deta hoon ki Hazrat Ali (R.A.) ne apne bachchon ke naam kis kis Sahabi ke naam par rakhe, unki family kis se shadi hui, aur kaunse Sahaba ko woh follow karte the.
+> # Main tumhe clear aur reference ke saath bata deta hoon ki Hazrat Ali (R.A.) ne apne bachchon ke naam kis kis Sahabi ke naam par rakhe, unki family kis se shadi hui, aur kaunse Sahaba ko woh follow karte the.
 
 ---
 
@@ -39,7 +39,7 @@ Aur ek jagah kaha:
 
 <hr>
 
-> Dekho, yeh baat ek common misconception hai ki “Sahaba pehle kafir the” isliye unki izzat kam ho jaati hai — lekin Qur’an aur Hadith dono yeh clear karte hain ki **jo log Islam qabool karke Imaan par qaim rahe, Allah unse raazi ho gaya**.
+> # Dekho, yeh baat ek common misconception hai ki “Sahaba pehle kafir the” isliye unki izzat kam ho jaati hai — lekin Qur’an aur Hadith dono yeh clear karte hain ki **jo log Islam qabool karke Imaan par qaim rahe, Allah unse raazi ho gaya**.
 
 Main tumhe Hinglish me samjhata hu references ke sath:
 
