@@ -646,3 +646,103 @@ Part 8 – Unity aur Respect ka Final Hukm
 ---
 ```
 
+<hr>
+
+< # Books
+
+Shia Muslims sabse zyada apni fiqh (law) aur aqeedah (beliefs) ke liye **Najaf, Qom** ke scholars ke fatwe aur apni riwayat ki books follow karte hain.
+Unke liye sabse zyada ahmiyat wali books yeh hain:
+
+---
+
+## **1. Shia Hadith Collection (Sabse Zyada Maany Hui Kitabein)**
+
+Inko Shia Islam ke **"Al-Kutub Al-Arba'a"** (Four Major Books) kehte hain:
+
+1. **Al-Kafi** — Muhammad ibn Ya'qub al-Kulayni
+
+   * Aqeedah, fiqh, tafsir, hadith ka sabse bara collection.
+   * Shia ka "Sahih al-Bukhari" samjha jaata hai.
+
+2. **Man La Yahduruhu al-Faqih** — Ibn Babawayh (Shaykh al-Saduq)
+
+   * Mostly fiqh (ahkam/masail) ke hadith aur rulings.
+
+3. **Tahdhib al-Ahkam** — Shaykh al-Tusi
+
+   * Fiqh ke detailed proofs aur ahadith.
+
+4. **Al-Istibsar** — Shaykh al-Tusi
+
+   * Contradicting hadith ko reconcile karne ki koshish.
+
+---
+
+## **2. Shia Tafsir Books**
+
+* **Tafsir al-Qummi**
+* **Tafsir al-Ayyashi**
+* **Tafsir al-Mizan** (Allama Tabatabai)
+
+---
+
+## **3. Shia Aqeedah & History Books**
+
+* **Nahjul Balagha** — Imam Ali (R.A.) ke sermons, letters, sayings (Shia version).
+* **Bihar al-Anwar** — Allama Majlisi ka encyclopaedia jisme Shia riwayat, history, tafsir sab ka collection hai.
+
+---
+
+📌 **Important Point for Debate:**
+Shia in 4 main hadith books (Al-Kafi, etc.) ko Sunni books (Bukhari, Muslim) ki tarah 100% authentic nahi maante — unke scholars khud kehte hain ke inme weak aur fabricated hadith bhi hain, jo filter karke li jaati hain.
+
+---
+
+> Shia Islam me 4 **main hadith books** ko “**Al-Kutub Al-Arba’ah**” (چار کتاب) kehte hain, aur ye unke liye Sunni hadith collections (Bukhari, Muslim, Tirmidhi, etc.) ke equivalent hoti hain.
+
+Yeh 4 books ye hain:
+
+---
+
+**1. Al-Kafi**
+
+* Author: Sheikh Abu Ja’far Muhammad ibn Ya’qub al-Kulayni (d. 941 CE)
+* Volumes: 8
+* Importance: Shia ke liye yeh sabse authentic aur comprehensive hadith collection hai.
+* Content: Aqeedah (belief), fiqh (law), aur imamate par bohot emphasis hai.
+* Sunni sources ke mukable me, isme Imam (Ahl al-Bayt) se riwayat zyada hoti hain.
+
+---
+
+**2. Man La Yahduruhu al-Faqih**
+
+* Author: Sheikh Abu Ja’far Muhammad ibn Ali ibn Babawayh al-Qummi (al-Saduq) (d. 991 CE)
+* Volumes: 4
+* Importance: Mainly fiqh (Islamic law) related ahadith ka collection.
+* Isme aqeedah aur rulings Ahl al-Bayt ki riwayat se liye gaye hain.
+
+---
+
+**3. Tahdhib al-Ahkam**
+
+* Author: Sheikh Abu Ja’far Muhammad ibn al-Hasan al-Tusi (d. 1067 CE)
+* Volumes: 10
+* Importance: Shia fiqh ka detailed discussion, contradictions ka jawab, aur rulings ka clarification.
+
+---
+
+**4. Al-Istibsar**
+
+* Author: Sheikh Abu Ja’far Muhammad ibn al-Hasan al-Tusi (same author as Tahdhib)
+* Volumes: 4
+* Importance: Mainly differences ko solve karna aur fiqh issues ka reconciliation.
+
+---
+
+📌 **Note:**
+
+* Ye 4 books **Shia Ithna Ashari (Twelver Shia)** ke liye sabse authentic source hain.
+* Sunni Bukhari/Muslim ke equal Shia books me **Al-Kafi** sabse zyada weight rakhti hai, lekin Shia scholars khud bhi kehte hain ke Al-Kafi me sari hadith authentic nahi hoti — jaise Sunni scholars Bukhari ke har hadith par explanation dete hain.
+* Iske alawa Shia ke paas tafseer books (Tafsir al-Qummi, Tafsir al-Ayyashi) aur history books bhi important hain.
+
+---
