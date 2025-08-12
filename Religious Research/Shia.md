@@ -1024,7 +1024,7 @@ Ye jo lafz **“Man kuntu mawlahu, fa Aliyun mawlahu”** (Jiska main maula hoon
 
 ---
 
-Main tumhe is point ka full historical context clear karke bata deta hoon, kyunki ye hi debate ka main confusion hota hai.
+> # Main tumhe is point ka full historical context clear karke bata deta hoon, kyunki ye hi debate ka main confusion hota hai.
 
 ---
 
@@ -1066,7 +1066,7 @@ Main tumhe is point ka full historical context clear karke bata deta hoon, kyunk
 
 ---
 
-> Samajh gaya — tum seedha historical logic chahte ho, bina sect ka angle liye.
+> # Samajh gaya — tum seedha historical logic chahte ho, bina sect ka angle liye.
 > Main simple, timeline + context ke hisab se samjhata hoon.
 
 ---
@@ -1113,7 +1113,7 @@ Ali (RA) ne baad me is decision ko accept kiya, isliye Abu Bakr (RA) first khali
 
 ---
 
-> Chalo exact tariqon ke hisab se sequence clear kar dete hain.
+> # Chalo exact tariqon ke hisab se sequence clear kar dete hain.
 
 ---
 
