@@ -648,7 +648,7 @@ Part 8 – Unity aur Respect ka Final Hukm
 
 <hr>
 
-< # Books
+> # Books
 
 Shia Muslims sabse zyada apni fiqh (law) aur aqeedah (beliefs) ke liye **Najaf, Qom** ke scholars ke fatwe aur apni riwayat ki books follow karte hain.
 Unke liye sabse zyada ahmiyat wali books yeh hain:
