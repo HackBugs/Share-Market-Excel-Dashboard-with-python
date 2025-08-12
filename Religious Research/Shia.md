@@ -1334,3 +1334,43 @@ Prophet Muhammad ﷺ
 
 ---
 
+
+> # Theek hai, main tumhe **Nabi ﷺ ki sab wives ka ek clear chart** bana deta hoon jisme:
+
+* Nikah ka approx. saal (Hijri & CE)
+* Unke saath Nabi ﷺ ke bache hue ya nahi
+* Bachon ke naam
+* Beti ka zikr alag se
+
+---
+
+### 📜 **Prophet Muhammad ﷺ – Wives, Marriage Dates & Children Chart**
+
+| Wife ka Naam (RA)                            | Nikah ka Saal                      | Bachche?           | Bachon ke Naam                                                                                     | Notes                                                  |
+| -------------------------------------------- | ---------------------------------- | ------------------ | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------ |
+| **Khadijah bint Khuwaylid (RA)**             | 595 CE (Pre-Prophethood, age 25)   | ✅ Haan             | Qasim, Zaynab (beti), Ruqayyah (beti), Umm Kulthum (beti), Fatimah (beti), Abdullah (Tahir/Tayyib) | Saare biological bachche yahi se (mard & aurat)        |
+| **Sawda bint Zam‘a (RA)**                    | 620 CE (Hijrah se pehle)           | ❌ Nahi             | —                                                                                                  | Pehle shohar ke inteqal ke baad nikah                  |
+| **Aisha bint Abi Bakr (RA)**                 | 622 CE (Hijrah ke baad, Medina me) | ❌ Nahi             | —                                                                                                  | Abu Bakr (RA) ki beti, ilm me sabse aage               |
+| **Hafsa bint Umar (RA)**                     | 625 CE                             | ❌ Nahi             | —                                                                                                  | Umar ibn al-Khattab (RA) ki beti                       |
+| **Zaynab bint Khuzayma (RA)**                | 625 CE                             | ❌ Nahi             | —                                                                                                  | “Umm al-Masakin” ke laqab se mashhoor, jaldi wafat hui |
+| **Umm Salama (Hind bint Abi Umayyah) (RA)**  | 625 CE                             | ❌ Nahi (Nabi ﷺ se) | —                                                                                                  | Pehle shohar se bachche the                            |
+| **Juwayriya bint al-Harith (RA)**            | 627 CE                             | ❌ Nahi             | —                                                                                                  | Bani Mustaliq se thi                                   |
+| **Umm Habiba (Ramlah bint Abi Sufyan) (RA)** | 628 CE                             | ❌ Nahi             | —                                                                                                  | Abu Sufyan ki beti                                     |
+| **Safiyya bint Huyayy (RA)**                 | 628 CE                             | ❌ Nahi             | —                                                                                                  | Jewish tribe (Banu Nadir) se Islam laya                |
+| **Maymunah bint al-Harith (RA)**             | 629 CE                             | ❌ Nahi             | —                                                                                                  | Nabi ﷺ ki aakhri wife                                  |
+| **Zaynab bint Jahsh (RA)**                   | 627 CE                             | ❌ Nahi             | —                                                                                                  | Quran me nikah ka zikr (33:37)                         |
+| **Maria al-Qibtiyya** *(concubine)*          | 628 CE                             | ✅ Haan             | Ibrahim (beta)                                                                                     | Misr ke ruler ne gift di, Ibrahim chhote me wafat hue  |
+
+---
+
+### 📌 **Summary**
+
+* **Total wives**: 11 (jisme se ek, Khadijah (RA), se saare biological bachche)
+* **Total biological bachche**: 7
+
+  * **Beta**: Qasim, Abdullah (Tahir/Tayyib), Ibrahim
+  * **Beti**: Zaynab, Ruqayyah, Umm Kulthum, Fatimah
+* **Sirf betiyan zinda rahi** Fatimah (RA) ke zariye Nabi ﷺ ka nasl aage badha.
+
+---
+
