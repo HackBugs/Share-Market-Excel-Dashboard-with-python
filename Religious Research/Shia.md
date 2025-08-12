@@ -1223,6 +1223,93 @@ Ali (RA) ne baad me is decision ko accept kiya, isliye Abu Bakr (RA) first khali
 
 ---
 
+> # **Ahl al-Bayt** ka matlab hai — *"Ghar walay"* ya *"Household of the Prophet ﷺ"* — lekin Islamic context me iska matlab sirf ghar wale nahi, balki **wo log jo Nabi Muhammad ﷺ ke ghar ke ahl (family) aur unki special respect & purity ka hukm Allah ne Qur'an me diya hai**.
+
+---
+
+### **Qur'an me Ahl al-Bayt ka zikr**
+
+📖 **Surah Al-Ahzab 33:33**
+
+> *"Allah to sirf ye chahata hai ke tum se (o Ahl al-Bayt) har najasat door kar de aur tumhein poori tarah paak kar de."*
+
+---
+
+### **Ahl al-Bayt me kaun kaun aate hain?**
+
+**Hadith (Sahih Muslim, Tirmidhi, Musnad Ahmad) ke mutabiq:**
+
+1. **Nabi Muhammad ﷺ**
+2. **Ali ibn Abi Talib (RA)** — Nabi ﷺ ke cousin aur damad
+3. **Fatimah (RA)** — Nabi ﷺ ki beti
+4. **Hasan (RA)** — Nabi ﷺ ke nawase
+5. **Husayn (RA)** — Nabi ﷺ ke nawase
+
+---
+
+### **Sunni aur Shia view difference**
+
+* **Sunni view:** Ahl al-Bayt me ye paanch log to hain hi, saath me Nabi ﷺ ki biwiyan (Ummahat al-Mu’mineen) bhi Ahl al-Bayt me shamil hain.
+* **Shia view:** Sirf Nabi ﷺ, Ali (RA), Fatimah (RA), Hasan (RA), Husayn (RA) aur unki nasl ke kuch specific imams ko Ahl al-Bayt me shamil mante hain, wives ko nahi.
+
+---
+
+> # Theek hai, main tumhe **Nabi ﷺ se le kar Hasan (RA) & Husayn (RA)** ki nasl ki **family tree** bana deta hoon, taaki tum dekh sako ki Ahl al-Bayt ka silsila kaise aage badha.
+
+---
+
+## 📜 **Ahl al-Bayt Family Tree – Hasan & Husayn se aage**
+
+```
+Prophet Muhammad ﷺ
+│
+├── Fatimah al-Zahra (RA)  —  married to  Ali ibn Abi Talib (RA)
+│
+├── Hasan ibn Ali (RA) — "Hasani Sayyids"
+│   │
+│   ├── Hasan al-Muthanna
+│   │     └── Nasl aage Hijaz, Iraq, Yemen, Africa & Hindustan me gayi
+│   │
+│   └── Baqi aur bachche (jo bachpan me wafat hue)
+│
+└── Husayn ibn Ali (RA) — "Husayni Sayyids"
+    │
+    ├── Ali Zayn al-Abidin (RA) — Karbala ke baad zinda rahe
+    │     │
+    │     └── Muhammad al-Baqir (RA)
+    │           │
+    │           └── Ja'far al-Sadiq (RA)
+    │                 │
+    │                 └── Ismail ibn Jafar  → (Ismaili branch)
+    │                 └── Musa al-Kazim  → (Imami/Twelver Shia branch)
+    │
+    └── Aur bachche jo Karbala me shaheed hue
+```
+
+---
+
+### **Hasani Nasl (Lineage of Hasan RA)**
+
+* Zyada tar **North Africa**, **Morocco**, **Yemen**, aur **Hindustan** me phaili.
+* India-Pakistan me aane wale bohot sayyids *Hasani* hote hain.
+
+---
+
+### **Husayni Nasl (Lineage of Husayn RA)**
+
+* **Iraq (Karbala, Najaf)**, **Iran**, **Syria**, aur phir Central Asia me phaili.
+* Twelver Shia aur bohot se Sunni sayyids Husayni lineage claim karte hain.
+
+---
+
+📌 **Summary:**
+
+* Nabi ﷺ ke biological descendants sirf **Hasan & Husayn** se aage chale.
+* Is silsile ka common title **"Sayyid"** ya **"Sharif"** hai.
+* Aaj duniya ke har continent me Ahl al-Bayt ki nasl ke log hain.
+
+---
+
 > # Nabi Prophet S.A.W ﷺ ki zindagi ke do main points:
 
 ---
