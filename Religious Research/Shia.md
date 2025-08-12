@@ -34,7 +34,6 @@
 * Nabi ﷺ ne kaha **"Mere Ummah 73 firqon me bat jayegi, sirf ek Jannat me hoga — jo mere aur mere sahaba ke tareeqe par hoga."** (Sunan Abu Dawood 4597, Jami\` at-Tirmidhi 2641) — isme Shia naam ka sect ka zikr nahi, sirf Sahaba ke tareeqe par chalne ka hukm hai.
 
 <hr>
----
 
 > Bilkul — maine **qurʼān me “shiʿah / شِيعَة” lafz** jo jagah-jagah aata hai, unki **Hinglish** me ek clean chart banaya hai: har verse ka matlab, context aur tafsīr ka short note (aur reliable link/reference) — taaki tum debate me seedha proof dikha sako.
 
