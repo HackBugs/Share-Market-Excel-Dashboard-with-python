@@ -139,7 +139,7 @@ Agar Allah unse raazi hai, to koi unko bura bole to wo Allah ke faisle ke khilaf
 
 <hr>
 
-> # **50 Quran aur Hadith references** about sahaba respect
+> # **50 Quran aur Hadith references** about sahaba respect **Abu Bakr (RA), Umar (RA), Uthman (RA), aur Ali (RA)**
 
 ---
 
