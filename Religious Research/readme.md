@@ -541,3 +541,18 @@ Yeh jo **8 prakar ke vivaah** hain, unka reference pramukh Vedic–Dharmashastri
 
 ---
 
+> # Shia
+
+Tumsab uske liye jhagdaa karte ho - jinhone Allah ke rashool ka massage failane ke liye jaan de di (o massage important tha) but tum log to jiske liye jaan diya gya (Message of Allah) usko bhul kar jo jaan diya usko sbase behatar banane me lage ho.
+
+Where is the word ‘Shia’ mentioned in the Quran, or any other sect name? Allah never told us to introduce ourselves as Shia, Sunni, Wahhabi, Deobandi, or Ahl-e-Hadith. All these divisions are man-made and rubbish, because they divide Muslims. Muslims are not united now because of these sects.
+
+1. Aur tum sab mil kar Allah ki rassi (Quran) ko mazbooti se pakad lo, aur tafarraq (firqon) me mat pado. (Surah Aal-e-Imran 3:103)
+
+2. Jinhon ne apne deen ko tukde tukde kar diya aur giroh (sects) bana liye, tum (Muhammad ﷺ) ka unse koi lena dena nahi. (Surah Al-An’am 6:159)
+
+3. Apne aap ko un logon me se mat banao jinhon ne apne deen ko hisso me baant diya, har giroh apne paas wali baat par khush. (Surah Ar-Rum 30:32)
+
+Yahi kaam tum sab kar rhe hai tumlogo se inshahallah allah jarur puchhenge.
+Surah Al-Ma'idah 5:116
+Aur jab Allah farmayega: 'Ae Isa bin Maryam! Kya tumne logon se kaha tha ke Allah ke siwa mujhe aur meri maa ko mabood bana lo?' Isa kahenge: 'Subhanaka (Tu paak hai), mujhe kaise haq hota jo baat mujhe haq nahin thi, main to unse wahi kaha jo Tu ne mujhe hukm diya: Allah ki ibadat karo jo mera bhi Rab hai aur tumhara bhi Rab hai.
