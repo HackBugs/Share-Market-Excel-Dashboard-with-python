@@ -556,3 +556,53 @@ Where is the word ‘Shia’ mentioned in the Quran, or any other sect name? All
 Yahi kaam tum sab kar rhe hai tumlogo se inshahallah allah jarur puchhenge.
 Surah Al-Ma'idah 5:116
 Aur jab Allah farmayega: 'Ae Isa bin Maryam! Kya tumne logon se kaha tha ke Allah ke siwa mujhe aur meri maa ko mabood bana lo?' Isa kahenge: 'Subhanaka (Tu paak hai), mujhe kaise haq hota jo baat mujhe haq nahin thi, main to unse wahi kaha jo Tu ne mujhe hukm diya: Allah ki ibadat karo jo mera bhi Rab hai aur tumhara bhi Rab hai.
+
+---
+
+Main tumhari baat ko sahi tarah se likh kar clear aur respectfully present kar deta hoon, taki meaning bilkul saaf ho aur references bhi de doon.
+
+---
+
+**📜 Pehli baat: Eesa Ibn Maryam (A.S.) se Qayamat ke din sawal ka zikr**
+Qur'an me Surah Al-Ma'idah (5:116) me aata hai:
+
+> **"Aur (Qayamat ke din) Allah farmayega: 'Aye Eesa Ibn Maryam! Kya tumne logon se kaha tha ke Allah ke siwa mujhe aur meri maa ko mabood bana lo?'
+> Eesa (A.S.) kahenge: 'Subhanaka! Main aisi baat keh hi nahi sakta jis ka mujhe haq nahi. Agar main ne aisi koi baat kahi hoti to aap zaroor jaante. Aap jaante hain jo kuch mere dil me hai, aur main nahi jaanta jo aap ke ilm me hai. Aap hi Ghaib ke sab se zyada Jaane wale hain.'"**
+> *(Surah Al-Ma’idah 5:116)*
+
+---
+
+**📜 Dusri baat: Nabi Muhammad ﷺ ka hadith — "Mere baad koi nabi hota to Umar hote"**
+Hadith:
+
+> Rasulullah ﷺ ne farmaya:
+> **"Agar mere baad koi Nabi hota, to wo Umar ibn Al-Khattab hote."**
+> *(Tirmidhi, Hadith No. 3686 — Hasan)*
+
+Iska matlab yeh nahi ke Umar (R.A.) nabi the ya ban gaye — balke yeh ek tareef thi unke imaan, taqwa aur adalat ki. Islam me Muhammad ﷺ ke baad **nabuwwat ka silsila khatam ho gaya hai** (Khatam an-Nabiyyin).
+
+---
+
+**📜 Teesri baat: Respect ka masla**
+Sahaba-e-Kiraam (R.A.) ke beech kuch ikhtilafat hue, lekin humare liye sab ke liye izzat aur adab farz hai. Allah aur uske Rasool ﷺ ke ilawa kisi ko imaan ka "certificate" dena ya kaafir kehna hamara kaam nahi.
+
+Hadith me aata hai:
+
+> **"Mere sahaba ke bare me zaban sambhal kar, kyunki agar tum me se koi Uhud pahad jitna sona kharch kare, to bhi unke ek mudd (thoda sa) kharch ke barabar nahi ho sakta."**
+> *(Bukhari & Muslim)*
+
+> — **Sahih al-Bukhari 3673** ([Sunnah][1])
+> — **Sahih Muslim 2540** ([Sunnah][2])
+
+**Iska matlab kya hai?**
+Ye hadith is baat ko emphasize karti hai ke Sahaba (R.A.) ki qadar aur unki sacrifice itni badi thi ke agar koi gold (jo ki bohot zyada keemti cheez hai) Mount Uhud (jo ek bohot badi mountain hai) jitni usme invest kare, phir bhi uski bhalaai un Sahaba ki eik mudd (lot) kharch ki barabar bhi na ho paaye.
+
+Aur agar hum unko "kaafir" kehna ya unki izzat ko kam karna shay'an bhi sochte hain, to ye hadith hame rokta hai — kyunki humare liye muqaddas hain aur unke saath humse zyada mohabat aur izzat ki jaakarht hai.
+
+---
+
+Agar aap chahte ho to main is concept ke liye ek concise aur powerful statement bhi tayaar kar sakta hoon jis me isi hadith ko embed karke likha ho— taaki presentation aur impactful ho. Chahe main wo bhi bana doon?
+
+[1]: "Sahih al-Bukhari 3673 - كتاب فضائل أصحاب النبى صلى الله عليه وسلم"
+[2]: "Sahih Muslim 2540 - كتاب فضائل الصحابة رضى الله تعالى عنهم"
+
