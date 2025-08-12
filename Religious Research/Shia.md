@@ -1,3 +1,44 @@
+> Main tumhe clear aur reference ke saath bata deta hoon ki Hazrat Ali (R.A.) ne apne bachchon ke naam kis kis Sahabi ke naam par rakhe, unki family kis se shadi hui, aur kaunse Sahaba ko woh follow karte the.
+
+---
+
+### **Hazrat Ali (R.A.) ke bachchon ke naam jo Sahaba ke naam par the**
+
+(References: *Tareekh al-Tabari*, *Siyar A‘lam al-Nubala’*, *Al-Isti‘ab* Ibn Abd al-Barr)
+
+1. **Abu Bakr ibn Ali** — Naam Hazrat Abu Bakr Siddiq (R.A.) ke naam par.
+2. **Umar ibn Ali** — Naam Hazrat Umar ibn al-Khattab (R.A.) ke naam par.
+3. **Uthman ibn Ali** — Naam Hazrat Uthman ibn Affan (R.A.) ke naam par.
+4. **Abbas ibn Ali** — Naam Hazrat Abbas ibn Abdul Muttalib (R.A.) ke naam par.
+
+Ye is baat ka clear evidence hai ki Hazrat Ali (R.A.) unko izzat dete the aur pyar se unke naam apne bachchon ko diye.
+
+---
+
+### **Hazrat Ali (R.A.) ke bachchon ki shaadiyaan**
+
+* Hazrat Hasan ibn Ali (R.A.) ki shaadi **Jafar ibn Abi Talib** ke ghar se hui thi.
+* Hazrat Hussain ibn Ali (R.A.) ki shaadi **Yazdgerd III** (Persian king) ki beti Shahrbanu se hui.
+* Hazrat Zaynab bint Ali ki shaadi **Abdullah ibn Ja'far** (R.A.) se hui jo Rasulullah ﷺ ke cousin the.
+
+---
+
+### **Hazrat Ali (R.A.) ka Sahaba ko follow karna**
+
+Hazrat Ali (R.A.) ne kaha:
+
+> **"Logon mein sabse behtareen mere bhai Abu Bakr aur Umar hain."**
+> *(Musnad Ahmad, vol. 1, p. 84; Ibn Majah, Hadith 102)*
+
+Aur ek jagah kaha:
+
+> **"Main wo banda hoon jo Abu Bakr aur Umar ke raaste par chala."**
+> *(Al-Sunnah Ibn Abi Asim, Hadith 1213)*
+
+---
+
+<hr>
+
 > Dekho, yeh baat ek common misconception hai ki “Sahaba pehle kafir the” isliye unki izzat kam ho jaati hai — lekin Qur’an aur Hadith dono yeh clear karte hain ki **jo log Islam qabool karke Imaan par qaim rahe, Allah unse raazi ho gaya**.
 
 Main tumhe Hinglish me samjhata hu references ke sath:
