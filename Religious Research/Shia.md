@@ -1,3 +1,52 @@
+> Dekho, yeh baat ek common misconception hai ki “Sahaba pehle kafir the” isliye unki izzat kam ho jaati hai — lekin Qur’an aur Hadith dono yeh clear karte hain ki **jo log Islam qabool karke Imaan par qaim rahe, Allah unse raazi ho gaya**.
+
+Main tumhe Hinglish me samjhata hu references ke sath:
+
+---
+
+### **1. Qur’an ka Clear Bayan**
+
+📜 **Surah Al-Fath (48:18)**
+
+> "Allah momineen se raazi ho gaya jab wo tum se bay’at kar rahe the darakht ke neeche."
+
+Yahan “momineen” me wahi Sahaba shamil hain jo pehle kafir the, phir Imaan laaye aur Allah ne unse raazi hone ka waada kar diya.
+
+---
+
+### **2. Pehle kafir hone ka matlab yeh nahi ki izzat kam ho gayi**
+
+📜 **Surah Al-Anfal (8:74)**
+
+> "Jo log Imaan laaye, hijrat ki, Allah ke raaste me jihad kiya aur jo log unki madad ki — wahi sachche momin hain. Unke liye maghfirat aur izzat ka rizq hai."
+
+Yani chahe pehle kafir the, Islam qabool karke unhone aisi deeds ki jin se Allah ne unko “sachche momin” kaha.
+
+---
+
+### **3. Nabi ﷺ ka bayan Sahaba ki fazilat par**
+
+📜 **Bukhari & Muslim**
+
+> "Mere Sahaba ko bura mat kaho, agar tum me se koi Uhud pahad jitna sona Allah ke raaste me kharch kare, to bhi unke ek mudd (thoda sa) ke barabar nahi ho sakta."
+
+Yani unke past ka koi relevance nahi — unka maqam unki imaan ke baad ki sacrifice se hai.
+
+---
+
+### **4. Hazrat Ali (RA) ka bayan Sahaba ke liye**
+
+📜 **Nahj al-Balagha**, Sermon 97 (jo Shia sources me bhi hai)
+Hazrat Ali (RA) ne Sahaba ki tareef ki:
+
+> "Mere bhai the, jo Qur’an padhte the, raat me ibadat karte the, din me jihad karte the, Allah ki raza ke liye zinda rehte the."
+
+Yani Ali (RA) ne bhi Sahaba ko izzat di, unka purana kafir hona koi nuqsan nahi.
+
+---
+
+<hr>
+
 > # Shia
 
 Tumsab uske liye jhagdaa karte ho - jinhone Allah ke rashool ka massage failane ke liye jaan de di (o massage important tha) but tum log to jiske liye jaan diya gya (Message of Allah) usko bhul kar jo jaan diya usko sbase behatar banane me lage ho.
