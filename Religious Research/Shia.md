@@ -746,3 +746,39 @@ Yeh 4 books ye hain:
 * Iske alawa Shia ke paas tafseer books (Tafsir al-Qummi, Tafsir al-Ayyashi) aur history books bhi important hain.
 
 ---
+
+> ## **"Shia Al-Kafi vs Sunni Sahih Hadith" comparison table** 
+
+* 📚 **Shia source**: *Al-Kafi* (Kitab al-Kafi by Sheikh al-Kulayni)
+* 📚 **Sunni sources**: *Sahih al-Bukhari, Sahih Muslim, Sunan Abu Dawood, Sunan al-Tirmidhi* etc.
+* 📝 **Category**: Common (dono mein hai) ya Exclusive (sirf ek side ka)
+* 📖 **Reference**: Exact Kitab & Hadith number
+* ⚡ **Topic**: Summary of content (debate-friendly points)
+
+---
+
+### 📊 **Shia Al-Kafi vs Sunni Sahih Hadith — Debate Comparison Table**
+
+| #  | Topic                                       | Shia Reference (Al-Kafi)                  | Sunni Reference (Sahih/Sunan) | Category                             | Notes for Debate                                                                                                                |
+| -- | ------------------------------------------- | ----------------------------------------- | ----------------------------- | ------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------- |
+| 1  | Imam Ali (RA) best after Prophet ﷺ          | Al-Kafi, Vol. 1, Hadith 62                | Sahih Muslim 2404             | Common                               | Dono taraf agree ke Prophet ﷺ ke baad Ali (RA) great rank wale hain, lekin leadership ka masla alag hai.                        |
+| 2  | Abu Bakr (RA) & Umar (RA) ka fazilat        | — (Negative mention in some Shia sources) | Sahih al-Bukhari 3671         | Exclusive (Sunni)                    | Sunni clear fazilat dete hain Abu Bakr & Umar ko, Shia major sources me criticize hota hai.                                     |
+| 3  | Twelve leaders after Prophet ﷺ              | Al-Kafi, Vol. 1, Hadith 533               | Sahih Muslim 1821             | Common (wording differs)             | Sunni hadith me “12 Khalifa” ka zikr hai, Shia isko apne 12 Imams se match karte hain.                                          |
+| 4  | Quran unchanged till Qiyamah                | Al-Kafi, Vol. 2, Hadith 634               | Sahih al-Bukhari 4986         | Common (some Shia scholars disagree) | Majority Shia scholars kehte hain Quran unchanged, kuch purane riwayat me tahreef ka zikr hai.                                  |
+| 5  | Ghadir Khumm                                | Al-Kafi, Vol. 1, Hadith 381               | Sunan al-Tirmidhi 3713        | Common                               | Wording same “Man kuntu mawlahu, fa Aliyun mawlahu” — Sunni isko love/friendship, Shia isko leadership proof ke liye lete hain. |
+| 6  | Following Ahl al-Bayt                       | Al-Kafi, Vol. 1, Hadith 294               | Sahih Muslim 2408             | Common                               | Dono agree ke Ahl al-Bayt ka respect & follow wajib hai.                                                                        |
+| 7  | Mahdi (AS) ka aana                          | Al-Kafi, Vol. 1, Hadith 385               | Sunan Abu Dawood 4282         | Common                               | Dono agree ke Mahdi aayenge, lekin Shia me specific 12th Imam Muhammad ibn Hasan al-Askari.                                     |
+| 8  | Imam Ali (RA) ne Abu Bakr (RA) se bay’ah ki | —                                         | Sahih al-Bukhari 4240         | Exclusive (Sunni)                    | Sunni sources me confirm hai bay’ah, Shia me usually deny ya delay mention hota hai.                                            |
+| 9  | Mut’ah marriage                             | Al-Kafi, Vol. 5, Hadith 452               | Sahih Muslim 1406 (abrogated) | Exclusive (Shia)                     | Sunni kehte hain Mut’ah haram baad me, Shia kehte hain halal.                                                                   |
+| 10 | Imam masoom (sinless) hote hain             | Al-Kafi, Vol. 1, Hadith 199               | —                             | Exclusive (Shia)                     | Sunni concept me masoom sirf Nabi hote hain.                                                                                    |
+
+---
+
+⚡ **Debate Tip**:
+
+* Common points pe unity show karke phir differences explain karo.
+* Jahan Shia riwayat Sunni riwayat ke opposite hai, wahan source ka naam, kitab, hadith number clear bolo.
+* Always Arabic + translation rakhna taaki front person source deny na kare.
+
+---
+
