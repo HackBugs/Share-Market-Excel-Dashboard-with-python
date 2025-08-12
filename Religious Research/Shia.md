@@ -1152,4 +1152,26 @@ Ali (RA) ne baad me is decision ko accept kiya, isliye Abu Bakr (RA) first khali
 
 ---
 
+> # Nabi Prophet S.A.W ﷺ ki zindagi ke do main points:
 
+---
+
+**📅 Paidaish (Birth)**
+
+* **Hijri Date:** 12 Rabi al-Awwal, ‘Aam al-Fil (Hathi ka Saal)
+* **Gregorian Approx:** 22 April 570 CE (exact date historians me thoda farq lekin widely accepted 570 CE)
+* Location: Makkah
+
+---
+
+**📅 Wafaat (Passing away)**
+
+* **Hijri Date:** 12 Rabi al-Awwal, 11 Hijri
+* **Gregorian Date:** 8 June 632 CE
+* Location: Madinah
+
+---
+
+⏳ **Zindagi ka duration:** \~63 saal
+
+---
