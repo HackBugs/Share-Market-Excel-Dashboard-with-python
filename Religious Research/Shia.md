@@ -782,3 +782,66 @@ Yeh 4 books ye hain:
 
 ---
 
+> **50-point Shia–Sunni debate table** diya hai. Format: **Topic/Claim | Sunni Reference | Shia Reference | Debate Note 
+
+### Shia–Sunni Debate Comparison (50 Points)
+
+1. **Sahaba ki ijjat farz** | Bukhari “Fada’il al-Sahaba”; Muslim “Fada’il” | — | Sunni: Sahaba ko bura kehna mana; ijjat farz.
+2. **Muhajireen–Ansar par Allah raazi** | Qur’an 9:100; 48:18,29 | — | Qur’an-based: early companions praised.
+3. **Tafarruq (firqe) mana** | Qur’an 6:159; 3:103; 30:32 | — | Unity ko emphasize karo—sectarian labels pehchan nahi.
+4. **Ahl al-Bayt se muhabbat** | Muslim “Fada’il Ahl al-Bayt” | Al-Kafi, Kitab al-Iman wa’l-Kufr | Dono taraf agree: Ahl al-Bayt ka haqq.
+5. **Hadith al-Thaqalayn** | Muslim (virtues), Tirmidhi | Al-Kafi, Kitab al-Hujjah | “Qur’an & Ahl al-Bayt”—interpretation differs.
+6. **Ghadir Khumm** | Tirmidhi (Man kuntu mawla…); Musnad Ahmad | Al-Kafi, Kitab al-Hujjah | Sunni: “mawla” = love/support; Shia: leadership proof.
+7. **12 leaders/Khulafa** | Muslim “Kitab al-Imarah” (twelve amirs) | Al-Kafi, Kitab al-Hujjah | Word same, application different (Khulafa vs 12 Imams).
+8. **Khilafah Abu Bakr** | Bukhari “Manaqib Abu Bakr”, “Ridda” | — | Sunni continuity via Saqifah.
+9. **Ali (RA) ne bay‘ah di** | Bukhari “Khaybar”, “Maghazi (Fadak/Bay’ah)” | — (aksar deny/delay) | Sunni: eventual bay‘ah established.
+10. **Umar ki fazilat** | Bukhari “Manaqib Umar”; Muslim “Fada’il” | — | “If nabi after me, ‘Umar…” (praise).
+11. **Uthman ki fazilat** | Bukhari “Manaqib ‘Uthman”; Muslim | — | “Angels have hayaa from Uthman.”
+12. **Ali ki fazilat (Khaybar ka jhanda)** | Bukhari “Maghazi (Khaybar)” | Al-Kafi, Kitab al-Hujjah | Dono me Ali ke fadayil strong.
+13. **Hadith al-Manzilah (Harun-Musa)** | Bukhari (expeditions), Muslim | Al-Kafi | Sunni: temporary deputation; Shia: succession cue.
+14. **Mubahala (Aal-Imran family)** | Qur’an 3:61 + Tafsir | Shia tafasir: Al-Mizan | Ahl al-Kisa ka dalil—scope pe debate.
+15. **Ahl al-Kisa (cloak)** | Muslim (Hadith Kisa variants) | Bihar al-Anwar; Al-Kafi | Virtues agreed; imamate inference par ikhtilaf.
+16. **Qur’an tahreef (alteration?)** | Sunni ijma‘: no tahreef | Al-Kafi me kuch riwayat; majority Shia scholars: no tahreef | Modern Shia stance: Qur’an preserved.
+17. **Mut‘ah (temporary marriage)** | Muslim “Nikah” (abrogation reports); Bukhari | Al-Kafi “Nikah al-Mut‘ah”; Tahdhib/Istibsar | Key jurisprudential difference.
+18. **Taqiyyah** | — (limited concept: darurah) | Al-Kafi “Bab al-Taqiyyah” | Shia fiqh me central; Sunni: only extreme compulsion.
+19. **Imams ki ‘Ismah (sinlessness)** | — | Al-Kafi, Kitab al-Hujjah | Sunni: ismah only anbiya; Shia: Imams masoom.
+20. **Ilm al-Ghayb for Imams** | — | Al-Kafi, Bihar al-Anwar | Sunni: ghayb only Allah; Shia: bestowed knowledge (ikhtilaf).
+21. **Leadership by shura** | Rashidun model; Bukhari “Ahkam” | — | Sunni: shura/sam‘-o-ta‘at; Shia: nas (designation).
+22. **Nas (explicit designation of Ali)** | — | Al-Kafi (nass riwayat) | Core Shia claim; Sunni: no explicit nass for succession.
+23. **Fadak issue** | Bukhari “Fara’id, Maghazi” | Shia maqalat/riwayat | Legal vs emotional framing—sources differ.
+24. **Cursing (tabarra) of Sahaba?** | Bukhari/Muslim: sahaba ko bura kehna haram | — / some historical Shia texts | Sunni: strict prohibition of sabb.
+25. **Umm Kulthum (Umar se nikah)** | Sunni histories: Tarikh al-Tabari, Ibn Kathir | Some Shia works discuss/deny | Debate point: occurrence/dispute.
+26. **Ali ke bachchon ke naam (Abu Bakr, ‘Umar, ‘Uthman)** | Sunni tarjamat/ansab books | Shia works me bhi ansab listed | Naming = respect argument.
+27. **Ali ka qawl Abu Bakr & ‘Umar par** | Sunni: Musnad/athar (“afdaliyyah” reports) | Shia: isnad pe bahs | Use carefully; sanad discussions hoti hain.
+28. **Hadith: “Best generation = my companions”** | Bukhari/Muslim | — | Sunni core: sahaba superiority (overall).
+29. **Hadith: “Don’t revile my companions”** | Bukhari/Muslim (Fada’il) | — | Strong Sunni dalil against sabb.
+30. **Hadith: Ten promised Jannah (Ashara Mubashshara)** | Tirmidhi, Abu Dawood, Ahmad | — | Includes Abu Bakr, Umar, Uthman, Ali… clear Sunni point.
+31. **Imamate = Usul-e-Deen (Shia)** | — | Shia theology texts (al-Saduq, al-Mufid) | Sunni: imamate = fiqhi/siyasi maslah.
+32. **Mahdi belief** | Abu Dawood, Tirmidhi (Sunni) | Al-Kafi, Al-Ghaybah (Tusi) | Dono accept Mahdi; identity/details differ.
+33. **Occultation (Ghaybah-e-Kubra)** | — | Al-Ghaybah (Tusi), Al-Irshad (Mufid) | Sunni: concept rejected; Shia cornerstone.
+34. **Salat practice (Qunoot, hands)** | Sunni fiqh madhahib | Shia fiqh (Ja‘fari) | Jurisprudential differences (not creed).
+35. **Combining prayers (jam‘)** | Sunni: travel/rain excuses | Shia: general permissibility | Evidence interpretation differs.
+36. **Azan differences (Hayya ‘ala khayr al-‘amal / “Aliyun waliullah”)** | Sunni: not part | Shia practice (juristic) | Textual vs juristic addition debate.
+37. **Mutawaatir ahadith weight** | Sunni usul al-hadith | Shia usul al-hadith | Methodology overlaps + differences.
+38. **Hadith grading standards** | Bukhari/Muslim criteria | Al-Kulayni/Tusi approach | Different hadith ecosystems.
+39. **Authority: Sahaba vs Ahl al-Bayt** | Sunni: both, esp. Khulafa & Mothers of Believers | Shia: Ahl al-Bayt central | Framing difference—cite both respectfully.
+40. **Mothers of Believers (Ummahat al-Mu’minin)** | Qur’an 33:6; Bukhari “Fada’il Aisha” | Shia sources often critical of Aisha | Sensitive point; keep adab.
+41. **Hadith al-Qirtas (pen & paper)** | Bukhari “Ilm” | Shia polemics cite as proof | Sunni: context & outcomes differ.
+42. **Khilafat ‘Uthman (shura selection)** | Sunni histories + Bukhari | Shia: critique of process | Historical method vs nass claim.
+43. **Khilafat ‘Ali (ijma‘ after ‘Uthman)** | Sunni: fourth caliph | Shia: first Imam always | Converge on virtue; differ on precedence.
+44. **Bay‘at-e-Rizwan** | Qur’an 48:18 (clear praise) | — | Strong Qur’anic point for Sahaba status.
+45. **Hadith: “Ali is from me & I from Ali”** | Tirmidhi (Fada’il) | Al-Kafi | Virtue agreed; succession inference differs.
+46. **Hadith: Banner at Khaybar** | Bukhari/Muslim | Al-Kafi | Virtue agreed; leadership inference differs.
+47. **Hadith: “Khalil” and Masjid gate for Abu Bakr** | Bukhari “Manaqib Abu Bakr” | — | Close companionship dalil.
+48. **Shia 4 Kutub (Al-Kafi, etc.) ka status** | — | Al-Kafi, Man La Yahduruhu…, Tahdhib, Istibsar | Shia: not all sahih; filtering by scholars.
+49. **Sunni Sihah Sittah ka status** | Bukhari, Muslim (sahihayn); 4 Sunan | — | Sunni canon & ijma‘ on authenticity hierarchy.
+50. **Unity principle (akhlaq in debate)** | Qur’an 49:10–12; 3:103 | Nahj al-Balagha (hikmah on akhlaq) | End with adab: ikhtilaf ke bawajood akhlaq.
+
+---
+
+### Kaise use karein (quick tips)
+
+* **Qur’an first, phir Sahih hadith**: 9:100, 48:18, 48:29, 59:10 + Bukhari/Muslim “Fada’il al-Sahaba”.
+* **Ghadir/Thaqalayn** par tone soft rakho: wording common hai, **interpretation** different.
+* **Mut‘ah/Taqiyyah/Ismah** me direct Shia kutub cite karo: *Al-Kafi (Kitab al-Hujjah / Nikah / Taqiyyah), Tahdhib, Istibsar, Bihar al-Anwar*.
+* **History points** (Fadak, Saqifah, Umm Kulthum nikah) me **tarikh** sources lo (Tabari, Ibn Kathir, Baladhuri) — calmly present, no insults.
