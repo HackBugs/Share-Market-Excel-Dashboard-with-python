@@ -1374,3 +1374,27 @@ Prophet Muhammad ﷺ
 
 ---
 
+> # Chalo main tumhe **Prophet ﷺ ke bachchon ka exact timeline** bana ke deta hoon, age aur date ke sath, taake clear ho jaaye kis umar me kaun paida hua.
+
+---
+
+## 📜 Nabi ﷺ ke bachchon ka birth timeline
+
+| Bachche ka Naam             | Maa ka Naam            | Nabi ﷺ ki Umar (approx) | Gregorian Year (approx) | Hijri Year (approx) | Note                                                       |
+| --------------------------- | ---------------------- | ----------------------- | ----------------------- | ------------------- | ---------------------------------------------------------- |
+| **Qasim**                   | Khadijah (RA)          | \~30 saal               | 600 CE                  | 10 BH               | Pehla beta, Nabi ﷺ ki kunyah "Abu al-Qasim" isi se.        |
+| **Zaynab**                  | Khadijah (RA)          | \~31-32 saal            | 601–602 CE              | 9–8 BH              | Pehli beti. Baad me Abu al-As ibn al-Rabi se nikah hua.    |
+| **Ruqayyah**                | Khadijah (RA)          | \~33 saal               | 604 CE                  | 6 BH                | Uthman ibn Affan (RA) se nikah hua.                        |
+| **Umm Kulthum**             | Khadijah (RA)          | \~36 saal               | 607 CE                  | 3 BH                | Ruqayyah ki wafat ke baad Uthman (RA) se nikah hua.        |
+| **Fatimah**                 | Khadijah (RA)          | \~35-36 saal            | 605–606 CE              | 5–4 BH              | Ali ibn Abi Talib (RA) se nikah hua. Hasan, Husayn ki maa. |
+| **Abdullah (Tayyib/Tahir)** | Khadijah (RA)          | \~42-43 saal            | 612–613 CE              | 2–3 AH              | Wahi aane ke baad paida hue, chhote umr me wafat.          |
+| **Ibrahim**                 | Maria al-Qibtiyya (RA) | \~60 saal               | 630 CE                  | 8 AH                | Madinah me paida hue, chhote umr me wafat.                 |
+
+---
+
+✅ **Note**:
+
+* Hijri year me "BH" ka matlab hai *Before Hijrah* (Makkah se Madinah hijrat se pehle).
+* Nabi ﷺ ki pehli wahi **610 CE me aayi** jab wo 40 saal ke the, isliye Qasim se le kar Fatimah tak ke sab bachche wahi se pehle paida hue (except Abdullah & Ibrahim).
+
+---
