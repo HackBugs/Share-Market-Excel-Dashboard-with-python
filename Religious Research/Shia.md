@@ -1152,6 +1152,41 @@ Ali (RA) ne baad me is decision ko accept kiya, isliye Abu Bakr (RA) first khali
 
 ---
 
+> # Exact timeline ke saath clear karte hain, taaki confusion na rahe.
+
+---
+
+### **1. Nabi ﷺ ki Wafaat**
+
+* **Date:** 8 June 632 CE (12 Rabi al-Awwal, 11 Hijri)
+* Din: Monday
+
+---
+
+### **2. Abu Bakr (RA) ka Khalifa banna**
+
+* Nabi ﷺ ki wafat ke **agla din** ya **uske agle din** (Monday ko wafat hui, Tuesday ko Saqifah Bani Sa’idah me mashwara hua, usi din Abu Bakr (RA) ko Khalifa banaya gaya)
+* Yaani **1–2 din baad** Abu Bakr (RA) Khalifa bane.
+
+---
+
+### **3. “Man kuntu mawlahu, fa Aliyun mawlahu” ka waqia**
+
+* Ye **Ghadir Khumm** ka waqia hai.
+* **Year:** 10 Hijri
+* **Gregorian Approx:** March 632 CE (Hajjat al-Wida ke baad, 18 Dhu al-Hijjah 10 Hijri)
+* Yaani **Nabi ﷺ ki wafat se \~3 mahine pehle** ye jumla kaha gaya tha.
+
+---
+
+### **Matlab timeline**
+
+1. **March 632 CE** – Nabi ﷺ ne Ghadir Khumm me “Man kuntu mawlahu, fa Aliyun mawlahu” kaha.
+2. **8 June 632 CE** – Nabi ﷺ ki wafat.
+3. **\~9 June 632 CE** – Abu Bakr (RA) Khalifa bane.
+
+---
+
 > # Nabi Prophet S.A.W ﷺ ki zindagi ke do main points:
 
 ---
