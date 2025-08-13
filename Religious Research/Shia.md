@@ -1,3 +1,31 @@
+```
+Don't divide in Firka
+-----------------------
+Surah al-i-Imraan (3:103)
+Surah al-An'aam (6:159)
+Surah al-An-Nisaa (4:59)
+Al-An'am (6:159):
+Rum (30:32):
+
+1. Aur tum sab mil kar Allah ki rassi (Quran) ko mazbooti se pakad lo, aur tafarraq (firqon) me mat pado. (Surah Aal-e-Imran 3:103)
+
+2. Jinhon ne apne deen ko tukde tukde kar diya aur giroh (sects) bana liye, tum (Muhammad ﷺ) ka unse koi lena dena nahi. (Surah Al-An’am 6:159)
+
+3. Apne aap ko un logon me se mat banao jinhon ne apne deen ko hisso me baant diya, har giroh apne paas wali baat par khush. (Surah Ar-Rum 30:32)
+
+
+Prophet don't knowledge of gaibbb
+Al-A'raaf 7:188
+Al-Anaam 6:50
+Al-Jinn Ayat (72)- 20 to 22
+
+Bukhari - 2753,6285,3767 muslim - 504,6313,6308 - Nabi Pak ﷺ na farmaya Agar Allah Ke Hazur Pakra To Mein Bhe Kam nh aou gha
+Sahih Bukhari Hadees No 1243
+
+सैयद बिन मुसब और अबू सलमा बिन अब्दुल रहमान ने खबर दी कि अबू हुरैरा रदी अल्लाह अनो ने कहा जब सूर शोरा की आयत अल्लाह ताला ने उतारी और अपने नजदीक नाते वालों को अल्लाह के अज़ाब से डरा तो रसूल अल्लाह सल्लल्लाहहु अलैहि वसल्लम ने फरमाया कुरैश के लोगों या ऐसा ही कोई और कलमा तुम लोग अपनीपनी जानों को नेक आमाल के बदले मोल ले लो बचा लो मैं अल्लाह के सामने तुम्हारे कुछ काम नहीं आने का यानी उसकी मर्जी के खिलाफ मैं कुछ नहीं कर सकने का अब्दुल मुनाफ के बेटों मैं अल्लाह के सामने तुम्हारे कुछ काम नहीं आने का अब्बास अब्दुल मुत्तलिब के बेटे मैं अल्लाह के सामने कुछ काम नहीं आने का सफिया मेरी फूफी मैं अल्लाह के सामने तुम्हारे कुछ काम नहीं आने का फातिमा रदी्लाहु अन्हा बेटी तू चाहे मेरा माल मांग ले लेकिन अल्लाह के सामने तेरे कुछ काम नहीं आएगा अबुल यमान के साथ हदीस को असबग ने भी अब्दुल्लाह बिन वब से उन्होंने यूनुस से उन्होंने इबने शहाब से रिवायत किया सही बुखारी हदीस नंबर 2753 
+```
+
+
 
 > # "Shia" lafz Quran me aata hai, lekin important baat yeh hai ki Quran me jab "Shia" ka zikr hota hai, toh wo **sirf ek group/followers** ke meaning me hota hai — jaise "party" ya "group" — na ki aaj ke zamane wale sect (Shia Islam) ka reference.
 
