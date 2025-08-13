@@ -1,4 +1,76 @@
 ```
+Qur’an me Nabi (Prophet) ka kaam kaafi clear taur par define kiya gaya hai — Allah ne har nabi ko ek hi basic mission ke liye bheja: **Allah ka paigham pahunchana, shirk se bachana, hidayat dena, aur insaf qayam karna.**
+
+---
+
+### **📌 Nabi ka kaam Qur’an ke mutabiq**
+
+**1. Allah ka Paigham Pahunchana (Message Convey Karna)**
+
+> *"Rasool ka kaam sirf paigham ko saaf taur par pahunchana hai."*
+> 📖 **Surah An-Nahl 16:35**
+> 📖 **Surah Al-Ma’idah 5:92**
+
+---
+
+**2. Sirf Allah ki Ibadat ka Hukm Dena & Shirk se Rokna**
+
+> *"Aur humne tum se pehle bhi har ummat me ek rasool bheja, ke Allah ki ibadat karo aur taghut (jhoothe mabood) se bach jao."*
+> 📖 **Surah An-Nahl 16:36**
+
+---
+
+**3. Kitab & Hikmat Sikhaana (Talim dena)**
+
+> *"Woh tumhe Kitab aur Hikmat sikhata hai, aur jo tum nahi jaante the woh tumhe batata hai."*
+> 📖 **Surah Al-Baqarah 2:151**
+> 📖 **Surah Al-Jumu’ah 62:2**
+
+---
+
+**4. Logo ko Paak Karna (Tazkiyah)**
+
+> *"Woh tumhe paak karta hai aur tumhe Kitab aur Hikmat sikhata hai."*
+> 📖 **Surah Al-Baqarah 2:151**
+
+---
+
+**5. Haq ka Faisla Karna (Judgement with Justice)**
+
+> *"Aur humne tum par Kitab nazil ki hai taake tum logo ke darmiyan Allah ne jo dikhaya uske mutabiq faisla karo."*
+> 📖 **Surah An-Nisa 4:105**
+
+---
+
+**6. Basharat (Good News) & Indhar (Warning)**
+
+> *"Humne tumhe sirf khushkhabri dene wala aur daraane wala bana kar bheja hai."*
+> 📖 **Surah Al-Fath 48:8**
+> 📖 **Surah Saba 34:28**
+
+---
+
+**7. Logo ke liye Uswa-e-Hasana (Best Example) Banna**
+
+> *"Tumhare liye Allah ke Rasool me behtareen namoona hai."*
+> 📖 **Surah Al-Ahzab 33:21**
+
+---
+
+**8. Deen ko Qayem Karna & Hidayat Pohochana**
+
+> *"Woh deen ko sab par gaalib karne ke liye bheja gaya."*
+> 📖 **Surah As-Saff 61:9**
+
+---
+
+-- Sahih Bukhari Hadees No 3445
+
+कि सुफियान ने बयान किया और कहा कि - जौहरी से सुना वह बयान करते थे कि मुझे वह उल्ला बिन अब्दुल्लाह ने खबर दी और वह हज़रत इब्ने अब्बास रदियल्लाहो अन्हो ने 
+और होने हजरत उमर radi-allahu-anhu को मेंबर पर यह कहते सुना था कि मैंने नबी करीम सल्लल्लाहू अलैहे वसल्लम से सुना आपने फ़रमाया मुझे मेरे मृत अबे से ज्यादा 
+ना बढ़ाओ जैसे ही साइड में मरियम अलैहेसलाम को नशारा ने उनके मृत अबे से ज्यादा बढ़ा दिया है मैं तो सिर्फ अल्लाह का बंदा हूं इसलिए यही कहा करो मेरे माता लिख कि 
+मैं अल्लाह का बंदा और उसका रसूल हूं सही बुखारी हदीस नंबर 3445 हैं
+
 Don't divide in Firka
 -----------------------
 Surah al-i-Imraan (3:103)
