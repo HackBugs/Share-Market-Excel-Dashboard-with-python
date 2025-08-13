@@ -1606,3 +1606,31 @@ Prophet Muhammad ﷺ
 संस्थापक:
 मुहम्मद कासिम नानौतवी, रशीद अहमद गंगोही, और अन्य. 
 ```
+
+---
+
+> Shia fika ali r.a ke rahte huaa start ho gya tha ?
+> # Haan — historical records aur early Islamic history ke mutabiq, **Shia fikr (Shiʿat ʿAlī — “Ali ke supporters”) ka beej** Prophet ﷺ ke zamane me hi lag gaya tha, lekin us waqt yeh “sect” ke form me nahi tha.
+
+📌 **Timeline samajh lo:**
+
+1. **Prophet ﷺ ke waqt**
+
+   * Kuch sahaba Ali ibn Abi Talib (RA) ko Prophet ke baad leadership ka sabse haqdar samajhte the — isko “Shiʿat ʿAlī” (Ali ki party) kaha jata tha.
+   * Lekin us time yeh sirf ek “group of supporters” tha, religious sect nahi.
+
+2. **Prophet ke wafat ke baad (632 CE)**
+
+   * Saqifah me Abu Bakr (RA) ko khalifa banaya gaya, aur Ali (RA) ne turant bay'ah nahi ki (sources ke hisab se kuch mahine baad ki).
+   * Yahaan se “Shia” aur “Sunni” ka political difference visible hua.
+
+3. **Ali (RA) ke khalifa banne ke baad (656 CE)**
+
+   * Jab Ali (RA) khud khalifa bane, unke supporters ko officially **Shiʿat ʿAlī** kaha jaane laga.
+   * Yeh political support se religious identity ki taraf badhne laga.
+
+📖 **Reference:**
+
+* Al-Tabari, *Tarikh al-Rusul wa al-Muluk* (Vol. 3) — earliest mention of “Shiʿat ʿAlī” as a group.
+* Encyclopaedia of Islam, Brill, entry “Shīʿa” — confirms that Shia identity ka base Ali ke waqt hi tha, sect ka development later hua.
+
