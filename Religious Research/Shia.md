@@ -1634,3 +1634,7 @@ Prophet Muhammad ﷺ
 * Al-Tabari, *Tarikh al-Rusul wa al-Muluk* (Vol. 3) — earliest mention of “Shiʿat ʿAlī” as a group.
 * Encyclopaedia of Islam, Brill, entry “Shīʿa” — confirms that Shia identity ka base Ali ke waqt hi tha, sect ka development later hua.
 
+
+* Tarikh al-Tabari, Vol. 3 — “Shiʿat ʿAlī” term used for political supporters.
+* Nahj al-Balagha, Letter 6 — Ali (RA) addresses all Muslims, including opponents, as part of the same Ummah.
+
