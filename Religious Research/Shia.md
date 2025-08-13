@@ -46,7 +46,8 @@ Bukhari - 2753,6285,3767 muslim - 504,6313,6308 - Nabi Pak ﷺ na farmaya Agar A
 ---
 
 **Hinglish Translation:**
-73\. Aur yaqeenan woh tumhe us cheez se hataa dena chahte the jo humne tum par wahi ki, taa ke tum hamare naam par kuchh aur ghad-badh bana do, aur agar tum aisa karte to woh tumhe apna dost bana lete.
+73\. Aur yaqeenan woh tumhe us cheez se hataa dena chahte the jo humne tum par wahi ki, taa ke tum hamare naam par kuchh aur ghad-badh bana do, 
+aur agar tum aisa karte to woh tumhe apna dost bana lete.
 74\. Aur agar hum tumhe sabit qadam (steadfast) na rakhte to tum unki taraf thoda sa jhuk jaate.
 75\. Agar aisa hota to hum tumhe zindagi me bhi dugna azaab chakhate aur maut ke baad bhi dugna azaab dete, phir tum humare khilaf koi madadgar na paate.
 
@@ -54,7 +55,8 @@ Bukhari - 2753,6285,3767 muslim - 504,6313,6308 - Nabi Pak ﷺ na farmaya Agar A
 
 **📌 Context (Tafsir Summary):**
 
-* Makkah ke mushrikeen ne Prophet ﷺ par dabav dala tha ke aap kuchh din unke devtaon ki tareef karen ya unke rituals me shamil ho jayein, badle me wo Islam ko accept karenge.
+* Makkah ke mushrikeen ne Prophet ﷺ par dabav dala tha ke aap kuchh din unke devtaon ki tareef karen ya unke rituals me shamil ho jayein, 
+badle me wo Islam ko accept karenge.
 * Allah ne yeh ayat utari taake nabi ﷺ ko sabit qadam rakha jaaye aur shirk se zara bhi jhukne ka khayal na aaye.
 * Ye ayat Nabi ﷺ ki insani fitrat ka zikr karti hai, lekin saath hi yeh bhi ke Allah ne apne nabi ko bacha liya, isliye woh kabhi gumrah nahi hue.
 ```
