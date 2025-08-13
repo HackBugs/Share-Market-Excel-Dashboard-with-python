@@ -40,8 +40,24 @@ Bukhari - 2753,6285,3767 muslim - 504,6313,6308 - Nabi Pak ﷺ na farmaya Agar A
 फिर किसकी अल्लाह ताला इज्जत अफजाई करेगा आपने फरमाया इसमें शुबा नहीं कि इनकी मौत आ चुकी कसम अल्लाह की मैं भी इनके लिए खैर ही की उम्मीद रखता हूं 
 लेकिन वल्लाह मुझे खुद अपने मुतालिक भी मालूम नहीं कि मेरे साथ क्या मामला होगा हालांकि मैं अल्लाह का रसूल हूं उम्मल उला ने कहा कि खुदा की कसम 
 अब मैं कभी किसी के मुतालिक इस तरह की गवाही नहीं दूंगी सही बुखारी हदीस नंबर 12243
-```
 
+**📖 Surah Al-Isra 17:73–75**
+
+---
+
+**Hinglish Translation:**
+73\. Aur yaqeenan woh tumhe us cheez se hataa dena chahte the jo humne tum par wahi ki, taa ke tum hamare naam par kuchh aur ghad-badh bana do, aur agar tum aisa karte to woh tumhe apna dost bana lete.
+74\. Aur agar hum tumhe sabit qadam (steadfast) na rakhte to tum unki taraf thoda sa jhuk jaate.
+75\. Agar aisa hota to hum tumhe zindagi me bhi dugna azaab chakhate aur maut ke baad bhi dugna azaab dete, phir tum humare khilaf koi madadgar na paate.
+
+---
+
+**📌 Context (Tafsir Summary):**
+
+* Makkah ke mushrikeen ne Prophet ﷺ par dabav dala tha ke aap kuchh din unke devtaon ki tareef karen ya unke rituals me shamil ho jayein, badle me wo Islam ko accept karenge.
+* Allah ne yeh ayat utari taake nabi ﷺ ko sabit qadam rakha jaaye aur shirk se zara bhi jhukne ka khayal na aaye.
+* Ye ayat Nabi ﷺ ki insani fitrat ka zikr karti hai, lekin saath hi yeh bhi ke Allah ne apne nabi ko bacha liya, isliye woh kabhi gumrah nahi hue.
+```
 ---
 
 > # "Shia" lafz Quran me aata hai, lekin important baat yeh hai ki Quran me jab "Shia" ka zikr hota hai, toh wo **sirf ek group/followers** ke meaning me hota hai — jaise "party" ya "group" — na ki aaj ke zamane wale sect (Shia Islam) ka reference.
