@@ -1597,3 +1597,12 @@ Prophet Muhammad ﷺ
 [10]: https://www.reddit.com/r/islam_ahmadiyya/comments/n54a2o?utm_source=chatgpt.com "Would it be accurate to describe Ahmadiyya as a subsect of Sunni Islam?"
 [11]: https://en.wikipedia.org/wiki/Barelvi_movement?utm_source=chatgpt.com "Barelvi movement"
 [12]: https://www.reddit.com/r/PakiExMuslims/comments/1ev87jr?utm_source=chatgpt.com "Can someone explain Pakistani islam sects to me?"
+
+```
+इस्लाम के नाम पर भारतीय ...देवबंदी और बरेलवी, ये दो अलग-अलग इस्लामी विचारधाराएँ हैं जो भारत में 19वीं सदी में उभरीं। देवबंदी आंदोलन 1866 
+में उत्तर प्रदेश के देवबंद में दारुल उलूम देवबंद की स्थापना के साथ शुरू हुआ, जबकि बरेलवी आंदोलन 1880 के दशक में अहमद रजा खान बरेलवी के नेतृत्व में बरेली में उभरा.
+ 
+देवबंदी आंदोलन:
+संस्थापक:
+मुहम्मद कासिम नानौतवी, रशीद अहमद गंगोही, और अन्य. 
+```
