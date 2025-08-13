@@ -1533,3 +1533,67 @@ Prophet Muhammad ﷺ
 * Nabi ﷺ ki pehli wahi **610 CE me aayi** jab wo 40 saal ke the, isliye Qasim se le kar Fatimah tak ke sab bachche wahi se pehle paida hue (except Abdullah & Ibrahim).
 
 ---
+
+> # [![en.wikipedia.org/wiki/is...](https://images.openai.com/thumbnails/url/OHFj4Xicu1mSUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw7M8Y2vMqzQNTYyD8gOjQgJiQ8ztwjOCHepjDcyjgiuijIorvT0K3J2L_NKdC4yNwjWdU1MzM0zL6-oSFcrBgD_Gyl_)](https://en.wikipedia.org/wiki/Islamic_schools_and_branches?utm_source=chatgpt.com)
+
+> **Islamic sect-branches tree** hai, jo major groups aur unke relationships ko dikhaata hai—Sunni, Shia, Kharijite/Ibadis, aur modern branches tak.
+
+---
+
+### Popular Islamic Sects — Branching Timeline Chart
+
+#### **1. Earliest Splits (7th Century CE):**
+
+* **Sunni**: Originated right after the Prophet ﷺ’s death in 632 CE, based on consensus-led leadership. ([Wikipedia][1], [Reddit][2])
+* **Shia (Shīʿat ‘Alī)**: Began during the First Fitna (656–661 CE), as followers of ʿAlī ibn Abī Ṭālib. ([Wikipedia][3])
+* **Kharijites**: Emerged during Ali’s Caliphate, rejecting both Ali and Mu‘āwiyah, later evolving into offshoots including Ibadism. ([Wikipedia][1])
+
+#### **2. Sub-Branches of Shia Islam:**
+
+* **Twelver Shia**: Recognize a line of twelve Imams, starting with ʿAlī and ending with Muhammad al-Mahdī. Founded by early supporters post-Ghadir Khumm (7th century CE). ([Wikipedia][4])
+* **Zaydi (Fivers)**: Developed in the 8th century, honoring Zayd ibn ʿAlī. They established dynasties in Iran and Yemen by 864–893 CE. ([Wikipedia][5], [Reddit][6])
+* **Ismāʻīlī (Seveners)**: Split after the death of Imam Jaʿfar al-Ṣādiq in 765 CE—followers of Ismāʿīl. The Fatimid Ismāʻīlīs formally established their state in 909 CE. ([Reddit][7], [All About Shias][8])
+
+#### **3. Kharijite Offshoot:**
+
+* **Ibadis**: The only surviving branch of the Kharijites, crystallized around the 7th–8th century CE. They spread to Oman, North Africa, Zanzibar, Andalusia, and formed states such as the Rustamid Imamate (757–909 CE). ([Wikipedia][9])
+
+#### **4. Modern Movements (19th–20th Century):**
+
+* **Ahmadiyya**: Emerged in the 19th century in British India, initially following Hanafi jurisprudence — later diverged significantly. ([Reddit][10])
+* **Sunni Sub-Movements**:
+
+  * **Barelvi**: Founded in the 1880s by Ahmad Raza Khan in South Asia to defend mystical practices. ([Wikipedia][11])
+  * **Deobandi**, **Salafi/Wahhabi**, **Ahl-e-Hadith**: Later Sunni schools/movements emphasizing textual literalism, hadith purity, etc. ([Reddit][12])
+
+---
+
+### Quick Reference Table
+
+| Branch/Movement             | Approx. Start Period     | Key Founder/Event               | Location/Notes                           |
+| --------------------------- | ------------------------ | ------------------------------- | ---------------------------------------- |
+| Sunni                       | 632 CE (Saqifah)         | Consensus after Prophet's death | Global majority                          |
+| Shia                        | 656–661 CE (First Fitna) | Followers of ʿAli               | Iraq, Iran, etc.                         |
+| Kharijites                  | 656–661 CE (Ali period)  | Protesters of Ali and Mu‘āwiyah | Extinct except Ibadis                    |
+| Ibadi (Kharijite)           | 7th–8th centuries        | Followers in Oman/north Africa  | Oman, North Africa                       |
+| Twelver Shia                | Post-765 CE (Imams line) | Early followers till Mahdi      | Iran, Iraq, South Asia                   |
+| Zaydi                       | 8th–9th century          | Followers of Zayd ibn ʿAlī      | Yemen, early Iran                        |
+| Ismāʻīlī                    | 765–909 CE               | Ismail's followers, Fatimids    | Egypt (Fatimid dynasty), etc.            |
+| Barelvi                     | 1880s                    | Ahmad Raza Khan                 | South Asia                               |
+| Deobandi/Ahle-Hadith/Salafi | 19th–20th century        | Various reform movements        | South Asia, Middle East                  |
+| Ahmadiyya                   | Late 19th century        | Mirza Ghulam Ahmad              | Indian subcontinent (controversial sect) |
+
+---
+
+[1]: https://en.wikipedia.org/wiki/Islamic_schools_and_branches?utm_source=chatgpt.com "Islamic schools and branches"
+[2]: https://www.reddit.com/r/MuslimLounge/comments/1da76ku?utm_source=chatgpt.com "When did the whole different sects originated?"
+[3]: https://en.wikipedia.org/wiki/Shia_Islam?utm_source=chatgpt.com "Shia Islam"
+[4]: https://en.wikipedia.org/wiki/Twelver_Shi%27ism?utm_source=chatgpt.com "Twelver Shi'ism"
+[5]: https://en.wikipedia.org/wiki/Zaydism?utm_source=chatgpt.com "Zaydism"
+[6]: https://www.reddit.com/r/IslamicHistoryMeme/comments/1ic6ghc?utm_source=chatgpt.com "Shiism Through the Ages: Prominent Sects and Their Beliefs (Context in Comment)"
+[7]: https://www.reddit.com/r/ismailis/comments/12tlp5p?utm_source=chatgpt.com "When was Sevener Ismaili actually founded?"
+[8]: https://allaboutshias.com/when-did-shiaism-come-about/?utm_source=chatgpt.com "When did Shiaism Come About? – All About Shias"
+[9]: https://en.wikipedia.org/wiki/Ibadism?utm_source=chatgpt.com "Ibadism"
+[10]: https://www.reddit.com/r/islam_ahmadiyya/comments/n54a2o?utm_source=chatgpt.com "Would it be accurate to describe Ahmadiyya as a subsect of Sunni Islam?"
+[11]: https://en.wikipedia.org/wiki/Barelvi_movement?utm_source=chatgpt.com "Barelvi movement"
+[12]: https://www.reddit.com/r/PakiExMuslims/comments/1ev87jr?utm_source=chatgpt.com "Can someone explain Pakistani islam sects to me?"
