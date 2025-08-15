@@ -1,3 +1,77 @@
+> # Tum jis waqiya ka zikr kar rahe ho wo **Sabse Pehli Wahi** ka waqiya hai jo **Ghaar-e-Hira** me hua tha, aur Quran ka pehla hissa **Surah Al-‘Alaq** (96:1-5) me nazil hua.
+
+---
+
+## 📜 Waqiya – Pehli Wahi ka
+
+### 1. **Jibreel (عليه السلام) ka aana**
+
+* Prophet Muhammad ﷺ Ghaar-e-Hira me ibadat kar rahe the.
+* Achaanak **Jibreel** aae aur kaha:
+
+  > **"Iqra"** (پڑھ / Read / Recite)
+
+---
+
+### 2. **Nabi ﷺ ka jawab**
+
+* Nabi ﷺ ne farmaya:
+
+  > **"Maa ana bi qari’in"**
+  > (میں پڑھنے والا نہیں / I am not one who can read)
+
+---
+
+### 3. **Taqrar teen baar hui**
+
+* Jibreel ne teen baar kaha "Iqra"
+* Har baar Nabi ﷺ ne wahi jawab diya: "Maa ana bi qari’in"
+
+---
+
+### 4. **Allah ka paigham**
+
+* Phir Allah ne wahi bheji:
+
+  ```
+  اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ  
+  خَلَقَ الإِنسَانَ مِنْ عَلَقٍ  
+  اقْرَأْ وَرَبُّكَ الأَكْرَمُ  
+  الَّذِي عَلَّمَ بِالْقَلَمِ  
+  عَلَّمَ الإِنسَانَ مَا لَمْ يَعْلَمْ
+  ```
+
+  **(Surah Al-‘Alaq 96:1-5)**
+
+  **Translation:**
+
+  > Padh apne Rab ke naam se jisne paida kiya.
+  > Insaan ko ek jame hue khoon se paida kiya.
+  > Padh! Aur tera Rab bohot karam wala hai.
+  > Jisne qalam se sikhaya.
+  > Insaan ko woh sikhaya jo wo nahi jaanta tha.
+
+---
+
+### 5. **"Dil me utarna" ka matlab**
+
+* Allah ne ye zimmedari li ki wahi sirf bolne ki nahi, **Prophet ﷺ ke dil me hifz bhi kara di jaye**.
+* Iska zikr Surah Al-Qiyamah (75:16-17) me hai:
+
+  > **"La tuharrik bihi lisanaka lita'jala bih, Inna ‘alayna jam‘ahu wa qur’anah"**
+  > (Apni zubaan ko jaldi jaldi mat hilao isko yaad karne ke liye, isko jama karna aur padhwana hamara kaam hai)
+
+---
+
+### 📚 Sources:
+
+* **Bukhari** (Hadith No. 3 – Kitab Bad' al-Wahy)
+* **Muslim** (Hadith No. 160 – Kitab al-Iman)
+* **Surah Al-‘Alaq 96:1-5**
+* **Surah Al-Qiyamah 75:16-17**
+
+---
+
 ```
 Qur’an me Nabi (Prophet) ka kaam kaafi clear taur par define kiya gaya hai — Allah ne har nabi ko ek hi basic mission ke liye bheja: **Allah ka paigham pahunchana, shirk se bachana, hidayat dena, aur insaf qayam karna.**
 
