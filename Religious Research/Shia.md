@@ -1405,7 +1405,7 @@ Ye baat **direct Qur’an ki ayat** se aati hai, specifically:
 * Is ayat ka pehla hissa (33:32–33) Nabi ﷺ ki **biwiyon** se khitab karta hai.
 * Hadith al-Kisa (Sahih Muslim, Tirmidhi) me Nabi ﷺ ne Ali, Fatimah, Hasan, Husayn ko chadar me le kar is ayat ko padhi — isliye dono group (Sunni & Shia) agree karte hain ke yeh ayat un par bhi apply hoti hai.
 
-## **poora ayat ka context (33:32–34)** ke sath tafsir Ibn Kathir, Tafsir al-Tabari aur Tafsir al-Qurtubi - jisme clearly likha hai ki “Ahl al-Bayt” ka matlab *Nabi ﷺ ke ghar wale jinhe Allah ne paak karne ka wada kiya*.
+> **poora ayat ka context (33:32–34)** ke sath tafsir Ibn Kathir, Tafsir al-Tabari aur Tafsir al-Qurtubi - jisme clearly likha hai ki “Ahl al-Bayt” ka matlab *Nabi ﷺ ke ghar wale jinhe Allah ne paak karne ka wada kiya*.
 
 ---
 
