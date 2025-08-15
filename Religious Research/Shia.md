@@ -1416,8 +1416,6 @@ Ye baat **direct Qur’an ki ayat** se aati hai, specifically:
 
 ---
 
-> # Theek hai, main tumhe **Nabi ﷺ se le kar Hasan (RA) & Husayn (RA)** ki nasl ki **family tree** bana deta hoon, taaki tum dekh sako ki Ahl al-Bayt ka silsila kaise aage badha.
-
 Jo Arabic text tumne likha hai —
 
 > **إِنَّمَا يُرِيدُ ٱللَّهُ لِيُذْهِبَ عَنكُمُ ٱلرِّجْسَ أَهْلَ ٱلْبَيْتِ وَيُطَهِّرَكُمْ تَطْهِيرًا**
@@ -1456,6 +1454,8 @@ Qur’an me “أهل البيت” lafz sirf do jagah aata hai:
 Dono jagah “Ahl al-Bayt” ka context **family/ghar wale** hai, pehle Hazrat Ibrahim A.S. ki family ke liye, doosre Nabi Muhammad ﷺ ki family ke liye.
 
 ---
+
+> # Theek hai, main tumhe **Nabi ﷺ se le kar Hasan (RA) & Husayn (RA)** ki nasl ki **family tree** bana deta hoon, taaki tum dekh sako ki Ahl al-Bayt ka silsila kaise aage badha.
 
 ## 📜 **Ahl al-Bayt Family Tree – Hasan & Husayn se aage**
 
