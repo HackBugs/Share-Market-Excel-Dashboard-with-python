@@ -1418,6 +1418,43 @@ Ye baat **direct Qur’an ki ayat** se aati hai, specifically:
 
 > # Theek hai, main tumhe **Nabi ﷺ se le kar Hasan (RA) & Husayn (RA)** ki nasl ki **family tree** bana deta hoon, taaki tum dekh sako ki Ahl al-Bayt ka silsila kaise aage badha.
 
+Jo Arabic text tumne likha hai —
+
+> **إِنَّمَا يُرِيدُ ٱللَّهُ لِيُذْهِبَ عَنكُمُ ٱلرِّجْسَ أَهْلَ ٱلْبَيْتِ وَيُطَهِّرَكُمْ تَطْهِيرًا**
+> *(Innama yurīdu-llāhu liyudhhiba \`ankumu-r-rijsa ahla-l-bayti wa yuṭahhirakum taṭhīrā)*
+
+Ye **Surah Al-Ahzab (33:33)** ka hissa hai.
+
+* **"Ahl al-Bayt"** ka literal translation Arabic me hota hai: *People of the House* ya *Household*.
+* Yahaan **“al-bayt”** ka matlab "ghar" hai, lekin Quran me iska reference Nabi ﷺ ke **ghar wale (household)** logon ke liye hai.
+
+📍 **Word-by-word translation:**
+
+* **إِنَّمَا يُرِيدُ ٱللَّهُ** — “Indeed, Allah only intends”
+* **لِيُذْهِبَ عَنكُمُ ٱلرِّجْسَ** — “to remove from you impurity”
+* **أَهْلَ ٱلْبَيْتِ** — “O people of the house (household)”
+* **وَيُطَهِّرَكُمْ تَطْهِيرًا** — “and to purify you thoroughly”
+
+Isliye “house” ka lafz direct English me *household* ban ke aata hai, Arabic me **al-bayt**.
+
+
+
+
+
+Qur’an me “أهل البيت” lafz sirf do jagah aata hai:
+
+1. **Surah Hud (11:73)** – Hazrat Ibrahim (A.S.) ki biwi se farishton ka guftagu:
+
+   > رَحْمَتُ ٱللَّهِ وَبَرَكَـٰتُهُۥ عَلَيْكُمْ أَهْلَ ٱلْبَيْتِ
+   > “Allah ki rahmat aur barkat tum par ho, Ahl al-Bayt (ghar walon).”
+
+2. **Surah Al-Ahzab (33:33)** – Nabi ﷺ ke ghar walon ke liye paak karne ka wada:
+
+   > إِنَّمَا يُرِيدُ ٱللَّهُ لِيُذْهِبَ عَنكُمُ ٱلرِّجْسَ أَهْلَ ٱلْبَيْتِ
+   > “Allah tum se gandagi door karna chahta hai, Ahl al-Bayt, aur tumhe paak karna chahta hai.”
+
+Dono jagah “Ahl al-Bayt” ka context **family/ghar wale** hai, pehle Hazrat Ibrahim A.S. ki family ke liye, doosre Nabi Muhammad ﷺ ki family ke liye.
+
 ---
 
 ## 📜 **Ahl al-Bayt Family Tree – Hasan & Husayn se aage**
