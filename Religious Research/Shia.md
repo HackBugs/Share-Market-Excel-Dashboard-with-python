@@ -1451,6 +1451,87 @@ Qur’an me “أهل البيت” lafz sirf do jagah aata hai:
 
 Dono jagah “Ahl al-Bayt” ka context **family/ghar wale** hai, pehle Hazrat Ibrahim A.S. ki family ke liye, doosre Nabi Muhammad ﷺ ki family ke liye.
 
+Main tumhe exact reference ke sath batata hoon jaha **Sahih Muslim** aur **Musnad Ahmad** me ye baat milti hai ki Nabi ﷺ ne apni **wives ko Ahl al-Bayt** kaha.
+
+---
+
+### **1. Sahih Muslim**
+
+**Kitab Fada'il al-Sahabah**
+Hadith No. **2442** (International numbering)
+
+* Riwayat: Zaid bin Arqam (RA) se poocha gaya: *"Kya Nabi ﷺ ki biwiyan Ahl al-Bayt me hain?"*
+* Zaid bin Arqam (RA) ne jawab diya:
+
+> "Haan, biwiyan bhi Ahl al-Bayt me hain."
+> Lekin phir unhone clarify kiya: "Ahl al-Bayt wo log bhi hain jin par sadaqa haram hai."
+
+📌 Is hadith se Sunni scholars conclude karte hain ke biwiyan Ahl al-Bayt me aati hain — kyunki Zaid bin Arqam ne sawal ka jawab **haan** me diya.
+
+---
+
+### **2. Musnad Ahmad ibn Hanbal**
+
+**Musnad Ahl al-Bayt**
+Hadith (Musnad of Umm Salamah, RA)
+
+* Umm Salamah (RA) se riwayat:
+
+> Nabi ﷺ ne farmaya: *"Tum (Umm Salamah) bhi mere Ahl al-Bayt me ho."*
+
+* Yeh us waqt hua jab Hadith al-Kisa ke waqia me Nabi ﷺ ne Ali, Fatima, Hasan, Husayn ko chadar me liya, aur Umm Salamah ko bataya ke wo bhi Ahl al-Bayt hain.
+
+📌 Yeh riwayat Shia sources me weak samjhi jaati hai, lekin Sunni muhaddithin ne ise qabool kiya hai.
+
+---
+
+💡 **Summary Table**
+
+| Source                | Narrator       | Matn (Summary)                          | Hukm                         |
+| --------------------- | -------------- | --------------------------------------- | ---------------------------- |
+| **Sahih Muslim** 2442 | Zaid bin Arqam | Wives ko Ahl al-Bayt me shamil kiya     | **Sahih**                    |
+| **Musnad Ahmad**      | Umm Salamah    | Nabi ﷺ ne apni wife ko Ahl al-Bayt kaha | Hasan/Sahih by Sunni grading |
+
+Theek hai, main tumhare liye **"Ahl al-Bayt Scope Map"** bana deta hoon — isme Qur’an ki sab jagah jaha lafz **Ahl al-Bayt** aaya hai, plus Sahih Hadith jaha iska zikr hua, aur har jagah ka **context** bhi hoga.
+
+---
+
+## **Ahl al-Bayt Scope Map (Qur’an + Sahih Hadith)**
+
+### **Qur’an References**
+
+| Surah & Ayah       | Arabic Text Snippet                                                    | Context                                                  | Scope Meaning                                                                                     |
+| ------------------ | ---------------------------------------------------------------------- | -------------------------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| **Hud 11:73**      | رَحْمَتُ ٱللَّهِ وَبَرَكَـٰتُهُۥ عَلَيْكُمْ أَهْلَ ٱلْبَيْتِ           | Farishton ka Ibrahim (AS) aur unki wife se mukhatib hona | Husband + wife (Prophet Ibrahim’s household)                                                      |
+| **Al-Ahzab 33:33** | إِنَّمَا يُرِيدُ ٱللَّهُ لِيُذْهِبَ عَنكُمُ ٱلرِّجْسَ أَهْلَ ٱلْبَيْتِ | Nabi ﷺ ke ghar walon ko paak karna                       | Debate: wives only (context of ayah) **+** Hadith al-Kisa ke hisab se Ali, Fatimah, Hasan, Husayn |
+
+---
+
+### **Sahih Hadith References**
+
+| Source           | Hadith No. (Int.) | Narrator             | Summary                                                                                | Scope Meaning                   |
+| ---------------- | ----------------- | -------------------- | -------------------------------------------------------------------------------------- | ------------------------------- |
+| **Sahih Muslim** | 2424              | A’isha (RA)          | Hadith al-Kisa — Nabi ﷺ ne Ali, Fatimah, Hasan, Husayn ko chadar me le kar 33:33 padhi | Household includes Ali’s family |
+| **Sahih Muslim** | 2442              | Zaid bin Arqam (RA)  | Sawal hua: "Kya wives Ahl al-Bayt hain?" → Jawab: "Haan"                               | Wives included                  |
+| **Musnad Ahmad** | —                 | Umm Salamah (RA)     | Nabi ﷺ ne Umm Salamah ko kaha: "Tum mere Ahl al-Bayt me ho"                            | Wives included                  |
+| **Tirmidhi**     | 3205              | Umar ibn Abi Salamah | Hadith al-Kisa narration                                                               | Ali, Fatimah, Hasan, Husayn     |
+
+---
+
+### **Scholarly Conclusions**
+
+1. **Qur’an context (33:33)** — Directly wives ko address kar raha hai.
+2. **Hadith al-Kisa** — Expands meaning to Ali, Fatimah, Hasan, Husayn.
+3. **Sahih Muslim (2442)** & **Musnad Ahmad** — Confirms wives are included.
+4. **Two Layers Scope** —
+
+   * Narrow: Ali’s family (per Hadith al-Kisa)
+   * Broad: All household (wives + those under sadaqa ban)
+
+---
+
+💡 Matlab: Qur’an + Sahih Hadith dono milake dekhe to Ahl al-Bayt ka matlab **Prophet ﷺ ke ghar walon ka poora group** — jisme wives bhi aati hain, aur Ali-Fatimah-Hasan-Husayn bhi.
+
 ---
 
 > # Theek hai, main tumhe **Nabi ﷺ se le kar Hasan (RA) & Husayn (RA)** ki nasl ki **family tree** bana deta hoon, taaki tum dekh sako ki Ahl al-Bayt ka silsila kaise aage badha.
