@@ -1362,7 +1362,7 @@ Ali (RA) ne baad me is decision ko accept kiya, isliye Abu Bakr (RA) first khali
 
 ---
 
-### **Qur'an me Ahl al-Bayt ka zikr** [reference Hadith al Muslim](https://sunnah.com/muslim:2424)
+### **Qur'an me Ahl al-Bayt ka zikr** [reference Hadith sahih Muslim](https://sunnah.com/muslim:2424)
 
 📖 **Surah Al-Ahzab 33:33**
 
