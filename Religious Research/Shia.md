@@ -1380,6 +1380,33 @@ Ali (RA) ne baad me is decision ko accept kiya, isliye Abu Bakr (RA) first khali
 4. **Hasan (RA)** — Nabi ﷺ ke nawase
 5. **Husayn (RA)** — Nabi ﷺ ke nawase
 
+Ye baat **direct Qur’an ki ayat** se aati hai, specifically:
+
+---
+
+📖 **Surah Al-Ahzab (33:33)**:
+
+> **إِنَّمَا يُرِيدُ ٱللَّهُ لِيُذْهِبَ عَنكُمُ ٱلرِّجْسَ أَهْلَ ٱلْبَيْتِ وَيُطَهِّرَكُمْ تَطْهِيرًا**
+>
+> "Allah ka irada sirf yeh hai, Aey *Ahl al-Bayt*, ke tum se har tarah ki gandagi door kar de aur tumhe poori tarah paak kar de."
+
+---
+
+🔍 **“Ahl al-Bayt” ka literal meaning** Arabic me hota hai:
+
+* **Ahl** = log / family / members
+* **al-Bayt** = ghar
+  ➡️ **Ahl al-Bayt** = *ghar wale / household members*
+
+---
+
+💡 **Context ka proof**:
+
+* Is ayat ka pehla hissa (33:32–33) Nabi ﷺ ki **biwiyon** se khitab karta hai.
+* Hadith al-Kisa (Sahih Muslim, Tirmidhi) me Nabi ﷺ ne Ali, Fatimah, Hasan, Husayn ko chadar me le kar is ayat ko padhi — isliye dono group (Sunni & Shia) agree karte hain ke yeh ayat un par bhi apply hoti hai.
+
+## **poora ayat ka context (33:32–34)** ke sath tafsir Ibn Kathir, Tafsir al-Tabari aur Tafsir al-Qurtubi - jisme clearly likha hai ki “Ahl al-Bayt” ka matlab *Nabi ﷺ ke ghar wale jinhe Allah ne paak karne ka wada kiya*.
+
 ---
 
 ### **Sunni aur Shia view difference**
