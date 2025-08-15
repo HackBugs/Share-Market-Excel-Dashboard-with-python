@@ -1382,6 +1382,11 @@ Ali (RA) ne baad me is decision ko accept kiya, isliye Abu Bakr (RA) first khali
 
 Ye baat **direct Qur’an ki ayat** se aati hai, specifically:
 
+### **Sunni aur Shia view difference**
+
+* **Sunni view:** Ahl al-Bayt me ye paanch log to hain hi, saath me Nabi ﷺ ki biwiyan (Ummahat al-Mu’mineen) bhi Ahl al-Bayt me shamil hain.
+* **Shia view:** Sirf Nabi ﷺ, Ali (RA), Fatimah (RA), Hasan (RA), Husayn (RA) aur unki nasl ke kuch specific imams ko Ahl al-Bayt me shamil mante hain, wives ko nahi.
+
 ---
 
 📖 **Surah Al-Ahzab (33:33)**:
@@ -1406,13 +1411,6 @@ Ye baat **direct Qur’an ki ayat** se aati hai, specifically:
 * Hadith al-Kisa (Sahih Muslim, Tirmidhi) me Nabi ﷺ ne Ali, Fatimah, Hasan, Husayn ko chadar me le kar is ayat ko padhi — isliye dono group (Sunni & Shia) agree karte hain ke yeh ayat un par bhi apply hoti hai.
 
 > **poora ayat ka context (33:32–34)** ke sath tafsir Ibn Kathir, Tafsir al-Tabari aur Tafsir al-Qurtubi - jisme clearly likha hai ki “Ahl al-Bayt” ka matlab *Nabi ﷺ ke ghar wale jinhe Allah ne paak karne ka wada kiya*.
-
----
-
-### **Sunni aur Shia view difference**
-
-* **Sunni view:** Ahl al-Bayt me ye paanch log to hain hi, saath me Nabi ﷺ ki biwiyan (Ummahat al-Mu’mineen) bhi Ahl al-Bayt me shamil hain.
-* **Shia view:** Sirf Nabi ﷺ, Ali (RA), Fatimah (RA), Hasan (RA), Husayn (RA) aur unki nasl ke kuch specific imams ko Ahl al-Bayt me shamil mante hain, wives ko nahi.
 
 ---
 
