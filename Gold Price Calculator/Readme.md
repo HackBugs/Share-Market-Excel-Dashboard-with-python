@@ -52,7 +52,6 @@ Isse normal jewellery kam banti hai kyuki bahut soft hota hai.
 
 ---
 
-# Purity Formula
 > # Market Dukandar Final price calculation
 
 3.82 gram 18K gold ka ek realistic full calculation:
@@ -106,3 +105,56 @@ branded showroom hai → ₹55k–₹60k+
 heavy design hai → making charge aur badhega
 
 stone laga hai → aur increase hoga.
+
+---
+
+# Prompt 
+
+```
+Mujhe gold jewellery ka realistic final price calculate karke do.
+
+Details:
+- Weight: ___ gram
+- Purity/Karat: ___K
+- Live gold rate: ___ per gram (agar na ho to current approximate market rate use karo)
+
+Calculation me ye sab include karo:
+
+1. Gold Value
+   = weight × live rate
+
+2. Making Charge
+   = Gold Value ka realistic percentage
+   (normal jewellery: 10%–20%)
+
+3. Wastage Charge
+   = Gold Value ka realistic percentage
+   (usually 2%–5%)
+
+4. Hallmark Charge
+   = ₹45–₹100 approx
+
+5. Subtotal
+   = Gold Value + Making + Wastage + Hallmark
+
+6. GST
+   = 3% on subtotal
+
+7. Final Price
+   = subtotal + GST
+
+Output step-by-step do:
+- Gold Value
+- Making Charge
+- Wastage
+- Hallmark
+- GST
+- Final Total
+
+Saath me ye bhi batao:
+- Normal local jeweller price
+- Branded showroom estimated price
+- Agar heavy design ya stone laga ho to approx kitna extra ho sakta hai
+
+Calculation realistic Indian jewellery market ke hisab se karo.
+```
