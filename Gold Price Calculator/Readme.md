@@ -122,3 +122,45 @@ Iska matlab:
 Agar 24K gold ₹154160 hai,
 
 to 18K gold ka approx rate ₹115620 hoga.
+
+<hr>
+
+Step by step solve karte hain 👇
+
+Question:
+
+154160 \times \frac{18}{24}
+
+Method 1 (Easy)
+
+Pehle fraction simplify karo:
+
+\frac{18}{24} = \frac{3}{4}
+
+Ab question ban gaya:
+
+154160 \times \frac{3}{4}
+
+
+---
+
+Step 1: 154160 ko 4 se divide karo
+
+154160 \div 4 = 38540
+
+
+---
+
+Step 2: jo answer aaya usko 3 se multiply karo
+
+38540 \times 3 = 115620
+
+
+---
+
+Final Answer
+
+154160 \times \frac{18}{24} = 115620
+
+Iska matlab: Agar 24K gold ₹154160 hai,
+to 18K gold ka approx rate ₹115620 hoga.
