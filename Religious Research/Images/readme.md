@@ -1,3 +1,39 @@
+<table>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/1.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/2.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/3.jpeg" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/4.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/5.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/6.jpeg" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/7.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/8.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/9.jpeg" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/10.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/11.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/12.jpeg" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/13.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/14.jpeg" width="250"></td>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/15.jpeg" width="250"></td>
+  </tr>
+  <tr>
+    <td><img src="https://raw.githubusercontent.com/HackBugs/Share-Market-Excel-Dashboard-with-python/main/Religious%20Research/Images/16.jpeg" width="250"></td>
+    <td></td>
+    <td></td>
+  </tr>
+</table>
+
+
+
+
 1. सईद बिन अल-हारिस (रह.) ने हज़रत जाबिर बिन अब्दुल्लाह (रज़ि.) से आग पर पकी हुई चीज़ खाने के बाद वुज़ू करने के बारे में पूछा। उन्होंने जवाब दिया:
 
 "नहीं (वुज़ू ज़रूरी नहीं है)। नबी ﷺ के दौर में हमें ऐसा खाना कम ही मिलता था। जब मिल जाता, तो हाथ पोंछने के लिए रुमाल नहीं, बल्कि हथेलियाँ, कलाई और पैर इस्तेमाल करते थे। फिर हम नया वुज़ू किए बिना ही नमाज़ पढ़ लेते थे।"
