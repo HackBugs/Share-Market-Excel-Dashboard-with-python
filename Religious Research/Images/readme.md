@@ -136,5 +136,8 @@ Unhone jawab diya:
 > Log sab se pehle ambiya ke paas jayenge, lekin har Nabi kahega: "Nafsi nafsi"
 Aur akhir me Rasoolullah ﷺ shafa’at farmaenge.
 
+Sahih al-Bukhari 7510
+Sahih Muslim 193 / 194 (Kitab al-Iman)
+
 ---
 
