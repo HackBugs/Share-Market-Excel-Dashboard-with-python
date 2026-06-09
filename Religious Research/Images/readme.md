@@ -139,5 +139,34 @@ Aur akhir me Rasoolullah ﷺ shafa’at farmaenge.
 Sahih al-Bukhari 7510
 Sahih Muslim 193 / 194 (Kitab al-Iman)
 
+## 📌 Ambiya kahan kahan gaye (order)
+Log jab shafa’at ke liye jaate hain:
+
+1. **Hazrat Adam (A.S)**
+   👉 Pehle Nabi ke paas jaate hain
+   👉 Woh kehte hain: “Main is layak nahi, Nuh (A.S) ke paas jao”
+
+2. **Hazrat Nuh (A.S)** *(hadith me indirectly Adam ke baad unka zikr aata hai)*
+   👉 Woh bhi mana karte hain
+   👉 Ibrahim (A.S) ke paas bhejte hain
+
+3. **Hazrat Ibrahim (A.S)**
+   👉 Kehte hain: “Main bhi is layak nahi”
+   👉 Musa (A.S) ke paas bhejte hain
+
+4. **Hazrat Musa (A.S)**
+   👉 Kehte hain: “Main is ke liye nahi”
+   👉 Isa (A.S) ke paas bhejte hain
+
+5. **Hazrat Isa (A.S)**
+   👉 Woh bhi mana karte hain
+   👉 Kehte hain: “Muhammad ﷺ ke paas jao”
+
+6. **Rasoolullah ﷺ**
+   👉 Phir sab log aap ﷺ ke paas aate hain
+   👉 Aap ﷺ shafa’at farmate hain (Allah ki ijazat se)
+
+---
+
 ---
 
