@@ -168,5 +168,3 @@ Log jab shafa’at ke liye jaate hain:
 
 ---
 
----
-
