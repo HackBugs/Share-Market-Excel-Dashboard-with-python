@@ -32,6 +32,10 @@
   </tr>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/16.jpeg" width="100%"></td>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/20.jpeg" width="100%"></td>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/21.jpeg" width="100%"></td>
+  </tr>
+    </tr>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/22.jpeg" width="100%"></td>
   </tr>
 </table>
 
