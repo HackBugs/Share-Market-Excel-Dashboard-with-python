@@ -139,8 +139,7 @@ Aur akhir me Rasoolullah ﷺ shafa’at farmaenge.
 Sahih al-Bukhari 7510
 Sahih Muslim 193 / 194 (Kitab al-Iman)
 
-## 📌 Ambiya kahan kahan gaye (order)
-Log jab shafa’at ke liye jaate hain:
+## 📌 Log jab shafa’at ke liye jaate hain:
 
 1. **Hazrat Adam (A.S)**
    👉 Pehle Nabi ke paas jaate hain
