@@ -1,13 +1,13 @@
 <table>
   <tr>
-    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/1.jpeg" width="100%"></td>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/12.jpeg" width="100%"></td>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/2.jpeg" width="100%"></td>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/3.jpeg" width="100%"></td>
   </tr>
   <tr>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/4.jpeg" width="100%"></td>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/5.jpeg" width="100%"></td>
-    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/6.jpeg" width="100%"></td>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/11.jpeg" width="100%"></td>
   </tr>
   <tr>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/7.jpeg" width="100%"></td>
@@ -16,8 +16,8 @@
   </tr>
     <tr>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/10.jpeg" width="100%"></td>
-    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/11.jpeg" width="100%"></td>
-    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/12.jpeg" width="100%"></td>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/6.jpeg" width="100%"></td>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/1.jpeg" width="100%"></td>
   </tr>
     <tr>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/13.jpeg" width="100%"></td>
