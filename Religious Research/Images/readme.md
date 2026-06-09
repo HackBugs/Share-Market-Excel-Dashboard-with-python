@@ -14,8 +14,13 @@
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/8.jpeg" width="100%"></td>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/9.jpeg" width="100%"></td>
   </tr>
-    <tr>
+  <tr>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/17.jpeg" width="100%"></td>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/18.jpeg" width="100%"></td>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/10.jpeg" width="100%"></td>
+  </tr>
+    <tr>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/19.jpeg" width="100%"></td>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/6.jpeg" width="100%"></td>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/1.jpeg" width="100%"></td>
   </tr>
@@ -26,6 +31,7 @@
   </tr>
   </tr>
     <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/16.jpeg" width="100%"></td>
+    <td><img src="https://github.com/HackBugs/Share-Market-Excel-Dashboard-with-python/blob/main/Religious%20Research/Images/20.jpeg" width="100%"></td>
   </tr>
 </table>
 
