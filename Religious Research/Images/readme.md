@@ -38,6 +38,23 @@
 
 <hr>
 
+### सही हदीस (Reference)
+
+रसूलुल्लाह ﷺ ने फ़रमाया:
+
+**“None of you will enter Paradise because of his deeds.”**
+(“तुम में से कोई भी अपने अमल की वजह से जन्नत में नहीं जाएगा।”)
+
+सहाबा ने पूछा: “आप भी नहीं?”
+आप ﷺ ने फ़रमाया:
+**“Not even I, unless Allah covers me with His grace and mercy.”**
+
+📚 **Source:**
+Sahih al-Bukhari **(Hadith 6463)**
+और यही रिवायत
+Sahih Muslim **(Hadith 2816)** में भी आती है
+
+---
 
 ## 📌 Wuzu aur Khane ke baad Masla
 
